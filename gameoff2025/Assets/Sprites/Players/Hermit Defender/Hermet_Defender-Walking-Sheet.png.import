@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0670bjmuy1i5"
-path="res://.godot/imported/Crab-Walking-Sheet.png-1cf7d2447818a9c0164a15d00ada7a96.ctex"
+path="res://.godot/imported/Hermet_Defender-Walking-Sheet.png-8ead49db9bd071052116bf0f9ad3041b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Hermit Crab/Crab-Walking-Sheet.png"
-dest_files=["res://.godot/imported/Crab-Walking-Sheet.png-1cf7d2447818a9c0164a15d00ada7a96.ctex"]
+source_file="res://Assets/Sprites/Players/Hermit Defender/Hermet_Defender-Walking-Sheet.png"
+dest_files=["res://.godot/imported/Hermet_Defender-Walking-Sheet.png-8ead49db9bd071052116bf0f9ad3041b.ctex"]
 
 [params]
 

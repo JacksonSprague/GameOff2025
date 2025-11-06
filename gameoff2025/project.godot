@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="GameOff2025"
+run/main_scene="uid://cpjock5hd6no2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=2880
+window/size/viewport_height=1620
+window/size/mode=2
+window/stretch/mode="canvas_items"

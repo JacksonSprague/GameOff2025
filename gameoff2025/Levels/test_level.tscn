@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpjock5hd6no2"]
+
+[ext_resource type="Texture2D" uid="uid://c76je0mugkosf" path="res://Assets/decoration-colorful-glass-mosaic-art-abstract-wall-background.jpg" id="1_ormqy"]
+
+[node name="Test Level" type="Node2D"]
+
+[node name="Placeholder Sand" type="Sprite2D" parent="."]
+texture = ExtResource("1_ormqy")

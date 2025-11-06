@@ -6,6 +6,7 @@
 [node name="Test Level" type="Node2D"]
 
 [node name="Placeholder Sand" type="Sprite2D" parent="."]
+position = Vector2(1831, 569)
 texture = ExtResource("1_ormqy")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_00vsl")]

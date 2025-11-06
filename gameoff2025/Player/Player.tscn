@@ -70,7 +70,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walking",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ndj"]
@@ -82,9 +82,11 @@ size = Vector2(180, 180)
 script = ExtResource("1_3qydi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(9.44, 9.44)
 sprite_frames = SubResource("SpriteFrames_p7tob")
 animation = &"Walking"
-frame_progress = 0.548878
+autoplay = "Idle"
+frame_progress = 0.528661
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l2ndj")

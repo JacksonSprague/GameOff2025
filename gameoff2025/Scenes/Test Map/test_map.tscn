@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb10bvr64833p"]
+
+[ext_resource type="Texture2D" uid="uid://dan0qmxd410ma" path="res://Assets/Sprites/decoration-colorful-glass-mosaic-art-abstract-wall-background.jpg" id="1_fdh1y"]
+[ext_resource type="Script" uid="uid://bkcf2ysguaq3s" path="res://Scenes/Test Map/test_map.gd" id="1_mh118"]
+[ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="2_fs1rn"]
+[ext_resource type="Script" uid="uid://cuujj7atpcrjw" path="res://Scenes/Test Map/camera_2d.gd" id="3_2e676"]
+[ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="3_fs1rn"]
+
+[node name="Test Map" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_mh118")
+player = NodePath("PlayerAverageCrab")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.187176, 0.187176, 0.187176, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_fdh1y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(6.04, 3.45)
+texture = ExtResource("2_fs1rn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_2e676")
+
+[node name="PlayerAverageCrab" parent="." instance=ExtResource("3_fs1rn")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-10, 858)

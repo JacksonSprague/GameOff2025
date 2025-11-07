@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://ck0hbmdv3h01s"]
+
+[ext_resource type="Script" uid="uid://m8amwx0tddi6" path="res://Resources/base/base_stats.gd" id="1_qkngh"]
+[ext_resource type="Texture2D" uid="uid://dlsp4u5v7h8lc" path="res://Assets/Sprites/Players/Average Crab/Average Crab Icon.png" id="1_qovsm"]
+
+[resource]
+script = ExtResource("1_qkngh")
+name = "Average Crab"
+type = 0
+icon = ExtResource("1_qovsm")
+health = 15.0
+health_increased_per_wave = 0.0
+damage = 3.0
+damage_increased_per_wave = 0.0
+speed = 300
+luck = 5.0
+block_chance = 1.0
+shell_drop = 0.0
+metadata/_custom_type_script = "uid://m8amwx0tddi6"

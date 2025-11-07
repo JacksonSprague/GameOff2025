@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl2q5epsndpea"]
+
+[ext_resource type="Script" uid="uid://bbkkjrjuy0uer" path="res://Scenes/base.gd" id="1_1w1q6"]
+[ext_resource type="Texture2D" uid="uid://cnn64ktmmu8yy" path="res://Assets/Sprites/shadow.png" id="1_6qyon"]
+
+[node name="Base" type="Area2D"]
+script = ExtResource("1_1w1q6")
+
+[node name="Visuals" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Shadow" type="Sprite2D" parent="Visuals"]
+modulate = Color(0.176471, 0.176471, 0.176471, 0.529412)
+position = Vector2(-3, -6)
+texture = ExtResource("1_6qyon")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
+position = Vector2(-6, -33)
+scale = Vector2(9.44, 9.44)
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

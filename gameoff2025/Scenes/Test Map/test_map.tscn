@@ -19,6 +19,8 @@ texture = ExtResource("1_fdh1y")
 texture_repeat = 2
 scale = Vector2(12.37, 7.066)
 texture = ExtResource("2_fs1rn")
+region_enabled = true
+region_rect = Rect2(237.52, 323, 3.32332e+06, 32323)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true

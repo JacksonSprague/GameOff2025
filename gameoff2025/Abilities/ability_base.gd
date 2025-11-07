@@ -8,7 +8,6 @@ var AbilityName :String = ""
 func _ready() -> void:
 	if get_owner():
 		Player=get_owner()
-	_activate()
 
 func _activate() -> void:
 	pass

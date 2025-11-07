@@ -48,7 +48,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -79,8 +79,12 @@ stats = ExtResource("2_n71fi")
 
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
 sprite_frames = SubResource("SpriteFrames_7ilmf")
+animation = &"walk"
+frame = 1
+frame_progress = 0.462615
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 position = Vector2(-15, -31)
 rotation = -1.0472
 scale = Vector2(0.41, 1.095)

@@ -18,6 +18,6 @@ texture = ExtResource("1_6qyon")
 unique_name_in_owner = true
 position = Vector2(-6, -33)
 scale = Vector2(9.44, 9.44)
-animation = &"idle"
+animation = &""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

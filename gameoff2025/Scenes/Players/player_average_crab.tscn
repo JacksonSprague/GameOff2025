@@ -73,8 +73,11 @@ position = Vector2(-2, -4)
 
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
 sprite_frames = SubResource("SpriteFrames_eib8b")
+animation = &"walk"
+frame_progress = 0.904829
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 position = Vector2(0, -37)
 scale = Vector2(1.04, 0.635)
 shape = SubResource("CircleShape2D_jbwao")

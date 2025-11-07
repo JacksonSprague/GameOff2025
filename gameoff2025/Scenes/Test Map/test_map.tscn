@@ -16,10 +16,12 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_fdh1y")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(6.04, 3.45)
+texture_repeat = 2
+scale = Vector2(12.37, 7.066)
 texture = ExtResource("2_fs1rn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
 script = ExtResource("3_2e676")
 
 [node name="PlayerAverageCrab" parent="." instance=ExtResource("3_fs1rn")]

@@ -8,8 +8,11 @@ func _process(delta: float) -> void:
 	
 	var current_velocity := move_dir * stats.speed
 	position += current_velocity * delta
-	position.x = clamp(position.x, -1500, 1500)
-	position.y = clamp(position.y, -865, 858)
+	
+	## Not sure why we need this
+	#position.x = clamp(position.x, -1500, 1500)
+	#position.y = clamp(position.y, -865, 858)
+	
 	
 	update_animations()
 

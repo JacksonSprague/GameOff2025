@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3suuvmmr1ytr"]
+
+[ext_resource type="Script" uid="uid://c75dqpmnb0qwj" path="res://Abilities/ability_base.gd" id="1_bs253"]
+
+[node name="AbilityBase" type="Node2D"]
+script = ExtResource("1_bs253")

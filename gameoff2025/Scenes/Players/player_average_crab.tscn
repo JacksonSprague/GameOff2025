@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpsaytykrou1f"]
+[gd_scene load_steps=15 format=3 uid="uid://cpsaytykrou1f"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_btait"]
 [ext_resource type="Texture2D" uid="uid://dqvs8dgxrng83" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Idle-Sheet.png" id="2_jbwao"]
 [ext_resource type="Script" uid="uid://cg2xvhl8q85l0" path="res://Scenes/Players/player.gd" id="2_otmsg"]
 [ext_resource type="Texture2D" uid="uid://b0scyaxiuutv6" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Walking-Sheet.png" id="3_88ojs"]
 [ext_resource type="Resource" uid="uid://ck0hbmdv3h01s" path="res://Resources/base/Players/stats_player_average_crab.tres" id="3_ttjkf"]
+[ext_resource type="PackedScene" uid="uid://bpssr34y1xcw2" path="res://Abilities/Ability_SpeedBoost.tscn" id="6_puodp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88ojs"]
 atlas = ExtResource("2_jbwao")
@@ -81,3 +82,6 @@ visible = false
 position = Vector2(0, -37)
 scale = Vector2(1.04, 0.635)
 shape = SubResource("CircleShape2D_jbwao")
+
+[node name="SpeedBoost" parent="." index="2" instance=ExtResource("6_puodp")]
+position = Vector2(-50, -37)

@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgr3i8ctya4j"]
+
+[ext_resource type="Texture2D" uid="uid://y3aiex0nxmw2" path="res://Assets/istockphoto-997807300-612x612.jpg" id="1_4ceyj"]
+
+[sub_resource type="Animation" id="Animation_4ceyj"]
+resource_name = "WaveCrash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3114.85)]
+}
+
+[sub_resource type="Animation" id="Animation_k21ev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k21ev"]
+_data = {
+&"RESET": SubResource("Animation_k21ev"),
+&"WaveCrash": SubResource("Animation_4ceyj")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k21ev"]
+atlas = ExtResource("1_4ceyj")
+region = Rect2(0, 0, 612, 612)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whh2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k21ev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ceyj"]
+size = Vector2(1877.19, 2114.47)
+
+[node name="BigWave" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../WaveCore/AnimatedSprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_k21ev")
+}
+autoplay = "WaveCrash"
+
+[node name="WaveCore" type="Area2D" parent="."]
+position = Vector2(0, 2148)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WaveCore"]
+modulate = Color(1, 1, 1, 0.584314)
+z_index = 10
+texture_repeat = 2
+scale = Vector2(16.5327, 6.63399)
+sprite_frames = SubResource("SpriteFrames_whh2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaveCore"]
+scale = Vector2(5.43791, 1.92484)
+shape = SubResource("RectangleShape2D_4ceyj")

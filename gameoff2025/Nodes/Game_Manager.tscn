@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7oxrq1d8n5fs"]
+
+[ext_resource type="Script" uid="uid://cx73se2auvuxo" path="res://Nodes/game_manager.gd" id="1_5i0na"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_5i0na")
+
+[node name="Wave_Frequency" type="Timer" parent="."]
+
+[node name="Spawn_Timer" type="Timer" parent="."]

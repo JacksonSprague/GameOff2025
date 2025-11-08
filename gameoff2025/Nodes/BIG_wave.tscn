@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgr3i8ctya4j"]
+[gd_scene load_steps=9 format=3 uid="uid://cgr3i8ctya4j"]
 
 [ext_resource type="Texture2D" uid="uid://y3aiex0nxmw2" path="res://Assets/istockphoto-997807300-612x612.jpg" id="1_4ceyj"]
+[ext_resource type="Script" uid="uid://3l4ovdtgg1uo" path="res://Nodes/big_wave.gd" id="1_k21ev"]
 
 [sub_resource type="Animation" id="Animation_4ceyj"]
 resource_name = "WaveCrash"
@@ -57,13 +58,13 @@ animations = [{
 size = Vector2(1877.19, 2114.47)
 
 [node name="BigWave" type="Node2D"]
+script = ExtResource("1_k21ev")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../WaveCore/AnimatedSprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_k21ev")
 }
-autoplay = "WaveCrash"
 
 [node name="WaveCore" type="Area2D" parent="."]
 position = Vector2(0, 2148)

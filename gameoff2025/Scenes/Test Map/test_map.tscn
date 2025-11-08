@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="2_fs1rn"]
 [ext_resource type="Script" uid="uid://cuujj7atpcrjw" path="res://Scenes/Test Map/camera_2d.gd" id="3_2e676"]
 [ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="3_fs1rn"]
-[ext_resource type="PackedScene" uid="uid://cgr3i8ctya4j" path="res://Nodes/BIG_wave.tscn" id="6_aygn4"]
+[ext_resource type="PackedScene" uid="uid://c7oxrq1d8n5fs" path="res://Nodes/Game_Manager.tscn" id="7_7khas"]
 
 [node name="Test Map" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_mh118")
@@ -32,4 +32,6 @@ script = ExtResource("3_2e676")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-10, 858)
 
-[node name="BigWave" parent="." instance=ExtResource("6_aygn4")]
+[node name="GameManager" parent="." node_paths=PackedStringArray("PlayerRef") instance=ExtResource("7_7khas")]
+position = Vector2(-1493, -1174)
+PlayerRef = NodePath("../PlayerAverageCrab")

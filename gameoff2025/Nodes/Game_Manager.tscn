@@ -6,5 +6,8 @@
 script = ExtResource("1_5i0na")
 
 [node name="Wave_Frequency" type="Timer" parent="."]
+wait_time = 5.0
 
 [node name="Spawn_Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Wave_Frequency" to="." method="_on_wave_frequency_timeout"]

@@ -1,6 +1,9 @@
 extends Base
 class_name Player
 
+
+
+
 var move_dir: Vector2
 
 func _process(delta: float) -> void:

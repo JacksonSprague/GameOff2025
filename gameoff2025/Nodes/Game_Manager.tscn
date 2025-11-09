@@ -3,6 +3,21 @@
 [ext_resource type="Script" uid="uid://cx73se2auvuxo" path="res://Nodes/game_manager.gd" id="1_5i0na"]
 [ext_resource type="Texture2D" uid="uid://dbae0x7rdobxa" path="res://Assets/Assets1.png" id="2_ld3wb"]
 
+[sub_resource type="Animation" id="Animation_1w46x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ld3wb"]
 resource_name = "WARNING"
 length = 2.0
@@ -18,21 +33,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(4, 4), Vector2(6, 6), Vector2(4, 4)]
-}
-
-[sub_resource type="Animation" id="Animation_1w46x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1w46x"]

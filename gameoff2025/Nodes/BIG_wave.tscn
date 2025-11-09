@@ -1,81 +1,145 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgr3i8ctya4j"]
+[gd_scene load_steps=8 format=3 uid="uid://cgr3i8ctya4j"]
 
 [ext_resource type="Texture2D" uid="uid://y3aiex0nxmw2" path="res://Assets/istockphoto-997807300-612x612.jpg" id="1_4ceyj"]
 [ext_resource type="Script" uid="uid://3l4ovdtgg1uo" path="res://Nodes/big_wave.gd" id="1_k21ev"]
 
-[sub_resource type="Animation" id="Animation_4ceyj"]
-resource_name = "WaveCrash"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ceyj"]
+size = Vector2(3194.24, 8017.81)
+
+[sub_resource type="Animation" id="Animation_k21ev"]
+resource_name = "INTERP"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../..:position")
+tracks/0/path = NodePath("../INTERP:scale:x")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -3114.85)]
+"values": [Vector2(1, 1), Vector2(-1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../INTERP:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0174533, -0.0174533]
 }
 
-[sub_resource type="Animation" id="Animation_k21ev"]
+[sub_resource type="Animation" id="Animation_whh2b"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../..:position")
+tracks/0/path = NodePath("../INTERP:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../INTERP:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k21ev"]
+[sub_resource type="Animation" id="Animation_nb500"]
+resource_name = "Receed"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../INTERP:scale:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../INTERP:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0174533, 0.0174533]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_whh2b"]
 _data = {
-&"RESET": SubResource("Animation_k21ev"),
-&"WaveCrash": SubResource("Animation_4ceyj")
+&"INTERP": SubResource("Animation_k21ev"),
+&"RESET": SubResource("Animation_whh2b"),
+&"Receed": SubResource("Animation_nb500")
 }
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k21ev"]
-atlas = ExtResource("1_4ceyj")
-region = Rect2(0, 0, 612, 612)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_whh2b"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k21ev")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ceyj"]
-size = Vector2(1877.19, 2114.47)
 
 [node name="BigWave" type="Node2D"]
 script = ExtResource("1_k21ev")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../WaveCore/AnimatedSprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_k21ev")
-}
-
 [node name="WaveCore" type="Area2D" parent="."]
 position = Vector2(0, 2148)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WaveCore"]
-modulate = Color(1, 1, 1, 0.584314)
-z_index = 10
-texture_repeat = 2
-scale = Vector2(16.5327, 6.63399)
-sprite_frames = SubResource("SpriteFrames_whh2b")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaveCore"]
+position = Vector2(18.9998, 5681.5)
 scale = Vector2(5.43791, 1.92484)
 shape = SubResource("RectangleShape2D_4ceyj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WaveCore"]
+libraries = {
+&"": SubResource("AnimationLibrary_whh2b")
+}
+autoplay = "INTERP"
+
+[node name="Sprite2D" type="Sprite2D" parent="WaveCore"]
+modulate = Color(1, 1, 1, 0.368627)
+texture_repeat = 2
+position = Vector2(0, 5670)
+scale = Vector2(3.4804, 3.849)
+texture = ExtResource("1_4ceyj")
+region_enabled = true
+region_rect = Rect2(0, 0, 5000, 4000)
+
+[node name="INTERP" type="Sprite2D" parent="."]
+visible = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 11
+position = Vector2(0, 201.82)
+amount = 400
+lifetime = 1.5
+emission_shape = 3
+emission_rect_extents = Vector2(3000, 200)
+direction = Vector2(0, -1)
+spread = 23.1
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 2000.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+scale_amount_min = 10.0
+scale_amount_max = 200.0
+
+[connection signal="animation_finished" from="WaveCore/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

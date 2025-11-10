@@ -6,7 +6,7 @@ script/source = "extends AbilityBase
 
 func _activate() -> void:
 	print(\"SPEEED\")
-	#Player.stats.speed
+	Player.stats.speed+=1000
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 
 [node name="SpeedBoost" type="Node2D"]
 script = SubResource("GDScript_ihdbv")
+AbilityType = 2
 Cooldown = 1.0

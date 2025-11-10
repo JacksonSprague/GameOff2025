@@ -8,6 +8,7 @@ var Highlighted = false
 func _ready() -> void:
 	$Area2D/AnimatedSprite2D.play(AbilityName)
 	modulate = Color(0.8, 0.8, 0.9, 0.9)
+	$AnimationPlayer.speed_scale=randf_range(0.7,1.3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,6 +30,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 func POP():
 	$POP.play()
+	if get_parent().has_method("AbilitySelected"):
+		get_parent().AbilitySelected(AbilityName)
 	$Area2D.queue_free()
 
 

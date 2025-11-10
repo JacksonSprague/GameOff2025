@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7oxrq1d8n5fs"]
+[gd_scene load_steps=10 format=3 uid="uid://c7oxrq1d8n5fs"]
 
 [ext_resource type="Script" uid="uid://cx73se2auvuxo" path="res://Nodes/game_manager.gd" id="1_5i0na"]
 [ext_resource type="Texture2D" uid="uid://dbae0x7rdobxa" path="res://Assets/Assets1.png" id="2_ld3wb"]
@@ -41,6 +41,60 @@ _data = {
 &"WARNING": SubResource("Animation_ld3wb")
 }
 
+[sub_resource type="Animation" id="Animation_2yyqe"]
+resource_name = "Rise"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interper:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0174533, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ir7hs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interper:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0174533]
+}
+
+[sub_resource type="Animation" id="Animation_4dtak"]
+resource_name = "Fall"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interper:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0174533]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ir7hs"]
+_data = {
+&"Fall": SubResource("Animation_4dtak"),
+&"RESET": SubResource("Animation_ir7hs"),
+&"Rise": SubResource("Animation_2yyqe")
+}
+
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_5i0na")
 
@@ -75,5 +129,14 @@ position = Vector2(500, 0)
 [node name="Bubble 3" type="Node2D" parent="Ability Spawn Core"]
 position = Vector2(0, -500)
 
+[node name="Interper" type="Node2D" parent="Ability Spawn Core"]
+rotation = 0.0174533
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ability Spawn Core"]
+libraries = {
+&"": SubResource("AnimationLibrary_ir7hs")
+}
+
 [connection signal="timeout" from="Wave_Frequency" to="." method="_on_wave_frequency_timeout"]
 [connection signal="timeout" from="Countdown_timer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="animation_finished" from="Ability Spawn Core/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -45,7 +45,6 @@ _data = {
 script = ExtResource("1_5i0na")
 
 [node name="Wave_Frequency" type="Timer" parent="."]
-wait_time = 10.0
 one_shot = true
 
 [node name="Spawn_Timer" type="Timer" parent="."]
@@ -59,11 +58,22 @@ visible = false
 position = Vector2(-2, 0)
 texture = ExtResource("2_ld3wb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Warning"]
+[node name="WarningAnimationPlayer" type="AnimationPlayer" parent="Warning"]
 libraries = {
 &"": SubResource("AnimationLibrary_1w46x")
 }
 autoplay = "WARNING"
+
+[node name="Ability Spawn Core" type="Node2D" parent="."]
+
+[node name="Bubble 1" type="Node2D" parent="Ability Spawn Core"]
+position = Vector2(-500, 0)
+
+[node name="Bubble 2" type="Node2D" parent="Ability Spawn Core"]
+position = Vector2(500, 0)
+
+[node name="Bubble 3" type="Node2D" parent="Ability Spawn Core"]
+position = Vector2(0, -500)
 
 [connection signal="timeout" from="Wave_Frequency" to="." method="_on_wave_frequency_timeout"]
 [connection signal="timeout" from="Countdown_timer" to="." method="_on_countdown_timer_timeout"]

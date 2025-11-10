@@ -1,6 +1,7 @@
 extends Node2D
 class_name AbilityBase
 
+
 enum AbilityTypeEnum {
 	ActiveAttack,
 	PassiveAttack,
@@ -8,10 +9,11 @@ enum AbilityTypeEnum {
 }
 
 @export var AbilityType :AbilityTypeEnum 
-
+@export var AbilityWeight :int = 1
 var Player :Base = null
 var AbilityName :String = ""
 @export var Cooldown :float
+@export var Description:String
 
 var _cooldown_timer: Timer
 

@@ -1,17 +1,19 @@
 extends Node2D
+class_name AbilityBubble
 
 var Highlighted = false
+@export var AbilityName :String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Area2D/AnimatedSprite2D.play(AbilityName)
 	modulate = Color(0.8, 0.8, 0.9, 0.9)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Click") and Highlighted:
-		
 		POP()
-	
+
 
 
 
@@ -27,4 +29,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 func POP():
 	$POP.play()
+	$Area2D.queue_free()
+
+
+func _on_pop_finished() -> void:
 	queue_free()

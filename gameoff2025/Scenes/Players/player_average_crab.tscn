@@ -65,6 +65,7 @@ animations = [{
 radius = 76.4418
 
 [node name="PlayerAverageCrab" instance=ExtResource("1_btait")]
+collision_mask = 2
 script = ExtResource("2_otmsg")
 stats = ExtResource("3_ttjkf")
 

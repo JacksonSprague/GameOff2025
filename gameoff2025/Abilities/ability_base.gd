@@ -19,6 +19,7 @@ var _cooldown_timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("Parent ready ran")
 	if get_owner():
 		Player=get_owner()
 		if AbilityType == AbilityTypeEnum.PassiveAbility:

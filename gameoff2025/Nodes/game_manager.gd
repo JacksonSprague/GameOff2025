@@ -77,9 +77,9 @@ func AbilitySelected(AbilityName :String):
 	if ability_dictionary.has(AbilityName):
 		var abilitydata = ability_dictionary[AbilityName]
 		NewAbilityNode = abilitydata["scene"].instantiate()
-		PlayerRef.add_child(NewAbilityNode)
+		PlayerRef.add_child(NewAbilityNode) 
 		print(PlayerRef.get_children())
-
+		#NewAbilityNode._activate()
 	
 
 func AwaitNextWave():

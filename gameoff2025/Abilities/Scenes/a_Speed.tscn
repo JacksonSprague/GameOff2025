@@ -1,19 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2yy7m1tjta48"]
+[gd_scene load_steps=2 format=3 uid="uid://birdaoahyeyca"]
 
-[sub_resource type="GDScript" id="GDScript_ihdbv"]
-script/source = "extends AbilityBase
+[ext_resource type="Script" uid="uid://c15mi77ak55fb" path="res://Abilities/Scenes/a_speed.gd" id="1_vfkai"]
 
-
-func _activate() -> void:
-	print(\"SPEEED\")
-	Player.stats.speed+=1000
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[node name="SpeedBoost" type="Node2D"]
-script = SubResource("GDScript_ihdbv")
-AbilityType = 2
-Cooldown = 1.0
+[node name="ASpeed" type="Node2D"]
+script = ExtResource("1_vfkai")
+metadata/_custom_type_script = "uid://c75dqpmnb0qwj"

@@ -1,4 +1,4 @@
-extends Base
+extends CharacterBase
 class_name Enemy
 
 @export var flock_push := 20.0

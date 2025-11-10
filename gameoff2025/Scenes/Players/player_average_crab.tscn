@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpsaytykrou1f"]
+[gd_scene load_steps=15 format=3 uid="uid://cpsaytykrou1f"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_btait"]
 [ext_resource type="Texture2D" uid="uid://dqvs8dgxrng83" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Idle-Sheet.png" id="2_jbwao"]
@@ -62,7 +62,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbwao"]
-radius = 76.4418
+radius = 6.41617
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ttjkf"]
+radius = 52.1536
 
 [node name="PlayerAverageCrab" instance=ExtResource("1_btait")]
 collision_mask = 2
@@ -78,7 +81,15 @@ animation = &"walk"
 frame_progress = 0.904829
 
 [node name="CollisionShape2D" parent="." index="1"]
-visible = false
 position = Vector2(0, -37)
-scale = Vector2(1.04, 0.635)
+scale = Vector2(0.52, 0.505)
 shape = SubResource("CircleShape2D_jbwao")
+
+[node name="HurtboxComponent" parent="." index="2"]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+position = Vector2(0, -36)
+scale = Vector2(1.83, 1.075)
+shape = SubResource("CircleShape2D_ttjkf")

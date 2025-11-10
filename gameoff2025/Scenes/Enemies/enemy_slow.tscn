@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7rfp31d60i48"]
+[gd_scene load_steps=9 format=3 uid="uid://b7rfp31d60i48"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
 [ext_resource type="Script" uid="uid://dflb8or6uvwrv" path="res://Scenes/Enemies/enemy.gd" id="2_gnx0v"]
 [ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/stats_enemy_slow.tres" id="3_gnx0v"]
+[ext_resource type="PackedScene" uid="uid://baxagywh1rba1" path="res://Scenes/Components/hitbox_component.tscn" id="5_7sxqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sxqv"]
-radius = 77.026
+radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnx0v"]
 radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlgua"]
+radius = 98.1835
 
 [node name="EnemySlow" instance=ExtResource("1_ynjhl")]
 collision_layer = 2
@@ -36,3 +40,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" index="0"]
 position = Vector2(0, -58)
 shape = SubResource("CircleShape2D_gnx0v")
+
+[node name="HitboxComponent" parent="." index="4" instance=ExtResource("5_7sxqv")]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -62)
+shape = SubResource("CircleShape2D_hlgua")
+debug_color = Color(0.814367, 0, 0.281238, 0.42)

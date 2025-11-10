@@ -11,7 +11,7 @@ func _ready() -> void:
 	$AnimationPlayer.speed_scale=randf_range(0.7,1.3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Click") and Highlighted:
 		POP()
 

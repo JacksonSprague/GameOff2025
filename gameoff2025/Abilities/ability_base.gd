@@ -10,7 +10,7 @@ enum AbilityTypeEnum {
 
 @export var AbilityType :AbilityTypeEnum 
 @export var AbilityWeight :int = 1
-var Player :Base = null
+var Player :CharacterBase = null
 var AbilityName :String = ""
 @export var Cooldown :float
 @export var Description:String
@@ -19,9 +19,8 @@ var _cooldown_timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("Parent ready ran")
-	if get_owner():
-		Player=get_owner()
+	if get_parent():
+		Player=get_parent()
 		if AbilityType == AbilityTypeEnum.PassiveAbility:
 			_activate()
 		if AbilityType == AbilityTypeEnum.PassiveAttack:

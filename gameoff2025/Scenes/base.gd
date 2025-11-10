@@ -1,5 +1,5 @@
 extends Node2D
-class_name Base
+class_name CharacterBase
 
 @export var stats: BaseStats
 

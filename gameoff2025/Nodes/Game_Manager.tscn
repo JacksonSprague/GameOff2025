@@ -41,8 +41,8 @@ _data = {
 &"WARNING": SubResource("Animation_ld3wb")
 }
 
-[sub_resource type="Animation" id="Animation_2yyqe"]
-resource_name = "Rise"
+[sub_resource type="Animation" id="Animation_4dtak"]
+resource_name = "Fall"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0174533, 0.0]
+"values": [0.0, 0.0174533]
 }
 
 [sub_resource type="Animation" id="Animation_ir7hs"]
@@ -72,8 +72,8 @@ tracks/0/keys = {
 "values": [0.0174533]
 }
 
-[sub_resource type="Animation" id="Animation_4dtak"]
-resource_name = "Fall"
+[sub_resource type="Animation" id="Animation_2yyqe"]
+resource_name = "Rise"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -85,7 +85,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0174533]
+"values": [0.0174533, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ir7hs"]

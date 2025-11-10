@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl2q5epsndpea"]
+[gd_scene load_steps=4 format=3 uid="uid://dl2q5epsndpea"]
 
 [ext_resource type="Script" uid="uid://bbkkjrjuy0uer" path="res://Scenes/base.gd" id="1_1w1q6"]
 [ext_resource type="Texture2D" uid="uid://cnn64ktmmu8yy" path="res://Assets/Sprites/shadow.png" id="1_6qyon"]
+[ext_resource type="PackedScene" uid="uid://cibai6exac3dl" path="res://Scenes/Components/hurtbox_component.tscn" id="3_6qyon"]
 
 [node name="Base" type="Area2D"]
 script = ExtResource("1_1w1q6")
@@ -21,3 +22,5 @@ scale = Vector2(9.44, 9.44)
 animation = &""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="HurtboxComponent" parent="." instance=ExtResource("3_6qyon")]

@@ -1,4 +1,4 @@
-extends Base
+extends CharacterBase
 class_name Enemy
 
 @export var flock_push := 20.0
@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	if not can_move:
 		return
 	
-	if not can_move_towards_palyer():
+	if not can_move_towards_player():
 		return
 	
 	position += get_move_direction() * stats.speed * delta
@@ -31,15 +31,15 @@ func get_move_direction() -> Vector2:
 	return direction
 
 
-func update_rotation () -> void:
+func update_rotation() -> void:
 	if not is_instance_valid(Global.player):
 		return
 	
 	var player_pos := Global.player.global_position
-	var moving_right := global_position.x - player_pos.x
+	var moving_right := global_position.x < player_pos.x
 	visuals.scale = Vector2(-0.5, 0.5) if moving_right else Vector2(0.5, 0.5)
 
 
-func can_move_towards_palyer() -> bool:
+func can_move_towards_player() -> bool:
 	return is_instance_valid(Global.player) and\
-	 global_position.distance_to(Global.player.global_position) > 60
+	global_position.distance_to(Global.player.global_position) > 60  

@@ -75,11 +75,11 @@ func _on_countdown_timer_timeout() -> void:
 	BigWaveRef._Crash()
 	print("CRASSSH")
 
-func weighted_dictionary_pick(dict : Dictionary) -> String:
+#func weighted_dictionary_pick(dict : Dictionary) -> String:
 	var total_weight :float=0.0
 	for key in dict.keys():
 		var w = dict[key]
-		
+		of typeof(w) == TYPE_D
 	
 
 

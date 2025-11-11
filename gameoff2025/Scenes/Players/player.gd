@@ -1,10 +1,17 @@
 extends CharacterBase
 class_name Player
 
-
+const UI = preload("res://Scenes/UI/HUD.tscn")
+var ui_ref :Player_HUD
 
 
 var move_dir: Vector2
+
+func _ready() -> void:
+	super._ready()
+	ui_ref= UI.instantiate()
+	add_child(ui_ref)
+
 
 func _process(delta: float) -> void:
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")

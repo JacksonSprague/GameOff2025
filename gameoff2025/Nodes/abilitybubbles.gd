@@ -22,14 +22,19 @@ func _on_area_2d_mouse_entered() -> void:
 	modulate = Color(1, 1, 1, 1)
 	Highlighted=true
 	$Highlight.play()
+	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription/MarginContainer/VBoxContainer/AbilityName").text=AbilityName.split("_")[1]
+	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=true
+	
 
 func _on_area_2d_mouse_exited() -> void:
 	modulate = Color(0.8, 0.8, 0.9, 0.9)
 	Highlighted=false
 	$DeHighlight.play()
+	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=false
 
 func POP():
 	$POP.play()
+	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=false
 	if get_parent().has_method("AbilitySelected"):
 		get_parent().AbilitySelected(AbilityName)
 	$Area2D.queue_free()

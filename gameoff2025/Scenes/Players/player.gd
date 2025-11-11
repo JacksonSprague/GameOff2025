@@ -11,6 +11,8 @@ func _ready() -> void:
 	super._ready()
 	ui_ref= UI.instantiate()
 	add_child(ui_ref)
+	##if ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription"):
+		#ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=true
 
 
 func _process(delta: float) -> void:

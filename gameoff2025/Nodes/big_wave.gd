@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	position.y=3500*$INTERP.rotation_degrees
+	position.y=3900*$INTERP.rotation_degrees
 
 
 
@@ -27,10 +27,12 @@ func _Crash():
 func Receed():
 	$WaveCore/AnimationPlayer.play("Receed")
 
-
+func callpowerups():
+	OwnerRef.PowerUps()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name=="INTERP":
-		OwnerRef.PowerUps()
+		#OwnerRef.PowerUps()
+		pass
 	if anim_name=="Receed":
 		OwnerRef.AwaitNextWave()

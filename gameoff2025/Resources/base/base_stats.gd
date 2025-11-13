@@ -10,6 +10,7 @@ enum BaseType {
 @export var type: BaseType
 @export var icon: Texture2D
 @export var health := 1.0
+@export var max_health := 1.0
 @export var health_increased_per_wave := 1.0
 @export var damage := 1.0
 @export var damage_increased_per_wave := 1.0

@@ -4,8 +4,17 @@ class_name Player
 const UI = preload("res://Scenes/UI/HUD.tscn")
 var ui_ref :Player_HUD
 
+var BurrowCharge :float = 0
+var BurrowChargeNeeded :float =100
+
+#placeholder values for now. Currently Start_X_Pos does nothing, that will come into play when we actually design the level
+var Start_X_Pos = 150
+var End_X_Pos = 50000
 
 var move_dir: Vector2
+
+var Burrowing = false
+var canUnBurrow = false
 
 func _ready() -> void:
 	super._ready()
@@ -17,19 +26,47 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
-	
 	var current_velocity := move_dir * stats.speed
-	position += current_velocity * delta
 	
-	## Not sure why we need this
-	#position.x = clamp(position.x, -1500, 1500)
-	#position.y = clamp(position.y, -865, 858)
+	if Burrowing == false:
+		position += current_velocity * delta
 	
-	
+	position.y = clamp(position.y, -2500, 2400)
 	update_animations()
+	
+	ui_ref.get_node("Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer/BurrowBar").value=(BurrowCharge / BurrowChargeNeeded)*100
+	ui_ref.get_node("Root/MainDivider/TopSection/MarginContainer/HBoxContainer/ProgressBar").value=(position.x / End_X_Pos)*100
+	ui_ref.get_node("Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer/HealthBar").value=($HealthComponent.current_health / $HealthComponent.max_health)*100
+	
+	#placeholder until we get enemies, you will earn this by killing them
+	if not Burrowing:
+		BurrowCharge+=1
+	
+	
+	if Input.is_action_just_pressed("Burrow") and BurrowCharge >= BurrowChargeNeeded and not Burrowing:
+		Burrow()
+	if Input.is_action_just_pressed("Burrow") and canUnBurrow:
+		UnBurrow()
 
 func update_animations() -> void:
-	if move_dir.length() > 0:
+	if move_dir.length() > 0 and not Burrowing:
 		animated_sprite_2d.play("walk")
-	else:
+	elif not Burrowing:
 		animated_sprite_2d.play("idle")
+
+func Burrow():
+	BurrowCharge=0
+	animated_sprite_2d.play("burrow")
+	Burrowing=true
+	
+func UnBurrow():
+	BurrowCharge=0
+	animated_sprite_2d.play("unburrow")
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation=="unburrow":
+		Burrowing=false
+		canUnBurrow=false
+	if animated_sprite_2d.animation=="burrow":
+		canUnBurrow=true

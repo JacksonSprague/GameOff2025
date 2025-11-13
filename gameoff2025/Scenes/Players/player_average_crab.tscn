@@ -83,9 +83,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eebff")
 }],
-"loop": true,
+"loop": false,
 "name": &"burrow",
-"speed": 13.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -97,6 +97,32 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eebff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh76m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33pcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3box")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxayl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x2el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eib8b")
+}],
+"loop": false,
+"name": &"unburrow",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,7 +159,6 @@ position = Vector2(-2, -4)
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
 sprite_frames = SubResource("SpriteFrames_eib8b")
 animation = &"burrow"
-frame_progress = 0.972187
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -37)
@@ -148,3 +173,5 @@ collision_mask = 4
 position = Vector2(0, -36)
 scale = Vector2(1.83, 1.075)
 shape = SubResource("CircleShape2D_ttjkf")
+
+[connection signal="animation_finished" from="Visuals/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

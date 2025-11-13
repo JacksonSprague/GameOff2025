@@ -9,6 +9,7 @@ name = "Hermit Defender"
 type = 0
 icon = ExtResource("1_h1h00")
 health = 30.0
+max_health = 30.0
 health_increased_per_wave = 0.0
 damage = 6.0
 damage_increased_per_wave = 0.0

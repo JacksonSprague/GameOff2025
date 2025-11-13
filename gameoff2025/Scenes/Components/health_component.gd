@@ -10,7 +10,7 @@ var current_health := 1.0
 
 func setup(stats: BaseStats) -> void:
 	max_health = stats.health
-	current_health = max_health
+	current_health = stats.health
 	on_health_changed.emit(current_health, max_health)
 
 func take_damage(value: float) -> void:

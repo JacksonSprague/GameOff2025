@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b87rr1vk725cu"]
+[gd_scene load_steps=16 format=3 uid="uid://b87rr1vk725cu"]
 
 [ext_resource type="Script" uid="uid://pwplvawr76f0" path="res://Scenes/UI/hud.gd" id="1_omqfp"]
 [ext_resource type="Texture2D" uid="uid://b0575jwhnfado" path="res://Assets/UI/Assets1.png" id="2_qc5w2"]
 [ext_resource type="Texture2D" uid="uid://l2fhmm10ifhp" path="res://Assets/UI/Assets2.png" id="3_xaom8"]
+[ext_resource type="Texture2D" uid="uid://cbwoufkwa3ery" path="res://Assets/Sprites/Assets6.png" id="4_ykvyr"]
+[ext_resource type="Texture2D" uid="uid://bgoicyfsj4kwn" path="res://Assets/Sprites/Assets9.png" id="5_lelo4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omqfp"]
 bg_color = Color(0.692128, 0.580183, 0.431598, 1)
@@ -26,6 +28,60 @@ border_width_bottom = 10
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lelo4"]
+bg_color = Color(0.135497, 0.0785575, 0.0827914, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.145098, 0.145098, 0.145098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2sja"]
+bg_color = Color(0.68, 0.2176, 0.279253, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.207843)
+shadow_size = 8
+shadow_offset = Vector2(5, 8)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ree7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ree7"]
+bg_color = Color(0.0633543, 0.132924, 0.0897828, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.145868, 0.145868, 0.145868, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4i0y"]
+bg_color = Color(0.2537, 0.59, 0.281725, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.207843)
+shadow_size = 8
+shadow_offset = Vector2(5, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bm6u"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -68,6 +124,7 @@ mouse_filter = 2
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_filter = 2
+alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Root/MainDivider/TopSection"]
 layout_mode = 2
@@ -76,13 +133,16 @@ theme_override_constants/margin_top = 25
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Root/MainDivider/TopSection/MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="StartIcon" type="TextureRect" parent="Root/MainDivider/TopSection/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_qc5w2")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="ProgressBar" type="ProgressBar" parent="Root/MainDivider/TopSection/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(2000, 75)
+custom_minimum_size = Vector2(2000, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_omqfp")
@@ -92,8 +152,59 @@ value = 59.0
 [node name="Goal Icon" type="TextureRect" parent="Root/MainDivider/TopSection/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_xaom8")
+expand_mode = 2
+stretch_mode = 4
 
-[node name="VSeparator" type="VSeparator" parent="Root/MainDivider"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/MainDivider"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/MainDivider/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/MainDivider/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="HealthIcon" type="TextureRect" parent="Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_ykvyr")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="HealthBar" type="ProgressBar" parent="Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(850, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_lelo4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d2sja")
+value = 49.53
+
+[node name="HSeparator" type="HSeparator" parent="Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ree7")
+
+[node name="BurrowIcon" type="TextureRect" parent="Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_lelo4")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="BurrowBar" type="ProgressBar" parent="Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(850, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_1ree7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i4i0y")
+value = 73.85
+
+[node name="VSeparator2" type="VSeparator" parent="Root/MainDivider"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2

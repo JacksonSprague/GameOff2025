@@ -33,6 +33,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0174533, -0.0174533]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"callpowerups"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_whh2b"]
 length = 0.001
@@ -131,7 +145,7 @@ position = Vector2(0, 201.82)
 amount = 400
 lifetime = 1.5
 emission_shape = 3
-emission_rect_extents = Vector2(3000, 200)
+emission_rect_extents = Vector2(3000, 100)
 direction = Vector2(0, -1)
 spread = 23.1
 gravity = Vector2(0, 0)

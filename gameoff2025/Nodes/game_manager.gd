@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	$Warning.position.x=PlayerRef.position.x
 	$Warning.position.y=PlayerRef.position.y+200
 	$"Ability Spawn Core".global_position.x=PlayerRef.global_position.x
-	$"Ability Spawn Core".global_position.y=PlayerRef.global_position.y+(1500*$"Ability Spawn Core/Interper".rotation_degrees)
+	$"Ability Spawn Core".global_position.y=PlayerRef.global_position.y+100+(1600*$"Ability Spawn Core/Interper".rotation_degrees)
 	
 	if Bubble1Ref:
 		Bubble1Ref.position=$"Ability Spawn Core/Bubble 1".global_position

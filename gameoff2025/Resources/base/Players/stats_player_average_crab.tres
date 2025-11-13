@@ -9,6 +9,7 @@ name = "Average Crab"
 type = 0
 icon = ExtResource("1_qovsm")
 health = 15.0
+max_health = 15.0
 health_increased_per_wave = 0.0
 damage = 3.0
 damage_increased_per_wave = 0.0

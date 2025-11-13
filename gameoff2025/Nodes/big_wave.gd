@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	position.y=3900*$INTERP.rotation_degrees
+	position.y=4500*$INTERP.rotation_degrees
 
 
 

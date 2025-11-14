@@ -15,11 +15,11 @@ var Bubble3Ref :AbilityBubble
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node
 ## it goes "name": then the weight (how common it is), then reference the node itself. Higher numbers are more common, lower are more rare.
 var ability_dictionary = {
-	"a_Attack": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn")},
-	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn")},
-	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn")},
-	"a_Stamina": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Stamina.tscn")},
-	"a_Weapon": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn")}
+	"a_Attack": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn"), "desc" : "You Attack"},
+	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Up Max Health"},
+	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "SPEEED"},
+	"a_Stamina": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Stamina.tscn"), "desc" : "More stamina"},
+	"a_Weapon": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn"), "desc" : "New Weapon"}
 }
 
 
@@ -50,16 +50,19 @@ func PowerUps():
 	$"Ability Spawn Core/AnimationPlayer".play("Rise")
 	Bubble1Ref = BubbleScene.instantiate()
 	Bubble1Ref.AbilityName=weighted_dictionary_pick(ability_dictionary)
+	Bubble1Ref.AbilityDescription=ability_dictionary[Bubble1Ref.AbilityName]["desc"]
 	add_child(Bubble1Ref)
 	print(Bubble1Ref.AbilityName)
 	
 	Bubble2Ref = BubbleScene.instantiate()
 	Bubble2Ref.AbilityName=weighted_dictionary_pick(ability_dictionary)
+	Bubble2Ref.AbilityDescription=ability_dictionary[Bubble2Ref.AbilityName]["desc"]
 	add_child(Bubble2Ref)
 	print(Bubble2Ref.AbilityName)
 	
 	Bubble3Ref = BubbleScene.instantiate()
 	Bubble3Ref.AbilityName=weighted_dictionary_pick(ability_dictionary)
+	Bubble3Ref.AbilityDescription=ability_dictionary[Bubble3Ref.AbilityName]["desc"]
 	add_child(Bubble3Ref)
 	print(Bubble3Ref.AbilityName)
 	Bubble1Ref.get_node("Area2D/CollisionShape2D").disabled=true

@@ -12,7 +12,7 @@ enum AbilityTypeEnum {
 @export var AbilityWeight :int = 1
 var Player :CharacterBase = null
 var AbilityName :String = ""
-@export var Cooldown :float
+@export var Cooldown :float =1
 @export var Description:String
 
 var _cooldown_timer: Timer

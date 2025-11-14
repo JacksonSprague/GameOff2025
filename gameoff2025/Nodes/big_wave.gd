@@ -15,6 +15,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$CPUParticles2D2.global_position.x=OwnerRef.PlayerRef.position.x
+	$CPUParticles2D.global_position.x=OwnerRef.PlayerRef.position.x
+	$WaveCore/CPUParticles2D3.position.x=OwnerRef.PlayerRef.position.x
 	position.y=4500*$INTERP.rotation_degrees
 
 

@@ -1,10 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://4wo4f3whj4ww"]
+[gd_scene load_steps=12 format=3 uid="uid://4wo4f3whj4ww"]
 
 [ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="1_7ktn1"]
 [ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="2_acser"]
 [ext_resource type="Texture2D" uid="uid://cu6rywq2i7f4x" path="res://Assets/Assets2.png" id="3_mmwlx"]
 [ext_resource type="Texture2D" uid="uid://bkc1ibdsybp6s" path="res://Assets/Assets3.png" id="4_opr1m"]
 [ext_resource type="PackedScene" uid="uid://c7oxrq1d8n5fs" path="res://Nodes/Game_Manager.tscn" id="5_ov375"]
+
+[sub_resource type="Gradient" id="Gradient_6mbg6"]
+offsets = PackedFloat32Array(0.387019, 0.978365)
+colors = PackedColorArray(0.932247, 0.782565, 0.628347, 1, 0.99877, 0.767427, 0.44892, 0.27451)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vfafu"]
+noise_type = 3
+domain_warp_amplitude = 172.01
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pjgj6"]
+width = 1701
+color_ramp = SubResource("Gradient_6mbg6")
+noise = SubResource("FastNoiseLite_vfafu")
+
+[sub_resource type="Gradient" id="Gradient_ov375"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.543269, 0.706731)
+colors = PackedColorArray(0, 0, 0, 0.529412, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6mbg6"]
+gradient = SubResource("Gradient_ov375")
+width = 444
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmwlx"]
 
@@ -13,11 +35,23 @@
 [node name="Floor" type="Sprite2D" parent="."]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-10, 45)
+position = Vector2(6813, 45)
 scale = Vector2(4, 4)
 texture = ExtResource("1_7ktn1")
 region_enabled = true
-region_rect = Rect2(1000, 1000, 1892.02, 2500)
+region_rect = Rect2(1000, 1000, 5000, 2500)
+
+[node name="Noise Texture" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(6791.5, 121)
+scale = Vector2(11.7419, 19.3125)
+texture = SubResource("NoiseTexture2D_pjgj6")
+
+[node name="Shading bottom" type="Sprite2D" parent="."]
+position = Vector2(7003.24, 3302.35)
+rotation = -1.5708
+scale = Vector2(9.01228, 319.732)
+texture = SubResource("GradientTexture2D_6mbg6")
 
 [node name="PlayerAverageCrab" parent="." instance=ExtResource("2_acser")]
 

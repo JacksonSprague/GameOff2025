@@ -3,6 +3,7 @@ class_name AbilityBubble
 
 var Highlighted = false
 @export var AbilityName :String
+@export var AbilityDescription :String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _on_area_2d_mouse_entered() -> void:
 	Highlighted=true
 	$Highlight.play()
 	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription/MarginContainer/VBoxContainer/AbilityName").text=AbilityName.split("_")[1]
+	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription/MarginContainer/VBoxContainer/Ability Description").text=AbilityDescription
 	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=true
 	
 

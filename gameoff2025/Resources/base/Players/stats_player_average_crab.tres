@@ -15,6 +15,6 @@ damage = 3.0
 damage_increased_per_wave = 0.0
 speed = 1060
 luck = 5.0
-block_chance = 1.0
+block_chance = 50.0
 shell_drop = 0.0
 metadata/_custom_type_script = "uid://m8amwx0tddi6"

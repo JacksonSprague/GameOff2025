@@ -1,10 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7rfp31d60i48"]
+[gd_scene load_steps=16 format=3 uid="uid://b7rfp31d60i48"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
 [ext_resource type="Script" uid="uid://dflb8or6uvwrv" path="res://Scenes/Enemies/enemy.gd" id="2_gnx0v"]
 [ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/stats_enemy_slow.tres" id="3_gnx0v"]
+[ext_resource type="Texture2D" uid="uid://dthveehaqylpg" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Sheet.png" id="4_hlgua"]
 [ext_resource type="PackedScene" uid="uid://baxagywh1rba1" path="res://Scenes/Components/hitbox_component.tscn" id="5_7sxqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2ldw"]
+atlas = ExtResource("4_hlgua")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cewjn"]
+atlas = ExtResource("4_hlgua")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo6w1"]
+atlas = ExtResource("4_hlgua")
+region = Rect2(50, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thoen"]
+atlas = ExtResource("4_hlgua")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piaqg"]
+atlas = ExtResource("4_hlgua")
+region = Rect2(100, 0, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvedb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2ldw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cewjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo6w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thoen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piaqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sxqv"]
 radius = 3.0
@@ -22,9 +66,13 @@ flock_push = 20.0
 stats = ExtResource("3_gnx0v")
 
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
-visible = false
+position = Vector2(-9, -60)
+sprite_frames = SubResource("SpriteFrames_wvedb")
+animation = &"default"
+frame_progress = 0.726748
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals" index="2"]
+visible = false
 position = Vector2(0, -63)
 texture = ExtResource("2_4yaod")
 

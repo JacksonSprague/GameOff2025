@@ -6,6 +6,7 @@ class_name Enemy
 @onready var vision_area: Area2D = $VisionArea
 
 var can_move := true
+var move_dir: Vector2
 
 func _process(delta: float) -> void:
 	if not can_move:
@@ -29,7 +30,6 @@ func get_move_direction() -> Vector2:
 			direction += flock_push * vector.normalized() / vector.length()
 	
 	return direction
-
 
 func update_rotation() -> void:
 	if not is_instance_valid(Global.player):

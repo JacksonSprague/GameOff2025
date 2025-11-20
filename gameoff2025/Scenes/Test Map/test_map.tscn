@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/enemy_slow.tscn" id="6_aygn4"]
 
 [node name="Test Map" type="Node2D" node_paths=PackedStringArray("player")]
+position = Vector2(-87, 66)
 script = ExtResource("1_mh118")
 player = NodePath("PlayerAverageCrab")
 normal_color = Color(1, 1, 1, 1)

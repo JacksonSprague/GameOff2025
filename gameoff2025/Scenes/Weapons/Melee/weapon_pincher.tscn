@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://2nwwklpsnrw"]
+[gd_scene load_steps=6 format=3 uid="uid://2nwwklpsnrw"]
 
 [ext_resource type="PackedScene" uid="uid://b52lluf1418x" path="res://Scenes/Weapons/weapon_base.tscn" id="1_7cto1"]
 [ext_resource type="Texture2D" uid="uid://cxs8f5bjvnhf3" path="res://Assets/Sprites/Weapons/Pincher/Pincher.png" id="2_bmgjm"]
 [ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="3_blnc0"]
+[ext_resource type="Script" uid="uid://c7hgk5ci810kv" path="res://Scenes/Weapons/Melee/weapon_behavior.gd" id="4_5g4de"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g4de"]
 size = Vector2(64, 32)
@@ -18,6 +19,8 @@ texture = ExtResource("2_bmgjm")
 scale = Vector2(0.5, 0.5)
 collision_layer = 16
 collision_mask = 8
+monitoring = false
+monitorable = false
 script = ExtResource("3_blnc0")
 metadata/_custom_type_script = "uid://hgkqvocq4aam"
 
@@ -25,3 +28,6 @@ metadata/_custom_type_script = "uid://hgkqvocq4aam"
 z_index = 1
 shape = SubResource("RectangleShape2D_5g4de")
 debug_color = Color(0.932223, 0.176746, 0.48425, 0.42)
+
+[node name="WeaponBehavior" parent="." index="3"]
+script = ExtResource("4_5g4de")

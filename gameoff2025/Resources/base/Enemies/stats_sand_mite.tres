@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://bkdywrxx7gqxl"]
+
+[ext_resource type="Texture2D" uid="uid://dgeb26lltawet" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Icon.png" id="1_onogp"]
+[ext_resource type="Script" uid="uid://m8amwx0tddi6" path="res://Resources/base/base_stats.gd" id="2_hv0l7"]
+
+[resource]
+script = ExtResource("2_hv0l7")
+name = "Enemy Slow"
+type = 1
+icon = ExtResource("1_onogp")
+health = 6.0
+max_health = 1.0
+health_increased_per_wave = 1.0
+damage = 1.5
+damage_increased_per_wave = 1.0
+speed = 840
+luck = 0.0
+block_chance = 3.0
+shell_drop = 1.0
+metadata/_custom_type_script = "uid://m8amwx0tddi6"

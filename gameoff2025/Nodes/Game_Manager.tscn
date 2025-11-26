@@ -102,6 +102,7 @@ script = ExtResource("1_5i0na")
 one_shot = true
 
 [node name="Spawn_Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Countdown_timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -138,5 +139,6 @@ libraries = {
 }
 
 [connection signal="timeout" from="Wave_Frequency" to="." method="_on_wave_frequency_timeout"]
+[connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Countdown_timer" to="." method="_on_countdown_timer_timeout"]
 [connection signal="animation_finished" from="Ability Spawn Core/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://4wo4f3whj4ww"]
+[gd_scene load_steps=13 format=3 uid="uid://4wo4f3whj4ww"]
 
+[ext_resource type="Script" uid="uid://nge8oayxixrp" path="res://game_level.gd" id="1_6mbg6"]
 [ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="1_7ktn1"]
 [ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="2_acser"]
 [ext_resource type="Texture2D" uid="uid://cu6rywq2i7f4x" path="res://Assets/Assets2.png" id="3_mmwlx"]
@@ -31,6 +32,7 @@ width = 444
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmwlx"]
 
 [node name="GameLevel" type="Node2D"]
+script = ExtResource("1_6mbg6")
 
 [node name="Floor" type="Sprite2D" parent="."]
 z_index = -1

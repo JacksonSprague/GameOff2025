@@ -1,4 +1,4 @@
 extends AbilityBase
 
 func _activate() -> void:
-	Player.stats.speed=Player.stats.speed*1.2
+	Player.health_component.max_health=Player.health_component.max_health*1.3

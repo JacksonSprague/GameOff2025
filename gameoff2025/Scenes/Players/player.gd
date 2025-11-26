@@ -1,6 +1,8 @@
 extends CharacterBase
 class_name Player
 
+var current_weapons: Array[Weapon] = []
+
 const UI = preload("res://Scenes/UI/HUD.tscn")
 var ui_ref :Player_HUD
 
@@ -47,6 +49,13 @@ func _process(delta: float) -> void:
 		Burrow()
 	if Input.is_action_just_pressed("Burrow") and canUnBurrow:
 		UnBurrow()
+
+func add_weapon(data: ItemWeapon) -> void:
+	var weapon := data.scene.instantiate() as Weapon
+	add_child(weapon)
+	
+	weapon.setup_weapon(data)
+	current_weapons.append(weapon)
 
 func update_animations() -> void:
 	if move_dir.length() > 0 and not Burrowing:

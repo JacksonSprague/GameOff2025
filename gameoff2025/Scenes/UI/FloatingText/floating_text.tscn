@@ -8,6 +8,7 @@ outline_size = 10
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [node name="FloatingText" type="Node2D"]
+z_index = 10
 script = ExtResource("1_neb2e")
 
 [node name="ValueLabel" type="Label" parent="."]

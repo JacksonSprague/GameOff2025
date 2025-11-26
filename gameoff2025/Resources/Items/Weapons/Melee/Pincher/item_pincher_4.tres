@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" load_steps=5 format=3 uid="uid://bwt734t0ljl0t"]
+
+[ext_resource type="Texture2D" uid="uid://cxs8f5bjvnhf3" path="res://Assets/Sprites/Weapons/Pincher/Pincher.png" id="1_dn8cb"]
+[ext_resource type="Script" uid="uid://cfn1olw2xh0fp" path="res://Resources/Items/Weapons/item_weapon.gd" id="2_22j5v"]
+[ext_resource type="PackedScene" uid="uid://2nwwklpsnrw" path="res://Scenes/Weapons/Melee/weapon_pincher.tscn" id="2_j7sb6"]
+[ext_resource type="Resource" uid="uid://btrq2oa1gdy5v" path="res://Resources/Items/Weapons/Melee/Pincher/stats_pincher_4.tres" id="3_qf37a"]
+
+[resource]
+script = ExtResource("2_22j5v")
+type = 0
+scene = ExtResource("2_j7sb6")
+stats = ExtResource("3_qf37a")
+item_name = "Pincher IV"
+item_icon = ExtResource("1_dn8cb")
+item_tier = 3
+item_type = 0
+item_cost = 130
+metadata/_custom_type_script = "uid://cfn1olw2xh0fp"

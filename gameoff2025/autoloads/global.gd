@@ -3,6 +3,13 @@ extends Node
 signal on_create_block_text(base: Node2D)
 signal on_create_damage_text(base: Node2D, hitbox: HitboxComponent)
 
+enum UpgradeTier{
+	COMMON,
+	RARE,
+	EPIC,
+	LEGENDARY
+}
+
 var player: Player
 
 func get_chance_sucess(chance: float) -> bool:

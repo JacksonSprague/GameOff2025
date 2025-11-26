@@ -7,7 +7,7 @@ var ui_ref :Player_HUD
 
 var BurrowCharge :float = 0
 var BurrowChargeNeeded :float =100
-
+var canmove = true
 #placeholder values for now. Currently Start_X_Pos does nothing, that will come into play when we actually design the level
 var Start_X_Pos = 150
 var End_X_Pos = 50000
@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	var current_velocity := move_dir * stats.speed
 	
-	if Burrowing == false:
+	if Burrowing == false and canmove==true:
 		position += current_velocity * delta
 	
 	position.y = clamp(position.y, -2500, 2400)
@@ -88,3 +88,14 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		canUnBurrow=false
 	if animated_sprite_2d.animation=="burrow":
 		canUnBurrow=true
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.name=="WaveCore" and Burrowing==false:
+		canmove=false
+		$AnimationPlayer.play("Wave")
+		
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().reload_current_scene()

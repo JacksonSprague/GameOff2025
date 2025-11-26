@@ -194,6 +194,7 @@ script = ExtResource("1_k21ev")
 
 [node name="WaveCore" type="Area2D" parent="."]
 position = Vector2(0, 2148)
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="WaveCore"]
 position = Vector2(56.3969, 5765.32)

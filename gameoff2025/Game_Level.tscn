@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4wo4f3whj4ww"]
+[gd_scene load_steps=14 format=3 uid="uid://4wo4f3whj4ww"]
 
 [ext_resource type="Script" uid="uid://nge8oayxixrp" path="res://game_level.gd" id="1_6mbg6"]
 [ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="1_7ktn1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cu6rywq2i7f4x" path="res://Assets/Assets2.png" id="3_mmwlx"]
 [ext_resource type="Texture2D" uid="uid://bkc1ibdsybp6s" path="res://Assets/Assets3.png" id="4_opr1m"]
 [ext_resource type="PackedScene" uid="uid://c7oxrq1d8n5fs" path="res://Nodes/Game_Manager.tscn" id="5_ov375"]
+[ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/enemy_slow.tscn" id="7_vfafu"]
 
 [sub_resource type="Gradient" id="Gradient_6mbg6"]
 offsets = PackedFloat32Array(0.387019, 0.978365)
@@ -31,8 +32,9 @@ width = 444
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmwlx"]
 
-[node name="GameLevel" type="Node2D"]
+[node name="GameLevel" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_6mbg6")
+player = NodePath("PlayerAverageCrab")
 
 [node name="Floor" type="Sprite2D" parent="."]
 z_index = -1
@@ -101,3 +103,4 @@ shape = SubResource("WorldBoundaryShape2D_mmwlx")
 [node name="GameManager" parent="." node_paths=PackedStringArray("PlayerRef") instance=ExtResource("5_ov375")]
 position = Vector2(28, 15)
 PlayerRef = NodePath("../PlayerAverageCrab")
+enemy_ref1 = ExtResource("7_vfafu")

@@ -2,6 +2,7 @@ extends Node2D
 class_name GameManager
 
 @export var PlayerRef :Player
+@export var enemy_ref1 :PackedScene
 
 var Difficulty = 1
 const WaveScene = preload("res://Nodes/BIG_wave.tscn")
@@ -11,6 +12,8 @@ var BigWaveRef :BigWave
 var Bubble1Ref :AbilityBubble
 var Bubble2Ref :AbilityBubble
 var Bubble3Ref :AbilityBubble
+
+
 
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node
 ## it goes "name": then the weight (how common it is), then reference the node itself. Higher numbers are more common, lower are more rare.
@@ -88,6 +91,7 @@ func AbilitySelected(AbilityName :String):
 func AwaitNextWave():
 	print("waiting")
 	BigWaveRef.queue_free()
+	$Spawn_Timer.start()
 	$Wave_Frequency.start()
 
 func _on_wave_frequency_timeout() -> void:
@@ -96,6 +100,7 @@ func _on_wave_frequency_timeout() -> void:
 
 func _on_countdown_timer_timeout() -> void:
 	$Warning.visible=false
+	$Spawn_Timer.stop()
 	BigWaveRef = WaveScene.instantiate()
 	add_child(BigWaveRef)
 	BigWaveRef.global_position.x=PlayerRef.position.x
@@ -139,4 +144,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Bubble1Ref.get_node("Area2D/CollisionShape2D").disabled=false
 		Bubble2Ref.get_node("Area2D/CollisionShape2D").disabled=false
 		Bubble3Ref.get_node("Area2D/CollisionShape2D").disabled=false
+
+
+
+func _on_spawn_timer_timeout() -> void:
+	var enemy = enemy_ref1.instantiate()
+	add_child(enemy)
+	enemy.position = Vector2(PlayerRef.position.x+2000*(sign(randf() - 0.5)),PlayerRef.position.y+1000*(sign(randf() - 0.5)))
 	

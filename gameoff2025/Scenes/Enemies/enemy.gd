@@ -5,6 +5,10 @@ class_name Enemy
 
 @onready var vision_area: Area2D = $VisionArea
 
+
+
+
+
 var can_move := true
 var move_dir: Vector2
 
@@ -43,3 +47,13 @@ func update_rotation() -> void:
 func can_move_towards_player() -> bool:
 	return is_instance_valid(Global.player) and\
 	global_position.distance_to(Global.player.global_position) > 60  
+
+
+
+
+func _on_area_entered(area: Area2D) -> void:
+	$AnimationPlayer.play("Wave")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	queue_free()

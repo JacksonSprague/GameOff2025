@@ -39,7 +39,7 @@ z_index = 1
 position = Vector2(-10, 858)
 
 [node name="EnemySlow" parent="." instance=ExtResource("6_aygn4")]
-position = Vector2(-809, -119)
+position = Vector2(-784, -405)
 
 [node name="EnemySlow2" parent="." instance=ExtResource("6_aygn4")]
 position = Vector2(-1061, 62)

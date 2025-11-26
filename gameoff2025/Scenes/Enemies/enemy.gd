@@ -52,6 +52,9 @@ func can_move_towards_player() -> bool:
 
 func _on_area_entered(area: Area2D) -> void:
 	$AnimationPlayer.play("Wave")
+	$HurtboxComponent.queue_free()
+	print("killhitbox")
+	$HitboxComponent.queue_free()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

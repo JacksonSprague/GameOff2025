@@ -19,10 +19,10 @@ var isWave =false
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node
 ## it goes "name": then the weight (how common it is), then reference the node itself. Higher numbers are more common, lower are more rare.
 var ability_dictionary = {
-	"a_Attack": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn"), "desc" : "You Attack"},
-	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Up Max Health"},
-	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "SPEEED"},
-	"a_Stamina": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Stamina.tscn"), "desc" : "More stamina"},
+	"a_Attack": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn"), "desc" : "Increase attack power by 10%"},
+	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Increase maximum health by 10%"},
+	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "Roam the beach 20% faster"},
+	"a_Stamina": {"weight" : 10, "scene" : preload("res://Abilities/Scenes/a_Stamina.tscn"), "desc" : "Reduce energy needed to burrow by 10%!"},
 	"a_Weapon": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn"), "desc" : "New Weapon"}
 }
 

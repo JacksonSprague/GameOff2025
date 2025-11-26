@@ -1,12 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://4wo4f3whj4ww"]
+[gd_scene load_steps=20 format=3 uid="uid://4wo4f3whj4ww"]
 
 [ext_resource type="Script" uid="uid://nge8oayxixrp" path="res://game_level.gd" id="1_6mbg6"]
 [ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="1_7ktn1"]
 [ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="2_acser"]
-[ext_resource type="Texture2D" uid="uid://cu6rywq2i7f4x" path="res://Assets/Assets2.png" id="3_mmwlx"]
-[ext_resource type="Texture2D" uid="uid://bkc1ibdsybp6s" path="res://Assets/Assets3.png" id="4_opr1m"]
+[ext_resource type="Texture2D" uid="uid://d03jcfv74gnip" path="res://Assets/Grassborder6.png" id="4_pjgj6"]
+[ext_resource type="Texture2D" uid="uid://cm1c1bfn0rm0c" path="res://Assets/Grassborder7.png" id="4_yjuli"]
 [ext_resource type="PackedScene" uid="uid://c7oxrq1d8n5fs" path="res://Nodes/Game_Manager.tscn" id="5_ov375"]
+[ext_resource type="Texture2D" uid="uid://gceffl78krc4" path="res://Assets/Grassborder.png" id="5_vfafu"]
+[ext_resource type="Texture2D" uid="uid://dchi6kqehee5q" path="res://Assets/Grassborder4.png" id="6_00igg"]
+[ext_resource type="Texture2D" uid="uid://cgyftl3mpq6ok" path="res://Assets/Grassborder3.png" id="7_kwjps"]
 [ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/enemy_slow.tscn" id="7_vfafu"]
+[ext_resource type="Texture2D" uid="uid://cvbw3mcfks78n" path="res://Assets/Grassborder2.png" id="8_8d60w"]
+[ext_resource type="Texture2D" uid="uid://bdotmf1lwkmiq" path="res://Assets/Grassborder5.png" id="8_pjgj6"]
 
 [sub_resource type="Gradient" id="Gradient_6mbg6"]
 offsets = PackedFloat32Array(0.387019, 0.978365)
@@ -32,6 +37,9 @@ width = 444
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmwlx"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_00igg"]
+distance = 8.02593
+
 [node name="GameLevel" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_6mbg6")
 player = NodePath("PlayerAverageCrab")
@@ -39,25 +47,26 @@ player = NodePath("PlayerAverageCrab")
 [node name="Floor" type="Sprite2D" parent="."]
 z_index = -1
 texture_repeat = 2
-position = Vector2(6813, 45)
-scale = Vector2(4, 4)
+position = Vector2(27327, 45)
+scale = Vector2(6, 6)
 texture = ExtResource("1_7ktn1")
 region_enabled = true
-region_rect = Rect2(1000, 1000, 5000, 2500)
+region_rect = Rect2(1000, 1000, 10000, 2500)
 
 [node name="Noise Texture" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
-position = Vector2(6791.5, 121)
-scale = Vector2(11.7419, 19.3125)
+position = Vector2(27454, 121)
+scale = Vector2(36.0364, 19.3125)
 texture = SubResource("NoiseTexture2D_pjgj6")
 
 [node name="Shading bottom" type="Sprite2D" parent="."]
-position = Vector2(7003.24, 3302.35)
+position = Vector2(24765.7, 3026.94)
 rotation = -1.5708
-scale = Vector2(9.01228, 319.732)
+scale = Vector2(9.01228, 874.808)
 texture = SubResource("GradientTexture2D_6mbg6")
 
 [node name="PlayerAverageCrab" parent="." node_paths=PackedStringArray("game_manager_ref") instance=ExtResource("2_acser")]
+position = Vector2(1297, 0)
 game_manager_ref = NodePath("../GameManager")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerAverageCrab"]
@@ -66,39 +75,297 @@ zoom = Vector2(0.9, 0.9)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Rocks" type="StaticBody2D" parent="."]
-position = Vector2(5, -2600)
-rotation = -3.14159
-scale = Vector2(3.09, 3.09)
-
-[node name="Rocks" type="Sprite2D" parent="Rocks"]
-texture_repeat = 2
-position = Vector2(2.74181e-06, 30.9899)
-rotation = 3.14159
-texture = ExtResource("3_mmwlx")
-region_enabled = true
-region_rect = Rect2(0, 0, 2000, 69.261)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks"]
-position = Vector2(0, -0.00012207)
-shape = SubResource("WorldBoundaryShape2D_mmwlx")
-
 [node name="Twigs" type="StaticBody2D" parent="."]
 position = Vector2(5, 2600)
 rotation = -3.14159
 scale = Vector2(3.09, 3.09)
 
-[node name="Twigs" type="Sprite2D" parent="Twigs"]
-texture_repeat = 2
-position = Vector2(2.74181e-06, 30.9899)
+[node name="Grassborder30" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1841.42, -122.973)
+rotation = -1.0472
+scale = Vector2(4.6168, 4.53862)
+texture = ExtResource("6_00igg")
+
+[node name="Grassborder31" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2385.44, -69.5731)
+rotation = 0.785397
+scale = Vector2(4.6168, 4.53862)
+texture = ExtResource("6_00igg")
+
+[node name="Grassborder32" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2872.49, -172.484)
+rotation = -0.523598
+scale = Vector2(4.6168, 4.53862)
+texture = ExtResource("6_00igg")
+
+[node name="Grassborder33" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1052.21, -169.365)
+rotation = -1.0472
+scale = Vector2(2.54152, 4.03118)
+texture = ExtResource("6_00igg")
+
+[node name="Grassborder25" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1108.41, -77.6672)
+rotation = -0.785397
+scale = Vector2(3.49267, 3.49267)
+texture = ExtResource("7_kwjps")
+
+[node name="Grassborder26" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1972.82, -86.4028)
+rotation = 0.785397
+scale = Vector2(3.49267, 3.49267)
+texture = ExtResource("7_kwjps")
+
+[node name="Grassborder27" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-411.974, -88.0248)
+rotation = -1.57079
+scale = Vector2(3.49267, 3.49267)
+texture = ExtResource("7_kwjps")
+
+[node name="Grassborder28" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-841.748, -44.0106)
+rotation = 2.0944
+scale = Vector2(3.49267, 3.49267)
+texture = ExtResource("7_kwjps")
+
+[node name="Grassborder29" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-3142.07, -91.254)
+rotation = -2.61799
+scale = Vector2(3.49267, 3.49267)
+texture = ExtResource("7_kwjps")
+
+[node name="Grassborder2" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-618.157, -78.9965)
 rotation = 3.14159
-texture = ExtResource("4_opr1m")
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder3" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1149.84, -75.4016)
+rotation = 2.09439
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder4" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1433.66, -59.8669)
+rotation = 3.14159
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder5" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-171.197, -39.1581)
+rotation = 1.309
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder6" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1701.29, -167.633)
+rotation = 1.309
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder7" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2598.06, -77.0161)
+rotation = 2.87979
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder8" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2138.51, -82.1952)
+rotation = 2.09439
+scale = Vector2(3.54135, 3.54135)
+texture = ExtResource("8_8d60w")
+
+[node name="Grassborder9" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-455.016, -70.8726)
+rotation = 1.309
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder10" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1075.08, -73.1362)
+rotation = 1.309
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder12" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2200.65, -90.6094)
+rotation = 1.309
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder13" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-3214.89, -85.7523)
+rotation = 1.309
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder14" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1606.15, -80.902)
+rotation = 2.87979
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder15" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-928.803, -76.0493)
+rotation = 2.87979
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder17" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2826.86, -84.1353)
+rotation = 2.87979
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder18" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-3693.2, -84.1329)
+rotation = 2.87979
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder19" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-3178.32, -133.325)
+rotation = -2.3562
+scale = Vector2(2.09431, 2.09431)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder20" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-2308.74, -63.4246)
+rotation = -2.3562
+scale = Vector2(2.09431, 2.09431)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder21" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1022.65, -158.897)
+rotation = -2.3562
+scale = Vector2(2.09431, 2.09431)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder22" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-1701.29, -42.7139)
+rotation = -2.3562
+scale = Vector2(2.09431, 2.09431)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder23" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-622.007, -45.9532)
+rotation = -2.3562
+scale = Vector2(2.09431, 2.09431)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder24" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(428.802, -49.1921)
+rotation = -2.3562
+scale = Vector2(2.09431, 2.09431)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder16" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(-76.6992, -61.8122)
+rotation = 2.87979
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Grassborder11" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+position = Vector2(330.097, -83.8197)
+rotation = 1.309
+scale = Vector2(3.23604, 3.23604)
+texture = ExtResource("8_pjgj6")
+
+[node name="Twigs" type="Sprite2D" parent="Twigs"]
+modulate = Color(0.85, 0.7225, 0, 1)
+texture_repeat = 2
+position = Vector2(-5007.12, 40.4658)
+rotation = 3.14159
+scale = Vector2(2.35, 2.35)
+texture = ExtResource("5_vfafu")
 region_enabled = true
-region_rect = Rect2(0, 0, 2000, 69.261)
+region_rect = Rect2(0, 0, 5000, 69.261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Twigs"]
 position = Vector2(0, 56.76)
 rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_mmwlx")
+
+[node name="Rocks" type="StaticBody2D" parent="."]
+position = Vector2(5, -2600)
+rotation = -3.14159
+scale = Vector2(3.09, 3.09)
+
+[node name="Grassborder7" type="Sprite2D" parent="Rocks"]
+texture_repeat = 2
+position = Vector2(-3590.61, 267.647)
+scale = Vector2(2, 2)
+texture = ExtResource("4_yjuli")
+region_enabled = true
+region_rect = Rect2(0, 0, 5000, 200)
+
+[node name="Grassborder8" type="Sprite2D" parent="Rocks"]
+texture_repeat = 2
+position = Vector2(710.677, -922.332)
+scale = Vector2(2.91862, 2)
+texture = ExtResource("4_yjuli")
+region_enabled = true
+region_rect = Rect2(0, 0, 421.37, 3000)
+
+[node name="Rocks" type="Sprite2D" parent="Rocks"]
+texture_repeat = 2
+position = Vector2(-4904.53, 68.6208)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("4_pjgj6")
+region_enabled = true
+region_rect = Rect2(0, 0, 5000, 74.051)
+
+[node name="Rocks2" type="Sprite2D" parent="Rocks"]
+texture_repeat = 2
+position = Vector2(155.014, -990.615)
+rotation = 1.57079
+scale = Vector2(2, 2)
+texture = ExtResource("4_pjgj6")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 74.051)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rocks"]
+position = Vector2(146.6, -819.742)
+rotation = -1.5708
+scale = Vector2(3.79997, 6.25)
+shape = SubResource("WorldBoundaryShape2D_00igg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks"]
+position = Vector2(0, -0.00012207)
 shape = SubResource("WorldBoundaryShape2D_mmwlx")
 
 [node name="GameManager" parent="." node_paths=PackedStringArray("PlayerRef") instance=ExtResource("5_ov375")]

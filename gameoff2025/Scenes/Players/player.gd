@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 		position += current_velocity * delta
 	
 	position.y = clamp(position.y, -2500, 2400)
+	position.x = clamp(position.x,-146,2010201021)
 	update_animations()
 	"res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"
 	ui_ref.get_node("Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer/BurrowBar").value=(BurrowCharge / BurrowChargeNeeded)*100

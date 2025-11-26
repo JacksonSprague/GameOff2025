@@ -91,7 +91,6 @@ func AbilitySelected(AbilityName :String):
 
 func AwaitNextWave():
 	print("waiting")
-	isWave=false
 	BigWaveRef.queue_free()
 	$Spawn_Timer.start()
 	$Wave_Frequency.start()
@@ -143,6 +142,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		if Bubble1Ref : Bubble1Ref.queue_free()
 		if Bubble2Ref : Bubble2Ref.queue_free()
 		if Bubble3Ref : Bubble3Ref.queue_free()
+		isWave=false
 	if anim_name=="Rise":
 		Bubble1Ref.get_node("Area2D/CollisionShape2D").disabled=false
 		Bubble2Ref.get_node("Area2D/CollisionShape2D").disabled=false

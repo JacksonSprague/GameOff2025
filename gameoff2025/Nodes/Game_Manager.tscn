@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7oxrq1d8n5fs"]
 
 [ext_resource type="Script" uid="uid://cx73se2auvuxo" path="res://Nodes/game_manager.gd" id="1_5i0na"]
-[ext_resource type="Texture2D" uid="uid://dbae0x7rdobxa" path="res://Assets/Assets1.png" id="2_ld3wb"]
+[ext_resource type="Texture2D" uid="uid://cp14ayu4ha0dg" path="res://Assets/Assets2.0.png" id="2_ld3wb"]
 
 [sub_resource type="Animation" id="Animation_1w46x"]
 length = 0.001
@@ -111,7 +111,8 @@ one_shot = true
 
 [node name="Warning" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2, 0)
+position = Vector2(0, 4)
+skew = -0.0174533
 texture = ExtResource("2_ld3wb")
 
 [node name="WarningAnimationPlayer" type="AnimationPlayer" parent="Warning"]

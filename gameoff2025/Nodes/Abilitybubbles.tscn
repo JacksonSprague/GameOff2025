@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://jwcr4f8p5ger"]
 
 [ext_resource type="Script" uid="uid://d2ppn6fnm58kp" path="res://Nodes/abilitybubbles.gd" id="1_enshr"]
-[ext_resource type="Texture2D" uid="uid://u2s3dplfajet" path="res://Assets/Sprites/Assets4.png" id="1_g68sb"]
 [ext_resource type="Texture2D" uid="uid://dl11h76ekh70r" path="res://Assets/Sprites/Assets7.png" id="2_2jead"]
 [ext_resource type="Texture2D" uid="uid://bynaanpkf2x1o" path="res://Assets/Sprites/Assets5.png" id="2_imdfa"]
+[ext_resource type="Texture2D" uid="uid://luhd42rrfbea" path="res://Assets/Assets2.3.png" id="2_ji0y8"]
 [ext_resource type="Texture2D" uid="uid://cbwoufkwa3ery" path="res://Assets/Sprites/Assets6.png" id="3_enshr"]
 [ext_resource type="Texture2D" uid="uid://bgoicyfsj4kwn" path="res://Assets/Sprites/Assets9.png" id="5_107ys"]
 [ext_resource type="Texture2D" uid="uid://dgwtd3tvcxuh8" path="res://Assets/Sprites/Assets8.png" id="6_ji0y8"]
@@ -147,8 +147,9 @@ script = ExtResource("1_enshr")
 shape = SubResource("CircleShape2D_g68sb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(6.74286, 6.74286)
-texture = ExtResource("1_g68sb")
+modulate = Color(1, 1, 1, 0.917647)
+scale = Vector2(7.71875, 7.71875)
+texture = ExtResource("2_ji0y8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 scale = Vector2(7.15, 7.15)

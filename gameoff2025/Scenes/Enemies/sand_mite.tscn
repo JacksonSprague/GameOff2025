@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
 [ext_resource type="Script" uid="uid://dflb8or6uvwrv" path="res://Scenes/Enemies/enemy.gd" id="2_gnx0v"]
-[ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/stats_enemy_slow.tres" id="3_gnx0v"]
+[ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/stats_sand_mite.tres" id="3_gnx0v"]
 [ext_resource type="Texture2D" uid="uid://dthveehaqylpg" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Sheet.png" id="4_hlgua"]
 [ext_resource type="PackedScene" uid="uid://baxagywh1rba1" path="res://Scenes/Components/hitbox_component.tscn" id="5_7sxqv"]
 
@@ -219,7 +219,7 @@ _data = {
 &"Wave": SubResource("Animation_hlgua")
 }
 
-[node name="EnemySlow" instance=ExtResource("1_ynjhl")]
+[node name="SandMite" instance=ExtResource("1_ynjhl")]
 collision_layer = 2
 script = ExtResource("2_gnx0v")
 flock_push = 20.0
@@ -229,11 +229,12 @@ stats = ExtResource("3_gnx0v")
 scale = Vector2(0.7, 0.7)
 
 [node name="Shadow" parent="Visuals" index="0"]
-scale = Vector2(1.74286, 1.62857)
+position = Vector2(-4.76837e-07, -8.57143)
+scale = Vector2(1.34286, 1.11428)
 
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
-position = Vector2(-12.8571, -134.286)
-scale = Vector2(18.1657, 17.8057)
+position = Vector2(-8.57143, -80)
+scale = Vector2(13.0257, 12.56)
 sprite_frames = SubResource("SpriteFrames_wvedb")
 animation = &"default"
 autoplay = "default"

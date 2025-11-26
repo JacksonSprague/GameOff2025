@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cu6rywq2i7f4x" path="res://Assets/Assets2.png" id="3_mmwlx"]
 [ext_resource type="Texture2D" uid="uid://bkc1ibdsybp6s" path="res://Assets/Assets3.png" id="4_opr1m"]
 [ext_resource type="PackedScene" uid="uid://c7oxrq1d8n5fs" path="res://Nodes/Game_Manager.tscn" id="5_ov375"]
-[ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/enemy_slow.tscn" id="7_vfafu"]
+[ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/sand_mite.tscn" id="7_vfafu"]
 
 [sub_resource type="Gradient" id="Gradient_6mbg6"]
 offsets = PackedFloat32Array(0.387019, 0.978365)

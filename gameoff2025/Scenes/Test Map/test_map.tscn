@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b1fcbti7w58t3" path="res://Assets/Sprites/Sand2.png" id="2_fs1rn"]
 [ext_resource type="Script" uid="uid://cuujj7atpcrjw" path="res://Scenes/Test Map/camera_2d.gd" id="3_2e676"]
 [ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="3_fs1rn"]
-[ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/enemy_slow.tscn" id="6_aygn4"]
+[ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/sand_mite.tscn" id="6_aygn4"]
 
 [node name="Test Map" type="Node2D" node_paths=PackedStringArray("player")]
 position = Vector2(-87, 66)

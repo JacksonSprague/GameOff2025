@@ -188,7 +188,6 @@ scale = Vector2(1.34286, 1.11428)
 position = Vector2(-8.57143, -80)
 scale = Vector2(13.0257, 12.56)
 sprite_frames = SubResource("SpriteFrames_wvedb")
-animation = &"default"
 autoplay = "default"
 frame_progress = 0.726748
 

@@ -8,7 +8,6 @@ class_name Enemy
 
 
 
-
 var can_move := true
 var move_dir: Vector2
 
@@ -50,12 +49,15 @@ func can_move_towards_player() -> bool:
 
 
 
-func _on_area_entered(area: Area2D) -> void:
-	$AnimationPlayer.play("Wave")
-	$HurtboxComponent.queue_free()
-	print("killhitbox")
-	$HitboxComponent.queue_free()
+func _on_area_entered(_area: Area2D) -> void:
+	if $AnimationPlayer.has_animation("Wave"):
+		$AnimationPlayer.play("Wave")
+	if$HurtboxComponent:
+		print("pring")
+		$HurtboxComponent.queue_free()
+	if $HitboxComponent:
+		$HitboxComponent.queue_free()
+		print("killhitbox")
 
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	queue_free()

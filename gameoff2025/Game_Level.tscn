@@ -57,7 +57,8 @@ rotation = -1.5708
 scale = Vector2(9.01228, 319.732)
 texture = SubResource("GradientTexture2D_6mbg6")
 
-[node name="PlayerAverageCrab" parent="." instance=ExtResource("2_acser")]
+[node name="PlayerAverageCrab" parent="." node_paths=PackedStringArray("game_manager_ref") instance=ExtResource("2_acser")]
+game_manager_ref = NodePath("../GameManager")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerAverageCrab"]
 position = Vector2(-7, -30)

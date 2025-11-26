@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c34bddmj8wplm" path="res://Scenes/Weapons/weapon.gd" id="1_ha56n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y2uhn"]
-radius = 150.0
+radius = 211.085
 
 [node name="WeaponBase" type="Node2D"]
 script = ExtResource("1_ha56n")

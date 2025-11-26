@@ -27,11 +27,7 @@ func _ready() -> void:
 	add_child(ui_ref)
 	
 	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
-	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
-	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
-	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
-	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
-	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+
 	
 func _process(delta: float) -> void:
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
@@ -80,6 +76,8 @@ func UnBurrow():
 	BurrowCharge=0
 	animated_sprite_2d.play("unburrow")
 
+func is_facing_right() -> bool:
+	return visuals.scale.x == -0.5
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation=="unburrow":

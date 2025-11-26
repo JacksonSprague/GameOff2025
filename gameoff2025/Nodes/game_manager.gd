@@ -13,7 +13,7 @@ var Bubble1Ref :AbilityBubble
 var Bubble2Ref :AbilityBubble
 var Bubble3Ref :AbilityBubble
 
-var isWave =false
+var isWave =false 
 
 
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node

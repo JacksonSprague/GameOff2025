@@ -99,6 +99,7 @@ _data = {
 script = ExtResource("1_5i0na")
 
 [node name="Wave_Frequency" type="Timer" parent="."]
+wait_time = 10.0
 one_shot = true
 
 [node name="Spawn_Timer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7rfp31d60i48"]
+[gd_scene load_steps=17 format=3 uid="uid://b7rfp31d60i48"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
@@ -56,60 +56,13 @@ radius = 3.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnx0v"]
 radius = 250.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2ldw"]
+radius = 94.0053
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlgua"]
 radius = 98.1835
 
-[sub_resource type="Animation" id="Animation_hlgua"]
-resource_name = "Wave"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -2000)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_o2ldw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cewjn"]
-_data = {
-&"RESET": SubResource("Animation_o2ldw"),
-&"Wave": SubResource("Animation_hlgua")
-}
-
 [node name="EnemySlow" instance=ExtResource("1_ynjhl")]
-rotation = 6.28319
 collision_layer = 2
 script = ExtResource("2_gnx0v")
 flock_push = 20.0
@@ -119,7 +72,6 @@ stats = ExtResource("3_gnx0v")
 position = Vector2(-9, -60)
 sprite_frames = SubResource("SpriteFrames_wvedb")
 animation = &"default"
-autoplay = "default"
 frame_progress = 0.726748
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals" index="2"]
@@ -140,6 +92,15 @@ collision_mask = 2
 position = Vector2(0, -58)
 shape = SubResource("CircleShape2D_gnx0v")
 
+[node name="HurtboxComponent" parent="." index="3"]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+position = Vector2(0, -62)
+shape = SubResource("CircleShape2D_o2ldw")
+debug_color = Color(1, 0.487198, 0.64356, 0.42)
+
 [node name="HitboxComponent" parent="." index="4" instance=ExtResource("5_7sxqv")]
 collision_layer = 4
 collision_mask = 32
@@ -148,11 +109,3 @@ collision_mask = 32
 position = Vector2(0, -62)
 shape = SubResource("CircleShape2D_hlgua")
 debug_color = Color(0.814367, 0, 0.281238, 0.42)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
-libraries = {
-&"": SubResource("AnimationLibrary_cewjn")
-}
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

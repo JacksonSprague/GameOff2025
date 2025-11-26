@@ -13,6 +13,7 @@ var Bubble1Ref :AbilityBubble
 var Bubble2Ref :AbilityBubble
 var Bubble3Ref :AbilityBubble
 
+var isWave =false
 
 
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node
@@ -90,6 +91,7 @@ func AbilitySelected(AbilityName :String):
 
 func AwaitNextWave():
 	print("waiting")
+	isWave=false
 	BigWaveRef.queue_free()
 	$Spawn_Timer.start()
 	$Wave_Frequency.start()
@@ -100,6 +102,7 @@ func _on_wave_frequency_timeout() -> void:
 
 func _on_countdown_timer_timeout() -> void:
 	$Warning.visible=false
+	isWave=true
 	$Spawn_Timer.stop()
 	BigWaveRef = WaveScene.instantiate()
 	add_child(BigWaveRef)

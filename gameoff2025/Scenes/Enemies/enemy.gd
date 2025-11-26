@@ -8,7 +8,6 @@ class_name Enemy
 
 
 
-
 var can_move := true
 var move_dir: Vector2
 

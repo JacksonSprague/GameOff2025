@@ -3,6 +3,7 @@ class_name Player
 
 const UI = preload("res://Scenes/UI/HUD.tscn")
 var ui_ref :Player_HUD
+@export var game_manager_ref :GameManager
 
 var BurrowCharge :float = 0
 var BurrowChargeNeeded :float =100
@@ -55,7 +56,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Burrow") and BurrowCharge >= BurrowChargeNeeded and not Burrowing:
 		Burrow()
 	if Input.is_action_just_pressed("Burrow") and canUnBurrow:
-		UnBurrow()
+		if game_manager_ref.isWave==false:
+			UnBurrow()
 
 func add_weapon(data: ItemWeapon) -> void:
 	var weapon := data.scene.instantiate() as Weapon

@@ -40,9 +40,12 @@ position = Vector2(-10, 858)
 
 [node name="EnemySlow" parent="." instance=ExtResource("6_aygn4")]
 position = Vector2(-784, -405)
+flock_push = null
 
 [node name="EnemySlow2" parent="." instance=ExtResource("6_aygn4")]
 position = Vector2(-1061, 62)
+flock_push = null
 
 [node name="EnemySlow3" parent="." instance=ExtResource("6_aygn4")]
 position = Vector2(-851, 224)
+flock_push = null

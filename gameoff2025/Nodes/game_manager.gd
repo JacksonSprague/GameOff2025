@@ -33,7 +33,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Warning.position.x=PlayerRef.position.x
 	$Warning.position.y=PlayerRef.position.y+200
 	$"Ability Spawn Core".global_position.x=PlayerRef.global_position.x

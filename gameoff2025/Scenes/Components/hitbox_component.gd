@@ -16,11 +16,11 @@ func disable() -> void:
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 	
-func setup(damage: float, critical: bool, knockback: float, source: Node2D) -> void:
-			self.damage = damage
-			self.critical = critical
-			knockback_power = knockback
-			self.source = source
+func setup(setdamage: float, setcritical: bool, setknockback: float, setsource: Node2D) -> void:
+			self.damage = setdamage
+			self.critical = setcritical
+			knockback_power = setknockback
+			self.source = setsource
 
 
 func _on_area_entered(area: Area2D) -> void:

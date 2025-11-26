@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 	
 	#placeholder until we get enemies, you will earn this by killing them
 	if not Burrowing:
-		BurrowCharge+=1
+		BurrowCharge+=0.3
 	
 	
 	if Input.is_action_just_pressed("Burrow") and BurrowCharge >= BurrowChargeNeeded and not Burrowing:

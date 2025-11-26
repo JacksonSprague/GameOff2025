@@ -11,6 +11,6 @@ func execute_attack() -> void:
 func get_damage() -> void:
 	var damage:= weapon.data.stats.damage + Global.player.stats.damage
 	var crit_change := weapon.data.stats.crit_chance
-##	if Global.get_chance_sucess(crit_chance):
-##		critical = true
-##		damage = ceil()
+	if Global.get_chance_sucess(crit_change):
+		critical = true
+		damage = ceil(100)

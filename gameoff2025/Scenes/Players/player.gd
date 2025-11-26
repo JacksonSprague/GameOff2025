@@ -1,8 +1,6 @@
 extends CharacterBase
 class_name Player
 
-var current_weapons: Array[Weapon] = []
-
 const UI = preload("res://Scenes/UI/HUD.tscn")
 var ui_ref :Player_HUD
 
@@ -13,6 +11,11 @@ var BurrowChargeNeeded :float =100
 var Start_X_Pos = 150
 var End_X_Pos = 50000
 
+@onready var weapon_container: WeaponContainer = $Visuals/WeaponContainer
+
+
+var current_weapons: Array[Weapon] = []
+
 var move_dir: Vector2
 
 var Burrowing = false
@@ -22,10 +25,14 @@ func _ready() -> void:
 	super._ready()
 	ui_ref= UI.instantiate()
 	add_child(ui_ref)
-	##if ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription"):
-		#ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=true
-
-
+	
+	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+	add_weapon(preload("res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"))
+	
 func _process(delta: float) -> void:
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	var current_velocity := move_dir * stats.speed
@@ -35,7 +42,7 @@ func _process(delta: float) -> void:
 	
 	position.y = clamp(position.y, -2500, 2400)
 	update_animations()
-	
+	"res://Resources/Items/Weapons/Melee/Pincher/item_pincher_1.tres"
 	ui_ref.get_node("Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer/BurrowBar").value=(BurrowCharge / BurrowChargeNeeded)*100
 	ui_ref.get_node("Root/MainDivider/TopSection/MarginContainer/HBoxContainer/ProgressBar").value=(position.x / End_X_Pos)*100
 	ui_ref.get_node("Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer/HealthBar").value=($HealthComponent.current_health / $HealthComponent.max_health)*100
@@ -56,6 +63,7 @@ func add_weapon(data: ItemWeapon) -> void:
 	
 	weapon.setup_weapon(data)
 	current_weapons.append(weapon)
+	weapon_container.update_weapons_position(current_weapons)
 
 func update_animations() -> void:
 	if move_dir.length() > 0 and not Burrowing:

@@ -11,10 +11,13 @@ size = Vector2(64, 32)
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(25, -3)
+scale = Vector2(4, 4)
 texture = ExtResource("2_bmgjm")
 
 [node name="HitboxComponent" type="Area2D" parent="Sprite2D" index="0"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 16
+collision_mask = 8
 script = ExtResource("3_blnc0")
 metadata/_custom_type_script = "uid://hgkqvocq4aam"
 

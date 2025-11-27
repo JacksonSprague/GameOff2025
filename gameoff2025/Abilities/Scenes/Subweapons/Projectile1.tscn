@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://btv0jhrbhwvnt"]
+
+[ext_resource type="Script" uid="uid://dw2pd5rjmuwqj" path="res://Abilities/Scenes/Subweapons/projectile_1.gd" id="1_2j3t4"]
+[ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="2_2j3t4"]
+
+[sub_resource type="Gradient" id="Gradient_2lhvc"]
+offsets = PackedFloat32Array(0.257212, 0.324519, 0.543269, 0.608173)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uv3ym"]
+gradient = SubResource("Gradient_2lhvc")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2j3t4"]
+radius = 38.0132
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lhvc"]
+radius = 39.0128
+
+[node name="Projectile1" type="Area2D"]
+modulate = Color(0.84, 0.912, 1, 1)
+script = ExtResource("1_2j3t4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = SubResource("GradientTexture2D_uv3ym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2j3t4")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("2_2j3t4")
+metadata/_custom_type_script = "uid://hgkqvocq4aam"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_2lhvc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

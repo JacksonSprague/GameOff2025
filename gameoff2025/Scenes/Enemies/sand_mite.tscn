@@ -171,7 +171,7 @@ _data = {
 &"Wave": SubResource("Animation_hlgua")
 }
 
-[node name="SandMite" instance=ExtResource("1_ynjhl")]
+[node name="SandMite" groups=["Enemy"] instance=ExtResource("1_ynjhl")]
 collision_layer = 2
 script = ExtResource("2_gnx0v")
 flock_push = 20.0

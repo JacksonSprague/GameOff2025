@@ -9,10 +9,11 @@ func _process(delta: float) -> void:
 func _activate() -> void:
 	if (not get_direction_to_enemy()==Vector2.ZERO) and (get_parent().Burrowing==false):
 		var projectielref = ProjectileScene.instantiate()
+		projectielref.damage=projectielref.Coredamage*get_parent().damagemultiplier
+		print(projectielref.Coredamage*get_parent().damagemultiplier)
 		get_tree().current_scene.add_child(projectielref)
-		projectielref.global_position=global_position	
+		projectielref.global_position=global_position+(aimdir*10)
 		projectielref.dir=aimdir
-		print(aimdir.angle())
 
 func get_nearest_enemy() -> Node:
 	var nearest_enemy = null

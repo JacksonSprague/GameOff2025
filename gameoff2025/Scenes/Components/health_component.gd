@@ -37,4 +37,15 @@ func heal(amount: float) -> void:
 	on_health_changed.emit(current_health, max_health)
 
 func die() -> void:
-	owner.queue_free()
+	if $"../HurtboxComponent":
+		$"../HurtboxComponent".queue_free()
+	if $"../HitboxComponent":
+		$"../HitboxComponent".queue_free()
+	if %Visuals:
+		%Visuals.visible=false
+	if $"../CPUParticles2D":
+		$"../CPUParticles2D".emitting=true
+	var spawned = $"..".ShardRef.instantiate()
+	get_tree().current_scene.add_child(spawned)
+	spawned.global_position=$"..".global_position
+	

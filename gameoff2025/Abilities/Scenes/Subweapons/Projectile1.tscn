@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="2_2j3t4"]
 
 [sub_resource type="Gradient" id="Gradient_2lhvc"]
-offsets = PackedFloat32Array(0.257212, 0.324519, 0.543269, 0.608173)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.257212, 0.350962, 0.456731, 0.509615, 0.581731, 0.711538)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_uv3ym"]
 gradient = SubResource("Gradient_2lhvc")
@@ -14,13 +14,15 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2j3t4"]
-radius = 38.0132
+radius = 5.09902
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2lhvc"]
-radius = 39.0128
+radius = 42.0119
 
 [node name="Projectile1" type="Area2D"]
-modulate = Color(0.84, 0.912, 1, 1)
+modulate = Color(0.990406, 0.516697, 0.72664, 1)
+collision_layer = 16384
+collision_mask = 16386
 script = ExtResource("1_2j3t4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,10 +33,25 @@ texture = SubResource("GradientTexture2D_uv3ym")
 shape = SubResource("CircleShape2D_2j3t4")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 8
 script = ExtResource("2_2j3t4")
 metadata/_custom_type_script = "uid://hgkqvocq4aam"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_2lhvc")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

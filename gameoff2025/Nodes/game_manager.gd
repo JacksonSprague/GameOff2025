@@ -23,7 +23,7 @@ var ability_dictionary = {
 	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Increase maximum health by 30%"},
 	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "Roam the beach 20% faster"},
 	"a_Stamina": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Stamina.tscn"), "desc" : "Reduce energy needed to burrow by 10%"},
-	"a_Weapon": {"weight" : 13, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn"), "desc" : "New Weapon"}
+	"a_Weapon": {"weight" : 13, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn"), "desc" : "Gain or enhance the SMALL SHOT weapon which fires small but deadly projectiles"}
 }
 
 

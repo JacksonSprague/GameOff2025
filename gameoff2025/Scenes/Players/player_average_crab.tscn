@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cpsaytykrou1f"]
+[gd_scene load_steps=28 format=3 uid="uid://cpsaytykrou1f"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_btait"]
 [ext_resource type="Texture2D" uid="uid://dqvs8dgxrng83" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Idle-Sheet.png" id="2_jbwao"]
@@ -7,6 +7,9 @@
 [ext_resource type="Resource" uid="uid://ck0hbmdv3h01s" path="res://Resources/base/Players/stats_player_average_crab.tres" id="3_ttjkf"]
 [ext_resource type="Texture2D" uid="uid://br0vcspvmdqem" path="res://Assets/Sprites/Players/Average Crab/Average Crab Burrow-Sheet.png" id="4_puodp"]
 [ext_resource type="Script" uid="uid://cg8urws23jqvb" path="res://Scenes/Players/weapon_container.gd" id="7_l6xtf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6xtf"]
+radius = 336.656
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eib8b"]
 atlas = ExtResource("4_puodp")
@@ -263,6 +266,15 @@ collision_mask = 2
 script = ExtResource("2_otmsg")
 stats = ExtResource("3_ttjkf")
 
+[node name="MagArea" type="Area2D" parent="." index="0"]
+position = Vector2(0, -7)
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="Magnet" type="CollisionShape2D" parent="MagArea" index="0"]
+shape = SubResource("CircleShape2D_l6xtf")
+debug_color = Color(0.0466666, 0.7, 0, 0.419608)
+
 [node name="Shadow" parent="Visuals" index="0"]
 position = Vector2(0, -4)
 
@@ -356,12 +368,12 @@ position = Vector2(129, -40)
 [node name="Marker2D6" type="Marker2D" parent="Visuals/WeaponContainer/Six" index="5"]
 position = Vector2(-129, -40)
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -37)
 scale = Vector2(0.52, 0.505)
 shape = SubResource("CircleShape2D_jbwao")
 
-[node name="HurtboxComponent" parent="." index="2"]
+[node name="HurtboxComponent" parent="." index="3"]
 collision_layer = 32
 collision_mask = 4
 
@@ -370,11 +382,12 @@ position = Vector2(0, -36)
 scale = Vector2(1.83, 1.075)
 shape = SubResource("CircleShape2D_ttjkf")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 libraries = {
 &"": SubResource("AnimationLibrary_k81a1")
 }
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="MagArea" to="." method="_on_mag_area_area_entered"]
 [connection signal="animation_finished" from="Visuals/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

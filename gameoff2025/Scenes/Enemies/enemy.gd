@@ -1,6 +1,7 @@
 extends CharacterBase
 class_name Enemy
 
+const ShardRef = preload("res://Nodes/BurrowShard.tscn")
 @export var flock_push := 20.0
 
 @onready var vision_area: Area2D = $VisionArea
@@ -49,15 +50,20 @@ func can_move_towards_player() -> bool:
 
 
 
-func _on_area_entered(_area: Area2D) -> void:
-	if $AnimationPlayer.has_animation("Wave"):
-		$AnimationPlayer.play("Wave")
-	if$HurtboxComponent:
-		print("pring")
-		$HurtboxComponent.queue_free()
-	if $HitboxComponent:
-		$HitboxComponent.queue_free()
-		print("killhitbox")
+func _on_area_entered(area: Area2D) -> void:
+	if area.name=="WaveCore":
+		if $AnimationPlayer.has_animation("Wave"):
+			$AnimationPlayer.play("Wave")
+		if$HurtboxComponent:
+			$HurtboxComponent.queue_free()
+		if $HitboxComponent:
+			$HitboxComponent.queue_free()
+			print("killhitbox")
+	elif area.get_parent().name=="Projectile1":
+		print(area.get_parent().name)
+		$HealthComponent.take_damage(area.get_parent().damage)
+		#area.get_parent().impactfunc()
 
-func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+
+func _on_cpu_particles_2d_finished() -> void:
 	queue_free()

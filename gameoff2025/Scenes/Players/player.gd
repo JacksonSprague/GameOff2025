@@ -5,12 +5,13 @@ const UI = preload("res://Scenes/UI/HUD.tscn")
 var ui_ref :Player_HUD
 @export var game_manager_ref :GameManager
 
-var BurrowCharge :float = 0
+var BurrowCharge :float = 100
 var BurrowChargeNeeded :float =100
 var canmove = true
 #placeholder values for now. Currently Start_X_Pos does nothing, that will come into play when we actually design the level
 var Start_X_Pos = 150
 var End_X_Pos = 50000
+var damagemultiplier = 1
 
 @onready var weapon_container: WeaponContainer = $Visuals/WeaponContainer
 
@@ -47,8 +48,8 @@ func _process(delta: float) -> void:
 	
 	#placeholder until we get enemies, you will earn this by killing them
 	if not Burrowing:
-		BurrowCharge+=0.3
-	
+		#BurrowCharge+=0.3
+		pass
 	
 	if Input.is_action_just_pressed("Burrow") and BurrowCharge >= BurrowChargeNeeded and not Burrowing:
 		Burrow()
@@ -94,8 +95,16 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name=="WaveCore" and Burrowing==false:
 		canmove=false
 		$AnimationPlayer.play("Wave")
+	if area.name=="Projectile1" or area.name=="HitboxComponent":
+		print("HIIHIHITY")
 		
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_mag_area_area_entered(area: Area2D) -> void:
+	
+	area.get_parent().queue_free()
+	BurrowCharge+=10

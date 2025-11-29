@@ -8,9 +8,10 @@ var critical := false
 func execute_attack() -> void:
 	pass
 
-func get_damage() -> void:
+func get_damage() -> float:
 	var damage:= weapon.data.stats.damage + Global.player.stats.damage
 	var crit_change := weapon.data.stats.crit_chance
 	if Global.get_chance_sucess(crit_change):
 		critical = true
-		damage = ceil(100)
+		damage = ceil(damage * weapon.data.stats.crit_damage)
+	return damage

@@ -26,4 +26,3 @@ func setup(setdamage: float, setcritical: bool, setknockback: float, setsource: 
 func _on_area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent:
 		on_hit_hurtbox.emit(area)
-		print(area.owner.name)

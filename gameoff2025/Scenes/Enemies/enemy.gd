@@ -58,11 +58,9 @@ func _on_area_entered(area: Area2D) -> void:
 			$HurtboxComponent.queue_free()
 		if $HitboxComponent:
 			$HitboxComponent.queue_free()
-			print("killhitbox")
 	elif area.get_parent().name=="Projectile1":
-		print(area.get_parent().name)
-		$HealthComponent.take_damage(area.get_parent().damage)
-		#area.get_parent().impactfunc()
+		#$HealthComponent.take_damage(area.get_parent().damage)
+		area.get_parent().impactfunc()
 
 
 func _on_cpu_particles_2d_finished() -> void:

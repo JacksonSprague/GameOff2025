@@ -23,5 +23,5 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 		return
 	
 	health_component.take_damage(hitbox.damage)
-	print("%s: %d" % [name, health_component.current_health])
+	#print("%s: %d" % [name, health_component.current_health])
 	Global.on_create_damage_text.emit(self, hitbox)

@@ -7,7 +7,7 @@ var Highlighted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Area2D/AnimatedSprite2D.play(AbilityName)
+	$BubblesArea/AnimatedSprite2D.play(AbilityName)
 	modulate = Color(0.8, 0.8, 0.9, 0.9)
 	$AnimationPlayer.speed_scale=randf_range(0.7,1.3)
 
@@ -39,7 +39,7 @@ func POP():
 	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=false
 	if get_parent().has_method("AbilitySelected"):
 		get_parent().AbilitySelected(AbilityName)
-	$Area2D.queue_free()
+	$BubblesArea.queue_free()
 
 
 func _on_pop_finished() -> void:

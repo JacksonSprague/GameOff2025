@@ -83,7 +83,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D:scale")
+tracks/0/path = NodePath("BubblesArea:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -95,7 +95,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D:rotation")
+tracks/1/path = NodePath("BubblesArea:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -110,7 +110,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D:scale")
+tracks/0/path = NodePath("BubblesArea:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -122,7 +122,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D:rotation")
+tracks/1/path = NodePath("BubblesArea:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -141,17 +141,17 @@ _data = {
 [node name="Abilitybubbles" type="Node2D"]
 script = ExtResource("1_enshr")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="BubblesArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubblesArea"]
 shape = SubResource("CircleShape2D_g68sb")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="BubblesArea"]
 modulate = Color(1, 1, 1, 0.917647)
 scale = Vector2(7.71875, 7.71875)
 texture = ExtResource("2_ji0y8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblesArea"]
 scale = Vector2(7.15, 7.15)
 sprite_frames = SubResource("SpriteFrames_6242v")
 animation = &"a_Weapon"
@@ -171,6 +171,6 @@ stream = ExtResource("9_tuelp")
 [node name="DeHighlight" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_tuelp")
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="BubblesArea" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="BubblesArea" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="finished" from="POP" to="." method="_on_pop_finished"]

@@ -56,41 +56,36 @@ func PowerUps():
 	Bubble1Ref.AbilityName=weighted_dictionary_pick(ability_dictionary)
 	Bubble1Ref.AbilityDescription=ability_dictionary[Bubble1Ref.AbilityName]["desc"]
 	add_child(Bubble1Ref)
-	print(Bubble1Ref.AbilityName)
 	
 	Bubble2Ref = BubbleScene.instantiate()
 	Bubble2Ref.AbilityName=weighted_dictionary_pick(ability_dictionary)
 	Bubble2Ref.AbilityDescription=ability_dictionary[Bubble2Ref.AbilityName]["desc"]
 	add_child(Bubble2Ref)
-	print(Bubble2Ref.AbilityName)
 	
 	Bubble3Ref = BubbleScene.instantiate()
 	Bubble3Ref.AbilityName=weighted_dictionary_pick(ability_dictionary)
 	Bubble3Ref.AbilityDescription=ability_dictionary[Bubble3Ref.AbilityName]["desc"]
 	add_child(Bubble3Ref)
-	print(Bubble3Ref.AbilityName)
-	Bubble1Ref.get_node("Area2D/CollisionShape2D").disabled=true
-	Bubble2Ref.get_node("Area2D/CollisionShape2D").disabled=true
-	Bubble3Ref.get_node("Area2D/CollisionShape2D").disabled=true
+	Bubble1Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
+	Bubble2Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
+	Bubble3Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
 
 
 func AbilitySelected(AbilityName :String):
 	var NewAbilityNode
 	$"Ability Spawn Core/AnimationPlayer".play("Fall")
-	Bubble1Ref.get_node("Area2D/CollisionShape2D").disabled=true
-	Bubble2Ref.get_node("Area2D/CollisionShape2D").disabled=true
-	Bubble3Ref.get_node("Area2D/CollisionShape2D").disabled=true
+	Bubble1Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
+	Bubble2Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
+	Bubble3Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
 	BigWaveRef.Receed()
 	if ability_dictionary.has(AbilityName):
 		var abilitydata = ability_dictionary[AbilityName]
 		NewAbilityNode = abilitydata["scene"].instantiate()
 		PlayerRef.add_child(NewAbilityNode) 
-		print(PlayerRef.get_children())
 		#NewAbilityNode._activate()
 	
 
 func AwaitNextWave():
-	print("waiting")
 	BigWaveRef.queue_free()
 	$Spawn_Timer.start()
 	$Wave_Frequency.start()
@@ -108,7 +103,6 @@ func _on_countdown_timer_timeout() -> void:
 	BigWaveRef.global_position.x=PlayerRef.position.x
 	BigWaveRef.global_position.y=3500
 	BigWaveRef._Crash()
-	print("CRASSSH")
 
 func weighted_dictionary_pick(dict : Dictionary) -> String:
 	var total_weight :float=0.0
@@ -144,9 +138,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		if Bubble3Ref : Bubble3Ref.queue_free()
 		isWave=false
 	if anim_name=="Rise":
-		Bubble1Ref.get_node("Area2D/CollisionShape2D").disabled=false
-		Bubble2Ref.get_node("Area2D/CollisionShape2D").disabled=false
-		Bubble3Ref.get_node("Area2D/CollisionShape2D").disabled=false
+		Bubble1Ref.get_node("BubblesArea/CollisionShape2D").disabled=false
+		Bubble2Ref.get_node("BubblesArea/CollisionShape2D").disabled=false
+		Bubble3Ref.get_node("BubblesArea/CollisionShape2D").disabled=false
 
 
 

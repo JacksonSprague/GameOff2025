@@ -308,6 +308,5 @@ position = Vector2(0, -0.00012207)
 shape = SubResource("WorldBoundaryShape2D_mmwlx")
 
 [node name="GameManager" parent="." node_paths=PackedStringArray("PlayerRef") instance=ExtResource("5_ov375")]
-position = Vector2(28, 15)
 PlayerRef = NodePath("../PlayerAverageCrab")
 enemy_ref1 = ExtResource("7_vfafu")

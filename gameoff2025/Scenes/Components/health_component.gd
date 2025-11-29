@@ -14,6 +14,7 @@ func setup(stats: BaseStats) -> void:
 	on_health_changed.emit(current_health, max_health)
 
 func take_damage(value: float) -> void:
+	print("damaged "+name+" of:"+get_parent().name)
 	if current_health <= 0:
 		return
 

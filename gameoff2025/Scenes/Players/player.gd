@@ -96,7 +96,7 @@ func _on_area_entered(area: Area2D) -> void:
 		canmove=false
 		$AnimationPlayer.play("Wave")
 	if area.name=="Projectile1" or area.name=="HitboxComponent":
-		print("HIIHIHITY")
+		pass
 		
 
 

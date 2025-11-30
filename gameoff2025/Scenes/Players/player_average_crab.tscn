@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpsaytykrou1f"]
+[gd_scene load_steps=29 format=3 uid="uid://cpsaytykrou1f"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_btait"]
 [ext_resource type="Texture2D" uid="uid://dqvs8dgxrng83" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Idle-Sheet.png" id="2_jbwao"]
@@ -7,9 +7,10 @@
 [ext_resource type="Resource" uid="uid://ck0hbmdv3h01s" path="res://Resources/base/Players/stats_player_average_crab.tres" id="3_ttjkf"]
 [ext_resource type="Texture2D" uid="uid://br0vcspvmdqem" path="res://Assets/Sprites/Players/Average Crab/Average Crab Burrow-Sheet.png" id="4_puodp"]
 [ext_resource type="Script" uid="uid://cg8urws23jqvb" path="res://Scenes/Players/weapon_container.gd" id="7_l6xtf"]
+[ext_resource type="PackedScene" uid="uid://bjofoqlswslyh" path="res://Abilities/Scenes/a_Weapon.tscn" id="8_g658y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6xtf"]
-radius = 336.656
+radius = 616.208
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eib8b"]
 atlas = ExtResource("4_puodp")
@@ -386,6 +387,8 @@ shape = SubResource("CircleShape2D_ttjkf")
 libraries = {
 &"": SubResource("AnimationLibrary_k81a1")
 }
+
+[node name="AWeapon" parent="." index="6" instance=ExtResource("8_g658y")]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_entered" from="MagArea" to="." method="_on_mag_area_area_entered"]

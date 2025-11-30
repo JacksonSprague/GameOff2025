@@ -44,6 +44,7 @@ shape = SubResource("CircleShape2D_2lhvc")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 15
+lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 direction = Vector2(0, 0)
@@ -54,4 +55,9 @@ initial_velocity_max = 600.0
 scale_amount_min = 10.0
 scale_amount_max = 20.0
 
+[node name="Destroy" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
+[connection signal="timeout" from="Destroy" to="." method="_on_destroy_timeout"]

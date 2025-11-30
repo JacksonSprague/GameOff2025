@@ -13,6 +13,8 @@ var Start_X_Pos = 150
 var End_X_Pos = 50000
 var damagemultiplier = 1
 
+var BurrowChargeMultiplier = 1
+
 @onready var weapon_container: WeaponContainer = $Visuals/WeaponContainer
 
 
@@ -105,6 +107,8 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 
 
 func _on_mag_area_area_entered(area: Area2D) -> void:
+	area.get_parent().magnet_target=self
+	area.get_parent().MAG=true
 	
-	area.get_parent().queue_free()
-	BurrowCharge+=10
+func add_burrow_charge():
+	BurrowCharge+=10*BurrowChargeMultiplier

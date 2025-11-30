@@ -51,6 +51,10 @@ func can_move_towards_player() -> bool:
 
 
 func _on_area_entered(area: Area2D) -> void:
+	ProjectileHit(area)
+
+
+func ProjectileHit(area: Area2D):
 	if area.name=="WaveCore":
 		if $AnimationPlayer.has_animation("Wave"):
 			$AnimationPlayer.play("Wave")
@@ -59,9 +63,13 @@ func _on_area_entered(area: Area2D) -> void:
 		if $HitboxComponent:
 			$HitboxComponent.queue_free()
 	elif area.get_parent().name=="Projectile1":
-		#$HealthComponent.take_damage(area.get_parent().damage)
+		$HealthComponent.take_damage(area.get_parent().damage)
 		area.get_parent().impactfunc()
-
+ 
 
 func _on_cpu_particles_2d_finished() -> void:
+	queue_free()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	queue_free()

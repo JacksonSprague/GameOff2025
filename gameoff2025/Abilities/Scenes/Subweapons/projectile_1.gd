@@ -4,19 +4,43 @@ class_name Projectile1
 var dir :Vector2 = Vector2(1,0)
 var speed=3000
 var damage = 0
-var Coredamage= 10
+var Coredamage= 3
+
+func _ready() -> void:
+	monitoring=true
+	monitorable=true
+#ProjectileHit(area)
 
 
-
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	position+=dir*speed*delta
+	rotation=dir.angle()
+
+
+
 
 func impactfunc():
 	$CPUParticles2D.emitting=true
+	$HitboxComponent.queue_free()
+	$CollisionShape2D.queue_free()
 	$Sprite2D.visible=false
 	speed=0
 
 
 
 func _on_cpu_particles_2d_finished() -> void:
+	queue_free()
+
+		#$HealthComponent.take_damage(area.get_parent().damage)
+		#area.get_parent().impactfunc()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	
+	#print(area.get_parent())
+	if area==Enemy:
+		print("HIHIHIHIIH")
+
+
+func _on_destroy_timeout() -> void:
 	queue_free()

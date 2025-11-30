@@ -14,7 +14,7 @@ func setup(stats: BaseStats) -> void:
 	on_health_changed.emit(current_health, max_health)
 
 func take_damage(value: float) -> void:
-	print("damaged "+name+" of:"+get_parent().name)
+	#print("damaged "+name+" of:"+get_parent().name)
 	if current_health <= 0:
 		return
 
@@ -38,10 +38,13 @@ func heal(amount: float) -> void:
 	on_health_changed.emit(current_health, max_health)
 
 func die() -> void:
-	if $"../HurtboxComponent":
-		$"../HurtboxComponent".queue_free()
-	if $"../HitboxComponent":
-		$"../HitboxComponent".queue_free()
+	if get_parent().has_node("HurtboxComponent"):
+		$"../HurtboxComponent".monitoring=false
+		$"../HurtboxComponent".monitorable=false
+	if get_parent().has_node("HitboxComponent"):
+		$"../HitboxComponent".monitoring=false
+		$"../HitboxComponent".monitorable=false
+		$"../HitboxComponent".disable()
 	if %Visuals:
 		%Visuals.visible=false
 	if $"../CPUParticles2D":

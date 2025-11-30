@@ -1,7 +1,7 @@
 extends Node
 
-signal on_create_block_text(base: Node2D)
-signal on_create_damage_text(base: Node2D, hitbox: HitboxComponent)
+#signal on_create_block_text(base: Node2D)
+#signal on_create_damage_text(base: Node2D, hitbox: HitboxComponent)
 
 enum UpgradeTier{
 	COMMON,
@@ -11,6 +11,8 @@ enum UpgradeTier{
 }
 
 var player: Player
+
+var cam: Camera2D
 
 func get_chance_sucess(chance: float) -> bool:
 	var random := randf_range(0, 1.0)

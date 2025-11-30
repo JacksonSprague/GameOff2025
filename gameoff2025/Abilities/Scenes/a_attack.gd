@@ -1,4 +1,4 @@
 extends AbilityBase
 
 func _activate() -> void:
-	Player.damagemultiplier =Player.damagemultiplier*10
+	Player.damagemultiplier =Player.damagemultiplier*1.1

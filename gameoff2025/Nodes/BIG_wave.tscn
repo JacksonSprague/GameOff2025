@@ -190,6 +190,7 @@ fill_from = Vector2(0.534188, 0.497863)
 fill_to = Vector2(0.916667, 0.90812)
 
 [node name="BigWave" type="Node2D"]
+z_index = 30
 script = ExtResource("1_k21ev")
 
 [node name="WaveCore" type="Area2D" parent="."]

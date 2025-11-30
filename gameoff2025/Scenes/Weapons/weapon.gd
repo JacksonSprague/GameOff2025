@@ -97,10 +97,22 @@ func can_use_weapon() -> bool:
 
 
 func _on_range_area_area_entered(area: Area2D) -> void:
-	targets.push_back(area)
+	if area.is_in_group("Enemy"):
+		targets.push_back(area)
+	else:
+		pass
 
 
 func _on_range_area_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 	if targets.size() == 0:
 		closest_target = null
+
+
+
+
+func _on_hitbox_component_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("Enemy"):
+		var health_ref = area.get_parent().get_node("HealthComponent")
+		if health_ref:
+			health_ref.take_damage(4*get_parent().damagemultiplier)

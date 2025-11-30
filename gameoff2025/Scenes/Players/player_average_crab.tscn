@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cpsaytykrou1f"]
+[gd_scene load_steps=34 format=3 uid="uid://cpsaytykrou1f"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_btait"]
 [ext_resource type="Texture2D" uid="uid://dqvs8dgxrng83" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Idle-Sheet.png" id="2_jbwao"]
@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://ck0hbmdv3h01s" path="res://Resources/base/Players/stats_player_average_crab.tres" id="3_ttjkf"]
 [ext_resource type="Texture2D" uid="uid://br0vcspvmdqem" path="res://Assets/Sprites/Players/Average Crab/Average Crab Burrow-Sheet.png" id="4_puodp"]
 [ext_resource type="Script" uid="uid://cg8urws23jqvb" path="res://Scenes/Players/weapon_container.gd" id="7_l6xtf"]
-[ext_resource type="PackedScene" uid="uid://bjofoqlswslyh" path="res://Abilities/Scenes/a_Weapon.tscn" id="8_g658y"]
+[ext_resource type="Script" uid="uid://cm25h6e2ubl71" path="res://Scenes/Players/camera_2d.gd" id="9_k81a1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6xtf"]
-radius = 616.208
+radius = 255.031
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eib8b"]
 atlas = ExtResource("4_puodp")
@@ -262,7 +262,55 @@ _data = {
 &"Wave": SubResource("Animation_l6xtf")
 }
 
-[node name="PlayerAverageCrab" instance=ExtResource("1_btait")]
+[sub_resource type="Gradient" id="Gradient_g658y"]
+offsets = PackedFloat32Array(0.5625, 0.985577)
+colors = PackedColorArray(1, 0.533333, 0, 0, 1, 0.41, 0.41, 0.631373)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k81a1"]
+gradient = SubResource("Gradient_g658y")
+width = 1000
+height = 1000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_k81a1"]
+resource_name = "Hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eib8b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3x2el"]
+_data = {
+&"Hurt": SubResource("Animation_k81a1"),
+&"RESET": SubResource("Animation_eib8b")
+}
+
+[node name="PlayerAverageCrab" groups=["Player"] instance=ExtResource("1_btait")]
 collision_mask = 2
 script = ExtResource("2_otmsg")
 stats = ExtResource("3_ttjkf")
@@ -389,7 +437,27 @@ libraries = {
 &"": SubResource("AnimationLibrary_k81a1")
 }
 
-[node name="AWeapon" parent="." index="6" instance=ExtResource("8_g658y")]
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
+position = Vector2(-7, -30)
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("9_k81a1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" index="0"]
+modulate = Color(1, 1, 1, 0)
+z_index = 20
+position = Vector2(1440.5, 807.5)
+scale = Vector2(2.885, 1.621)
+texture = SubResource("GradientTexture2D_k81a1")
+
+[node name="HURT" type="AnimationPlayer" parent="." index="8"]
+root_node = NodePath("../CanvasLayer/Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_3x2el")
+}
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_entered" from="MagArea" to="." method="_on_mag_area_area_entered"]

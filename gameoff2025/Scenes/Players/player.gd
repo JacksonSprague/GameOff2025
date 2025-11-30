@@ -5,14 +5,15 @@ const UI = preload("res://Scenes/UI/HUD.tscn")
 var ui_ref :Player_HUD
 @export var game_manager_ref :GameManager
 
-var BurrowCharge :float = 100
-var BurrowChargeNeeded :float =100
+var BurrowCharge :float = 130
+var BurrowChargeNeeded :float =130
 var canmove = true
 #placeholder values for now. Currently Start_X_Pos does nothing, that will come into play when we actually design the level
 var Start_X_Pos = 150
-var End_X_Pos = 50000
+var End_X_Pos = 200000
 var damagemultiplier = 1
 
+var MagRange =1
 var BurrowChargeMultiplier = 1
 
 @onready var weapon_container: WeaponContainer = $Visuals/WeaponContainer
@@ -36,6 +37,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	var current_velocity := move_dir * stats.speed
+	
+	$MagArea/Magnet.scale=Vector2(MagRange*1.2,MagRange)
 	
 	if Burrowing == false and canmove==true:
 		position += current_velocity * delta
@@ -103,7 +106,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 
 func _on_mag_area_area_entered(area: Area2D) -> void:
@@ -111,4 +114,7 @@ func _on_mag_area_area_entered(area: Area2D) -> void:
 	area.get_parent().MAG=true
 	
 func add_burrow_charge():
-	BurrowCharge+=10*BurrowChargeMultiplier
+	if BurrowCharge<BurrowChargeNeeded:
+		BurrowCharge+=10*BurrowChargeMultiplier
+	else:
+		$HealthComponent.heal(0.5)

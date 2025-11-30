@@ -10,13 +10,14 @@ class_name Game_Level
 
 func _ready() -> void:
 	Global.player = player
-	Global.on_create_block_text.connect(_on_create_block_text)
-	Global.on_create_damage_text.connect(_on_create_damage_text)
+	#Global.on_create_block_text.connect(_on_create_block_text)
+	#Global.on_create_damage_text.connect(_on_create_damage_text)
 
 
 func create_floating_text(base: Node2D) -> FloatingText:
 	var instance := Global.FLOATING_TEXT.instantiate() as FloatingText
-	get_tree().root.add_child(instance)
+	if get_tree().current_scene:
+		get_tree().current_scene.add_child(instance)
 	var random_pos := randf_range(0, TAU) * 35
 	var spawn_pos:= base.global_position + Vector2.RIGHT.rotated(random_pos)
 	instance.global_position = spawn_pos

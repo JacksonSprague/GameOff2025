@@ -4,7 +4,7 @@ class_name Projectile1
 var dir :Vector2 = Vector2(1,0)
 var speed=3000
 var damage = 0
-var Coredamage= 3
+var Coredamage= 2
 
 func _ready() -> void:
 	monitoring=true
@@ -35,12 +35,15 @@ func _on_cpu_particles_2d_finished() -> void:
 		#area.get_parent().impactfunc()
 
 
-func _on_area_entered(area: Area2D) -> void:
-	
-	#print(area.get_parent())
-	if area==Enemy:
-		print("HIHIHIHIIH")
 
 
 func _on_destroy_timeout() -> void:
 	queue_free()
+
+
+func _on_hitbox_component_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("Enemy"):
+		var health_ref = area.get_parent().get_node("HealthComponent")
+		if health_ref:
+			health_ref.take_damage(damage)
+		impactfunc()

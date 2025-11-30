@@ -3,7 +3,9 @@ const ProjectileScene = preload("res://Abilities/Scenes/Subweapons/Projectile1.t
 var aimdir
 var target
 var projectielref
-func _process(delta: float) -> void:
+
+var hasrand=false
+func _process(_delta: float) -> void:
 	target = get_nearest_enemy()
 	aimdir = get_direction_to_enemy()
 
@@ -13,7 +15,7 @@ func _activate() -> void:
 		projectielref = ProjectileScene.instantiate()
 		projectielref.damage=projectielref.Coredamage*get_parent().damagemultiplier
 		get_tree().current_scene.add_child(projectielref)
-		projectielref.global_position=global_position+(aimdir*10)
+		projectielref.global_position=global_position+(aimdir*10)+Vector2(randf_range(-50,50),randf_range(-100,10))
 		projectielref.dir=aimdir
 
 func get_nearest_enemy() -> Node:

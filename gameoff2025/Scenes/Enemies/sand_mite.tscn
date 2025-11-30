@@ -1,11 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7rfp31d60i48"]
+[gd_scene load_steps=24 format=3 uid="uid://b7rfp31d60i48"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
 [ext_resource type="Script" uid="uid://dflb8or6uvwrv" path="res://Scenes/Enemies/enemy.gd" id="2_gnx0v"]
 [ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/stats_sand_mite.tres" id="3_gnx0v"]
 [ext_resource type="Texture2D" uid="uid://dthveehaqylpg" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Sheet.png" id="4_hlgua"]
+[ext_resource type="Shader" uid="uid://df7sdg3agk3i2" path="res://flash.shader.gdshader" id="4_x0nff"]
 [ext_resource type="PackedScene" uid="uid://baxagywh1rba1" path="res://Scenes/Components/hitbox_component.tscn" id="5_7sxqv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4h48"]
+shader = ExtResource("4_x0nff")
+shader_parameter/flash_strength = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2ldw"]
 atlas = ExtResource("4_hlgua")
@@ -60,7 +65,7 @@ radius = 250.0
 radius = 94.0053
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlgua"]
-radius = 98.1835
+radius = 76.0066
 
 [sub_resource type="Animation" id="Animation_o2ldw"]
 length = 0.001
@@ -194,6 +199,7 @@ position = Vector2(-4.76837e-07, -8.57143)
 scale = Vector2(1.34286, 1.11428)
 
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
+material = SubResource("ShaderMaterial_w4h48")
 position = Vector2(-8.57143, -80)
 scale = Vector2(13.0257, 12.56)
 sprite_frames = SubResource("SpriteFrames_wvedb")
@@ -206,11 +212,12 @@ position = Vector2(0, -63)
 texture = ExtResource("2_4yaod")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -53.12)
+position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_7sxqv")
 debug_color = Color(0.985329, 0, 0.334846, 0.42)
 
 [node name="VisionArea" type="Area2D" parent="." index="2"]
+position = Vector2(0, 38.12)
 collision_layer = 0
 collision_mask = 2
 
@@ -219,6 +226,7 @@ position = Vector2(0, -58)
 shape = SubResource("CircleShape2D_gnx0v")
 
 [node name="HurtboxComponent" parent="." index="3"]
+position = Vector2(0, 38.12)
 collision_layer = 8
 collision_mask = 16
 monitoring = false
@@ -229,12 +237,13 @@ shape = SubResource("CircleShape2D_o2ldw")
 debug_color = Color(1, 0.487198, 0.64356, 0.42)
 
 [node name="HitboxComponent" parent="." index="4" instance=ExtResource("5_7sxqv")]
+position = Vector2(0, 38.12)
 collision_layer = 4
 collision_mask = 32
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
-position = Vector2(0, -62)
+position = Vector2(0, -46.12)
 shape = SubResource("CircleShape2D_hlgua")
 debug_color = Color(0.814367, 0, 0.281238, 0.42)
 
@@ -244,7 +253,7 @@ libraries = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." index="7"]
-position = Vector2(0, -38)
+position = Vector2(0, 0.119999)
 emitting = false
 amount = 40
 one_shot = true
@@ -266,6 +275,10 @@ color_ramp = SubResource("Gradient_x0nff")
 hue_variation_min = -0.3
 hue_variation_max = 0.5
 
+[node name="VisualsDisappear" type="Timer" parent="." index="8"]
+wait_time = 0.1
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
+[connection signal="timeout" from="VisualsDisappear" to="." method="_on_visuals_disappear_timeout"]

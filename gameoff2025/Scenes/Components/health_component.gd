@@ -14,20 +14,30 @@ func setup(stats: BaseStats) -> void:
 	on_health_changed.emit(current_health, max_health)
 
 func take_damage(value: float) -> void:
-	#print("damaged "+name+" of:"+get_parent().name)
+	#print("damaged "+name+" of:"+get_parent().name+" for: ")
 	if current_health <= 0:
 		return
 
 	current_health -= value
+
 	current_health = max(current_health, 0)
 	
 	on_unit_hit.emit()
 	on_health_changed.emit(current_health, max_health)
+	if get_parent().is_in_group("Player"):
+		Global.cam.shake(10, 0.2,30)
+		var animationP :AnimationPlayer = get_parent().get_node("HURT")
+		if animationP:
+			animationP.play("Hurt")
+	
+	if get_parent().has_method("start_flash"):
+		get_parent().start_flash()
 	
 	if current_health <= 0:
 		current_health = 0
 		on_unit_died.emit()
-		die()
+		call_deferred("die")
+
 
 func heal(amount: float) -> void:
 	if current_health <= 0:
@@ -38,18 +48,20 @@ func heal(amount: float) -> void:
 	on_health_changed.emit(current_health, max_health)
 
 func die() -> void:
-	if get_parent().has_node("HurtboxComponent"):
-		$"../HurtboxComponent".monitoring=false
-		$"../HurtboxComponent".monitorable=false
-	if get_parent().has_node("HitboxComponent"):
-		$"../HitboxComponent".monitoring=false
-		$"../HitboxComponent".monitorable=false
-		$"../HitboxComponent".disable()
-	if %Visuals:
-		%Visuals.visible=false
-	if $"../CPUParticles2D":
-		$"../CPUParticles2D".emitting=true
-	var spawned = $"..".ShardRef.instantiate()
-	get_tree().current_scene.add_child(spawned)
-	spawned.global_position=$"..".global_position
+	if get_parent().is_in_group("Player"):
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	if get_parent().is_in_group("Enemy"):
+		var hurtbox = get_parent().get_node("HurtboxComponent")
+		var hitbox = get_parent().get_node("HitboxComponent")
+		if hurtbox:
+			hurtbox.queue_free()
+		if hitbox:
+			hitbox.queue_free()
+		$"../VisualsDisappear".start()
+		if $"../CPUParticles2D":
+			$"../CPUParticles2D".emitting=true
+		var spawned = $"..".ShardRef.instantiate()
+		get_tree().current_scene.add_child(spawned)
+	
+		spawned.global_position=$"..".global_position
 	

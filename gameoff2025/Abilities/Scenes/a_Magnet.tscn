@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc7xpbmws2noa"]
+
+[ext_resource type="Script" uid="uid://dm4tqnr05jbcs" path="res://Abilities/Scenes/a_magnet.gd" id="1_35kiq"]
+
+[node name="AMagnet" type="Node2D"]
+script = ExtResource("1_35kiq")
+AbilityType = 2
+metadata/_custom_type_script = "uid://c75dqpmnb0qwj"

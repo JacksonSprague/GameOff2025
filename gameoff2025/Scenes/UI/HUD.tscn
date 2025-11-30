@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0575jwhnfado" path="res://Assets/UI/Assets1.png" id="2_qc5w2"]
 [ext_resource type="Texture2D" uid="uid://l2fhmm10ifhp" path="res://Assets/UI/Assets2.png" id="3_xaom8"]
 [ext_resource type="Texture2D" uid="uid://cbwoufkwa3ery" path="res://Assets/Sprites/Assets6.png" id="4_ykvyr"]
-[ext_resource type="Texture2D" uid="uid://bgoicyfsj4kwn" path="res://Assets/Sprites/Assets9.png" id="5_lelo4"]
+[ext_resource type="Texture2D" uid="uid://cceob0gme7yui" path="res://Assets/Assets2.1.png" id="5_ykvyr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omqfp"]
 bg_color = Color(0.692128, 0.580183, 0.431598, 1)
@@ -193,9 +193,8 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_1ree7")
 
 [node name="BurrowIcon" type="TextureRect" parent="Root/MainDivider/HBoxContainer/MarginContainer/HBoxContainer"]
-modulate = Color(1, 0.5, 0.5, 1)
 layout_mode = 2
-texture = ExtResource("5_lelo4")
+texture = ExtResource("5_ykvyr")
 expand_mode = 2
 stretch_mode = 4
 
@@ -258,8 +257,11 @@ mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxFlat_ykvyr")
 
 [node name="Ability Description" type="Label" parent="Root/MainDivider/MarginContainer/AbilityDescription/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 190)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "Increases your SPEEEED
 "
+horizontal_alignment = 1
+autowrap_mode = 2

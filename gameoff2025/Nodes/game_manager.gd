@@ -21,9 +21,10 @@ var isWave =false
 var ability_dictionary = {
 	"a_Attack": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn"), "desc" : "Increase attack power by 10%"},
 	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Increase maximum health by 30%"},
-	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "Roam the beach 20% faster"},
-	"a_Stamina": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Stamina.tscn"), "desc" : "Reduce energy needed to burrow by 10%"},
-	"a_Weapon": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn"), "desc" : "Gain or enhance the SMALL SHOT weapon which fires small but deadly projectiles"}
+	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "Roam the beach 10% faster"},
+	"a_ShellStrength": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_ShellStrength.tscn"), "desc" : "Reduce shell strength needed to burrow by 10%"},
+	"a_Weapon": {"weight" : 3, "scene" : preload("res://Abilities/Scenes/a_Weapon.tscn"), "desc" : "Gain or enhance the SMALL SHOT weapon which fires small but deadly projectiles"},
+	"a_Magnet": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Magnet.tscn"), "desc" : "Increase the distance from which you can grab shell shards by 30%"}
 }
 
 
@@ -87,7 +88,9 @@ func AbilitySelected(AbilityName :String):
 
 func AwaitNextWave():
 	BigWaveRef.queue_free()
+	$Spawn_Timer.wait_time=$Spawn_Timer.wait_time/1.2
 	$Spawn_Timer.start()
+	$Wave_Frequency.wait_time=clamp($Wave_Frequency.wait_time/1.1,6,100)
 	$Wave_Frequency.start()
 
 func _on_wave_frequency_timeout() -> void:
@@ -103,6 +106,7 @@ func _on_countdown_timer_timeout() -> void:
 	BigWaveRef.global_position.x=PlayerRef.position.x
 	BigWaveRef.global_position.y=3500
 	BigWaveRef._Crash()
+	Global.cam.shake(20,3.5,1)
 
 func weighted_dictionary_pick(dict : Dictionary) -> String:
 	var total_weight :float=0.0
@@ -147,5 +151,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_spawn_timer_timeout() -> void:
 	var enemy = enemy_ref1.instantiate()
 	add_child(enemy)
-	enemy.position = Vector2(PlayerRef.position.x+2000*(sign(randf() - 0.5)),PlayerRef.position.y+1000*(sign(randf() - 0.5)))
+	var radius = 2000
+	enemy.position = point_on_oval(PlayerRef.global_position,radius*1.2,radius,randf_range(0,360))
+	
+func point_on_oval(center: Vector2, radius_x: float, radius_y: float, angle: float) -> Vector2:
+	var x = center.x + radius_x * cos(angle)
+	var y = center.y + radius_y * sin(angle)
+	return Vector2(x, y)
+	
+	
+	
+	
 	

@@ -3,7 +3,7 @@ class_name HitboxComponent
 
 signal on_hit_hurtbox(hurtbox: HurtboxComponent)
 
-@export var damage := 1.0
+@export var damage := 1
 var critical := false
 var knockback_power := 0.0
 var source: Node2D

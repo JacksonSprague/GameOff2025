@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bynaanpkf2x1o" path="res://Assets/Sprites/Assets5.png" id="2_imdfa"]
 [ext_resource type="Texture2D" uid="uid://luhd42rrfbea" path="res://Assets/Assets2.3.png" id="2_ji0y8"]
 [ext_resource type="Texture2D" uid="uid://cbwoufkwa3ery" path="res://Assets/Sprites/Assets6.png" id="3_enshr"]
-[ext_resource type="Texture2D" uid="uid://bgoicyfsj4kwn" path="res://Assets/Sprites/Assets9.png" id="5_107ys"]
+[ext_resource type="Texture2D" uid="uid://dgy2no5ijok7" path="res://Assets/Assets333.png" id="5_ji0y8"]
+[ext_resource type="Texture2D" uid="uid://dua7eggwx0y08" path="res://Assets/Assets2.8.png" id="5_tuelp"]
 [ext_resource type="Texture2D" uid="uid://dgwtd3tvcxuh8" path="res://Assets/Sprites/Assets8.png" id="6_ji0y8"]
 [ext_resource type="AudioStream" uid="uid://dbrmrg2mscqmh" path="res://Assets/Sprites/SoundsCrate-Stylized_Bubble_Pop_5.wav" id="8_ji0y8"]
 [ext_resource type="AudioStream" uid="uid://cyyqhdluw5is0" path="res://Assets/Sprites/SoundsCrate-Stylized_Bubble_Pop_4.mp3" id="9_tuelp"]
@@ -23,10 +24,6 @@ region = Rect2(0, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ljp86"]
 atlas = ExtResource("2_imdfa")
-region = Rect2(0, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w560e"]
-atlas = ExtResource("5_107ys")
 region = Rect2(0, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_io12i"]
@@ -53,18 +50,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ljp86")
+"texture": ExtResource("5_tuelp")
 }],
 "loop": true,
-"name": &"a_Speed",
+"name": &"a_Magnet",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w560e")
+"texture": ExtResource("5_ji0y8")
 }],
 "loop": true,
-"name": &"a_Stamina",
+"name": &"a_ShellStrength",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljp86")
+}],
+"loop": true,
+"name": &"a_Speed",
 "speed": 5.0
 }, {
 "frames": [{
@@ -139,6 +144,7 @@ _data = {
 }
 
 [node name="Abilitybubbles" type="Node2D"]
+z_index = 32
 script = ExtResource("1_enshr")
 
 [node name="BubblesArea" type="Area2D" parent="."]
@@ -152,7 +158,7 @@ scale = Vector2(7.71875, 7.71875)
 texture = ExtResource("2_ji0y8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblesArea"]
-scale = Vector2(7.15, 7.15)
+scale = Vector2(5.78125, 5.78125)
 sprite_frames = SubResource("SpriteFrames_6242v")
 animation = &"a_Weapon"
 

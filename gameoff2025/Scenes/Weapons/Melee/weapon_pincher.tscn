@@ -17,8 +17,8 @@ texture = ExtResource("2_bmgjm")
 
 [node name="HitboxComponent" type="Area2D" parent="Sprite2D" index="0"]
 scale = Vector2(0.5, 0.5)
-collision_layer = 16
-collision_mask = 8
+collision_layer = 16416
+collision_mask = 16392
 monitoring = false
 monitorable = false
 script = ExtResource("3_blnc0")
@@ -33,3 +33,5 @@ debug_color = Color(0.932223, 0.176746, 0.48425, 0.42)
 script = ExtResource("4_5g4de")
 hitbox = NodePath("../Sprite2D/HitboxComponent")
 weapon = NodePath("..")
+
+[connection signal="area_entered" from="Sprite2D/HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

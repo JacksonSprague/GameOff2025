@@ -90,7 +90,7 @@ func AwaitNextWave():
 	BigWaveRef.queue_free()
 	$Spawn_Timer.wait_time=$Spawn_Timer.wait_time/1.2
 	$Spawn_Timer.start()
-	$Wave_Frequency.wait_time=clamp($Wave_Frequency.wait_time/1.1,6,100)
+	$Wave_Frequency.wait_time=clamp($Wave_Frequency.wait_time/1.05,6,100)
 	$Wave_Frequency.start()
 
 func _on_wave_frequency_timeout() -> void:

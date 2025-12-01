@@ -1,0 +1,298 @@
+[gd_scene load_steps=26 format=3 uid="uid://cbtip7r2bvico"]
+
+[ext_resource type="Script" uid="uid://cr5bycvvry8xm" path="res://Scenes/tutorial_2.gd" id="1_adk46"]
+[ext_resource type="Texture2D" uid="uid://clqdgda1avuj0" path="res://Scenes/UI/MainMenu/Buttons/StartButton.png" id="2_3stay"]
+[ext_resource type="Texture2D" uid="uid://ddcq55ikte5gu" path="res://Scenes/UI/MainMenu/Buttons/StartButton_Hovered.png" id="3_rk11l"]
+[ext_resource type="Texture2D" uid="uid://b1jls5px6hoe8" path="res://Scenes/UI/MainMenu/Buttons/ShorboundTitle.png" id="4_homct"]
+[ext_resource type="Texture2D" uid="uid://c3bwfdjifx8pq" path="res://Assets/Sprites/Tilemap/Beach_Horizontal_Anim-export.png" id="5_6xl51"]
+[ext_resource type="Texture2D" uid="uid://bi1pwovlo8a3d" path="res://Assets/Sprites/Tilemap/Beach_Horizonta_UpsideDownl_Anim-export-export.png" id="6_niexs"]
+[ext_resource type="Texture2D" uid="uid://dcu73jpanra5n" path="res://Assets/Sprites/Tilemap/Beach_Vertical_Anim-export.png" id="7_oitb5"]
+[ext_resource type="Texture2D" uid="uid://d2t2l8rmspg76" path="res://Assets/Sprites/Tilemap/Beach_Vertical_Right_Anim-export.png" id="8_52ykd"]
+[ext_resource type="Texture2D" uid="uid://86gwgd30n1gr" path="res://Assets/Sprites/Tilemap/Beach_Corner_Outleta_Anim-export.png" id="9_qpk7m"]
+[ext_resource type="Texture2D" uid="uid://c5s2oh1snjell" path="res://Assets/Sprites/Tilemap/Beach_Corner_Outlet_Anim-export.png" id="10_tw4ew"]
+[ext_resource type="Texture2D" uid="uid://cja1jtgxh5hgo" path="res://Assets/Sprites/Tilemap/Beach Sand.png" id="11_cb4r0"]
+[ext_resource type="Texture2D" uid="uid://cjinpckdymmom" path="res://Assets/Sprites/Tilemap/Beach_Horizontal_Anim-Fixed.png" id="12_p4ehh"]
+[ext_resource type="Texture2D" uid="uid://bbmdwtf1ap06b" path="res://Assets/Assets24.7.png" id="14_3stay"]
+[ext_resource type="AudioStream" uid="uid://dkgtifsqbsdy2" path="res://Abilities/Scenes/Alberto Sueri - 8 Bit Fun - Laser Shot Short Synth Stutter.wav" id="14_rk11l"]
+[ext_resource type="AudioStream" uid="uid://bsjjtgsa7fhu1" path="res://Nodes/Beison  - Seagulls - Harbor Ambience Gulls Squawking.wav" id="15_rk11l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6kctb"]
+font_size = 86
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 21
+shadow_color = Color(0, 0, 0, 0.0705882)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m47u"]
+texture = ExtResource("5_6xl51")
+0:0/size_in_atlas = Vector2i(6, 5)
+0:0/animation_columns = 1
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84iac"]
+texture = ExtResource("6_niexs")
+0:0/size_in_atlas = Vector2i(6, 5)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n0dv"]
+texture = ExtResource("7_oitb5")
+0:0/size_in_atlas = Vector2i(5, 5)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/animation_frame_16/duration = 1.0
+0:0/animation_frame_17/duration = 1.0
+0:0/animation_frame_18/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ne6ao"]
+texture = ExtResource("8_52ykd")
+0:0/size_in_atlas = Vector2i(5, 6)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt8ml"]
+texture = ExtResource("9_qpk7m")
+0:0/size_in_atlas = Vector2i(6, 6)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmarx"]
+texture = ExtResource("10_tw4ew")
+0:0/size_in_atlas = Vector2i(6, 6)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkdq0"]
+texture = ExtResource("11_cb4r0")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+3:2/0 = 0
+3:4/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+1:8/0 = 0
+0:8/0 = 0
+0:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xcoo4"]
+texture = ExtResource("12_p4ehh")
+0:0/size_in_atlas = Vector2i(6, 5)
+0:0/animation_columns = 1
+0:0/animation_speed = 9.67
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/0 = 0
+0:0/0/z_index = -1
+
+[sub_resource type="TileSet" id="TileSet_jw7lb"]
+sources/0 = SubResource("TileSetAtlasSource_6m47u")
+sources/1 = SubResource("TileSetAtlasSource_84iac")
+sources/2 = SubResource("TileSetAtlasSource_5n0dv")
+sources/3 = SubResource("TileSetAtlasSource_ne6ao")
+sources/4 = SubResource("TileSetAtlasSource_tt8ml")
+sources/5 = SubResource("TileSetAtlasSource_fmarx")
+sources/6 = SubResource("TileSetAtlasSource_hkdq0")
+sources/7 = SubResource("TileSetAtlasSource_xcoo4")
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_adk46")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1383.0
+offset_top = -498.0
+offset_right = 1374.0
+offset_bottom = 467.0
+text = "Use the arrow keys or WSAD to move
+
+Defeated enemies drop SHELL SHARDS. 
+Collect shell shards to fill your burrow meter. 
+
+If your burrow meter is full, press SPACEBAR to burrow and avoid a wave! Enemies can still hurt you while burrowed, so time it carefully"
+label_settings = SubResource("LabelSettings_6kctb")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button_Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Button_Manager"]
+z_index = 3
+layout_mode = 0
+offset_left = -4.99988
+offset_top = 710.0
+offset_right = 27.0001
+offset_bottom = 723.0
+scale = Vector2(16.3394, 17.8207)
+pivot_offset = Vector2(16, 10)
+texture_normal = ExtResource("2_3stay")
+texture_hover = ExtResource("3_rk11l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.99997, -641)
+scale = Vector2(5.4175, 5.4175)
+texture = ExtResource("4_homct")
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color(0.61, 0.61, 0.61, 1)
+z_index = -5
+position = Vector2(-1309, -1161)
+scale = Vector2(18.155, 18.155)
+tile_set = SubResource("TileSet_jw7lb")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 65542, 3, 3, 65542, 3, 0, 65542, 3, 1, 65542, 3, 131071, 65542, 3, 65536, 6, 3, 65537, 6, 3, 65538, 65542, 3, 65539, 6, 3, 65540, 6, 3, 65541, 65542, 3, 65542, 65542, 3, 5, 65542, 3, 6, 65542, 3, 4, 65542, 3, 65535, 65542, 3, 7, 65542, 3, 8, 65542, 3, 65543, 65542, 3, 65544, 65542, 3, 131075, 6, 3, 131076, 6, 3, 131073, 6, 3, 131074, 65542, 3, 196607, 65542, 3, 131072, 6, 3, 131077, 65542, 3, 131078, 65542, 3, 131079, 6, 3, 131080, 6, 3, 131081, 65542, 3, 131082, 65542, 3, 65545, 65542, 3, 65546, 65542, 3, 9, 65542, 3, 10, 65542, 3, 131083, 65542, 3, 131084, 65542, 3, 11, 65542, 3, 65547, 65542, 3, 12, 65542, 3, 65548, 65542, 3, 327681, 65542, 3, 327687, 65542, 3, 327679, 65542, 3, 262144, 65542, 3, 262145, 65542, 3, 262146, 65542, 3, 262147, 65542, 3, 262148, 6, 3, 262149, 6, 3, 262150, 6, 3, 262151, 65542, 3, 262152, 65542, 3, 262153, 65542, 3, 196617, 65542, 3, 196618, 65542, 3, 196616, 6, 3, 196615, 6, 3, 196614, 65542, 3, 196613, 6, 3, 196612, 6, 3, 196611, 65542, 3, 196610, 6, 3, 196609, 6, 3, 196608, 6, 3, 262143, 65542, 3, 262142, 65542, 3, 327678, 65542, 3, 393214, 65542, 3, 393215, 65542, 3, 327680, 65542, 3, 327682, 65542, 3, 327683, 65542, 3, 327684, 6, 3, 327685, 6, 3, 327686, 6, 3, 327688, 65542, 3, 327689, 65542, 3, 327690, 65542, 3, 393226, 65542, 3, 393227, 65542, 3, 393228, 65542, 3, 458764, 65542, 3, 458763, 65542, 3, 458762, 65542, 3, 393225, 65542, 3, 393224, 65542, 3, 393223, 65542, 3, 393222, 65542, 3, 393221, 65542, 3, 393220, 65542, 3, 262154, 65542, 3, 262155, 65542, 3, 262156, 65542, 3, 262157, 65542, 0, 327693, 65542, 0, 327692, 65542, 3, 327691, 65542, 3, 393218, 65542, 3, 393219, 65542, 3, 393217, 65542, 3, 393216, 65542, 3, 458751, 65542, 3, 458755, 65542, 3, 458756, 65542, 3, 458757, 65542, 3, 458758, 65542, 3, 458759, 65542, 3, 458760, 65542, 3, 458754, 65542, 3, 458753, 65542, 3, 458752, 65542, 3, 524287, 65542, 3, 524286, 65542, 3, 458750, 65542, 3, 196619, 65542, 3, 458761, 65542, 3, 196606, 65542, 3, 131070, 65542, 3, 65534, 65542, 3, 196620, 65542, 3)
+
+[node name="Assets24_7" type="Sprite2D" parent="."]
+position = Vector2(871, -224)
+scale = Vector2(3.90625, 3.90625)
+texture = ExtResource("14_3stay")
+
+[node name="Fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_rk11l")
+volume_db = -10.0
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_rk11l")
+volume_db = 10.0
+autoplay = true
+max_distance = 3.27384e+15
+attenuation = 1e-05
+
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="finished" from="Fire" to="." method="_on_fire_finished"]

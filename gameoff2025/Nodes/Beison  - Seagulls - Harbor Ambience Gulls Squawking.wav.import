@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsjjtgsa7fhu1"
+path="res://.godot/imported/Beison  - Seagulls - Harbor Ambience Gulls Squawking.wav-67f01955cc3677ea6079dfa00115e520.sample"
+
+[deps]
+
+source_file="res://Nodes/Beison  - Seagulls - Harbor Ambience Gulls Squawking.wav"
+dest_files=["res://.godot/imported/Beison  - Seagulls - Harbor Ambience Gulls Squawking.wav-67f01955cc3677ea6079dfa00115e520.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://5xunvss8080v"]
+[gd_scene load_steps=28 format=3 uid="uid://5xunvss8080v"]
 
-[ext_resource type="Script" uid="uid://w15qqyyxbmby" path="res://main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://8b7ovq3f08v6" path="res://Scenes/main_menu.gd" id="1_wyh8j"]
 [ext_resource type="Texture2D" uid="uid://clqdgda1avuj0" path="res://Scenes/UI/MainMenu/Buttons/StartButton.png" id="2_48xlc"]
 [ext_resource type="Texture2D" uid="uid://ddcq55ikte5gu" path="res://Scenes/UI/MainMenu/Buttons/StartButton_Hovered.png" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bwwac4tdaa4t4" path="res://Scenes/UI/MainMenu/Buttons/OptionsButton.png" id="4_cp0ys"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cja1jtgxh5hgo" path="res://Assets/Sprites/Tilemap/Beach Sand.png" id="15_6dk6o"]
 [ext_resource type="Texture2D" uid="uid://cjinpckdymmom" path="res://Assets/Sprites/Tilemap/Beach_Horizontal_Anim-Fixed.png" id="16_jr6u5"]
 [ext_resource type="AudioStream" uid="uid://y7e3evoa460g" path="res://Artlist Productions - Urban Egypt Vol 1 - Alexandria Beach Mediterranean Sea Fisherman.wav" id="17_wyh8j"]
+[ext_resource type="AudioStream" uid="uid://dkgtifsqbsdy2" path="res://Abilities/Scenes/Alberto Sueri - 8 Bit Fun - Laser Shot Short Synth Stutter.wav" id="18_ujyyl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m47u"]
 texture = ExtResource("9_m3bi6")
@@ -222,7 +223,7 @@ sources/6 = SubResource("TileSetAtlasSource_hkdq0")
 sources/7 = SubResource("TileSetAtlasSource_xcoo4")
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_28flt")
+script = ExtResource("1_wyh8j")
 
 [node name="Button_Manager" type="Control" parent="."]
 layout_mode = 3
@@ -290,6 +291,11 @@ autoplay = true
 max_distance = 3.27384e+15
 attenuation = 1e-05
 
+[node name="Fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_ujyyl")
+volume_db = -10.0
+
 [connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button_Manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="Fire" to="." method="_on_fire_finished"]

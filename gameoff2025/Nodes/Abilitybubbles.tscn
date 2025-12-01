@@ -1,40 +1,26 @@
-[gd_scene load_steps=20 format=3 uid="uid://jwcr4f8p5ger"]
+[gd_scene load_steps=18 format=3 uid="uid://jwcr4f8p5ger"]
 
 [ext_resource type="Script" uid="uid://d2ppn6fnm58kp" path="res://Nodes/abilitybubbles.gd" id="1_enshr"]
-[ext_resource type="Texture2D" uid="uid://dl11h76ekh70r" path="res://Assets/Sprites/Assets7.png" id="2_2jead"]
-[ext_resource type="Texture2D" uid="uid://bynaanpkf2x1o" path="res://Assets/Sprites/Assets5.png" id="2_imdfa"]
 [ext_resource type="Texture2D" uid="uid://luhd42rrfbea" path="res://Assets/Assets2.3.png" id="2_ji0y8"]
-[ext_resource type="Texture2D" uid="uid://cbwoufkwa3ery" path="res://Assets/Sprites/Assets6.png" id="3_enshr"]
-[ext_resource type="Texture2D" uid="uid://dgy2no5ijok7" path="res://Assets/Assets333.png" id="5_ji0y8"]
-[ext_resource type="Texture2D" uid="uid://dua7eggwx0y08" path="res://Assets/Assets2.8.png" id="5_tuelp"]
-[ext_resource type="Texture2D" uid="uid://dgwtd3tvcxuh8" path="res://Assets/Sprites/Assets8.png" id="6_ji0y8"]
+[ext_resource type="Texture2D" uid="uid://dbwh2m058p0sd" path="res://Assets/Assets24.2.png" id="3_w560e"]
+[ext_resource type="Texture2D" uid="uid://qjktjjwk7gkt" path="res://Assets/Assets24.5.png" id="4_io12i"]
+[ext_resource type="Texture2D" uid="uid://bbdob2vo4picr" path="res://Assets/Assets24.1.png" id="5_302tt"]
+[ext_resource type="Texture2D" uid="uid://broq68ftkcysm" path="res://Assets/Assets24.6.png" id="6_6bu7a"]
+[ext_resource type="Texture2D" uid="uid://p5q8n151y3x0" path="res://Assets/Assets24.4.png" id="7_rxe72"]
+[ext_resource type="Texture2D" uid="uid://bpflbttvstexl" path="res://Assets/Assets24.8.png" id="8_cqyfn"]
 [ext_resource type="AudioStream" uid="uid://dbrmrg2mscqmh" path="res://Assets/Sprites/SoundsCrate-Stylized_Bubble_Pop_5.wav" id="8_ji0y8"]
+[ext_resource type="Texture2D" uid="uid://ymal1kdf2rs0" path="res://Assets/Assets24.3.png" id="9_g5y38"]
 [ext_resource type="AudioStream" uid="uid://cyyqhdluw5is0" path="res://Assets/Sprites/SoundsCrate-Stylized_Bubble_Pop_4.mp3" id="9_tuelp"]
+[ext_resource type="Texture2D" uid="uid://bvl1sh0crmk4q" path="res://Assets/Assets24.0.png" id="10_0bj42"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g68sb"]
 radius = 217.083
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuelp"]
-atlas = ExtResource("2_2jead")
-region = Rect2(0, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8aye"]
-atlas = ExtResource("3_enshr")
-region = Rect2(0, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_io12i"]
-atlas = ExtResource("6_ji0y8")
-region = Rect2(0, 0, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljp86"]
-atlas = ExtResource("2_imdfa")
-region = Rect2(0, 0, 70, 70)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6242v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tuelp")
+"texture": ExtResource("3_w560e")
 }],
 "loop": true,
 "name": &"a_Attack",
@@ -42,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ji0y8")
+"texture": ExtResource("4_io12i")
 }],
 "loop": true,
 "name": &"a_Big Shot",
@@ -50,7 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t8aye")
+"texture": ExtResource("5_302tt")
 }],
 "loop": true,
 "name": &"a_Health",
@@ -58,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_tuelp")
+"texture": ExtResource("6_6bu7a")
 }],
 "loop": true,
 "name": &"a_Magnet",
@@ -66,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ji0y8")
+"texture": ExtResource("7_rxe72")
 }],
 "loop": true,
 "name": &"a_Rapid Shot",
@@ -74,7 +60,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ji0y8")
+"texture": ExtResource("8_cqyfn")
 }],
 "loop": true,
 "name": &"a_Shell Strength",
@@ -82,7 +68,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_io12i")
+"texture": ExtResource("9_g5y38")
 }],
 "loop": true,
 "name": &"a_Small Shot",
@@ -90,7 +76,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ljp86")
+"texture": ExtResource("10_0bj42")
 }],
 "loop": true,
 "name": &"a_Speed",
@@ -174,9 +160,10 @@ scale = Vector2(7.71875, 7.71875)
 texture = ExtResource("2_ji0y8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblesArea"]
-scale = Vector2(5.78125, 5.78125)
+position = Vector2(-1, -3)
+scale = Vector2(7.0625, 7.0625)
 sprite_frames = SubResource("SpriteFrames_6242v")
-animation = &"a_Rapid Shot"
+animation = &"a_Magnet"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -51,6 +51,7 @@ func setup_weapon(data: ItemWeapon) -> void:
 func use_weapon() -> void:
 	calculate_spread()
 	weapon_behavior.execute_attack()
+	$Swing.play()
 	cooldown_timer.wait_time = data.stats.cooldown
 	cooldown_timer.start()
 
@@ -109,8 +110,10 @@ func get_closest_target() -> Node2D:
 	return closest_enemy
 
 func can_use_weapon() -> bool:
-	return cooldown_timer.is_stopped() and closest_target and closest_target.global_position.distance_to(get_parent().global_position)<400
-
+	if get_parent().Burrowing==false:
+		return cooldown_timer.is_stopped() and closest_target and closest_target.global_position.distance_to(get_parent().global_position)<400
+	else:
+		return false
 
 func _on_range_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):

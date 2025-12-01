@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckv13njnwt8ue"
+path="res://.godot/imported/Alberto Sueri - 8 Bit Fun - Quick Whoosh Gritty .wav-e5bd9ebb3314a188ea730edbf76ef755.sample"
+
+[deps]
+
+source_file="res://Resources/Items/Weapons/Melee/Pincher/Alberto Sueri - 8 Bit Fun - Quick Whoosh Gritty .wav"
+dest_files=["res://.godot/imported/Alberto Sueri - 8 Bit Fun - Quick Whoosh Gritty .wav-e5bd9ebb3314a188ea730edbf76ef755.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

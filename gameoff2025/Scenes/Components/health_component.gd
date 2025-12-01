@@ -23,7 +23,10 @@ func take_damage(value: float) -> void:
 	current_health -= value
 
 	current_health = max(current_health, 0)
-	
+	var soundP :AudioStreamPlayer2D = get_parent().get_node("HIT")
+	if soundP:
+		soundP.play()
+			
 	on_unit_hit.emit()
 	on_health_changed.emit(current_health, max_health)
 	if get_parent().is_in_group("Player"):
@@ -31,6 +34,9 @@ func take_damage(value: float) -> void:
 		var animationP :AnimationPlayer = get_parent().get_node("HURT")
 		if animationP:
 			animationP.play("Hurt")
+		
+		
+		
 	
 	if get_parent().has_method("start_flash"):
 		get_parent().start_flash()
@@ -51,7 +57,9 @@ func heal(amount: float) -> void:
 
 func die() -> void:
 	if get_parent().is_in_group("Player"):
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_parent().diestuff()
+		get_parent().visuals.visible=false
+		get_parent().Burrowing=true
 	if get_parent().is_in_group("Enemy"):
 		var hurtbox = get_parent().get_node("HurtboxComponent")
 		var hitbox = get_parent().get_node("HitboxComponent")

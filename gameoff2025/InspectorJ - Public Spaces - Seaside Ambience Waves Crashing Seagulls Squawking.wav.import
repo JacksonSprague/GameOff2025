@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf7v5vq5myhbd"
+path="res://.godot/imported/InspectorJ - Public Spaces - Seaside Ambience Waves Crashing Seagulls Squawking.wav-a2e1fed5c757459f682bd8f790c51612.sample"
+
+[deps]
+
+source_file="res://InspectorJ - Public Spaces - Seaside Ambience Waves Crashing Seagulls Squawking.wav"
+dest_files=["res://.godot/imported/InspectorJ - Public Spaces - Seaside Ambience Waves Crashing Seagulls Squawking.wav-a2e1fed5c757459f682bd8f790c51612.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

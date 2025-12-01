@@ -84,6 +84,7 @@ func PowerUps():
 
 func AbilitySelected(AbilityName :String):
 	var NewAbilityNode
+	$MusicFade.play("Wave_End")
 	$"Ability Spawn Core/AnimationPlayer".play("Fall")
 	Bubble1Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
 	Bubble2Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
@@ -116,6 +117,7 @@ func AwaitNextWave():
 func _on_wave_frequency_timeout() -> void:
 	$Warning.visible=true
 	$Countdown_timer.start()
+	$Alarm.play()
 
 func _on_countdown_timer_timeout() -> void:
 	$Warning.visible=false
@@ -127,6 +129,8 @@ func _on_countdown_timer_timeout() -> void:
 	BigWaveRef.global_position.y=3500
 	BigWaveRef._Crash()
 	Global.cam.shake(20,3.5,1)
+	$MusicFade.play("Wave")
+	$WAVECrash.play()
 
 func weighted_dictionary_pick(dict : Dictionary) -> String:
 	var total_weight :float=0.0

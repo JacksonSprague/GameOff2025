@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl8ofi7iduhki"
+path="res://.godot/imported/Sound Spark - Sea - Large Wave Crashing Spraying Water.wav-d203fd074a7db1960dc65b7771152f09.sample"
+
+[deps]
+
+source_file="res://Scenes/Sound Spark - Sea - Large Wave Crashing Spraying Water.wav"
+dest_files=["res://.godot/imported/Sound Spark - Sea - Large Wave Crashing Spraying Water.wav-d203fd074a7db1960dc65b7771152f09.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

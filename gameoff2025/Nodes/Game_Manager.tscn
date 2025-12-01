@@ -1,7 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7oxrq1d8n5fs"]
+[gd_scene load_steps=20 format=3 uid="uid://c7oxrq1d8n5fs"]
 
 [ext_resource type="Script" uid="uid://cx73se2auvuxo" path="res://Nodes/game_manager.gd" id="1_5i0na"]
 [ext_resource type="Texture2D" uid="uid://cp14ayu4ha0dg" path="res://Assets/Assets2.0.png" id="2_ld3wb"]
+[ext_resource type="AudioStream" uid="uid://c2q2wchfkl318" path="res://Nodes/Music.mp3" id="3_1w46x"]
+[ext_resource type="AudioStream" uid="uid://bwgafukixvcr0" path="res://Nodes/Underwater.mp3" id="4_2yyqe"]
+[ext_resource type="AudioStream" uid="uid://y7e3evoa460g" path="res://Artlist Productions - Urban Egypt Vol 1 - Alexandria Beach Mediterranean Sea Fisherman.wav" id="5_ir7hs"]
+[ext_resource type="AudioStream" uid="uid://bnuwjoodnq684" path="res://Soundholder - Designed Underwater deep Stream.wav" id="6_4dtak"]
+[ext_resource type="AudioStream" uid="uid://bl8ofi7iduhki" path="res://Scenes/Sound Spark - Sea - Large Wave Crashing Spraying Water.wav" id="7_fgv8e"]
+[ext_resource type="AudioStream" uid="uid://b5lrt7g2ujkbe" path="res://Scenes/Federico Soler - Alarm - emergency warning .wav" id="8_m2i46"]
 
 [sub_resource type="Animation" id="Animation_1w46x"]
 length = 0.001
@@ -95,6 +101,204 @@ _data = {
 &"Rise": SubResource("Animation_2yyqe")
 }
 
+[sub_resource type="Animation" id="Animation_m2i46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MusicUnder:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Underwater:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Underwater:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ambience:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-4.0]
+}
+
+[sub_resource type="Animation" id="Animation_fgv8e"]
+resource_name = "Wave"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MusicUnder:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Underwater:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Underwater:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ambience:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.76667, 3.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-4.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_fxmiw"]
+resource_name = "Wave_End"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MusicUnder:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Underwater:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.16667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Underwater:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.133333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ambience:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.933333, 3.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -4.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m2i46"]
+_data = {
+&"RESET": SubResource("Animation_m2i46"),
+&"Wave": SubResource("Animation_fgv8e"),
+&"Wave_End": SubResource("Animation_fxmiw")
+}
+
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_5i0na")
 
@@ -103,11 +307,10 @@ wait_time = 27.0
 one_shot = true
 
 [node name="Spawn_Timer" type="Timer" parent="."]
-wait_time = 1.2
 autostart = true
 
 [node name="Countdown_timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="Warning" type="Sprite2D" parent="."]
@@ -141,6 +344,50 @@ rotation = 0.0174533
 libraries = {
 &"": SubResource("AnimationLibrary_ir7hs")
 }
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1w46x")
+autoplay = true
+max_distance = 1.65276e+06
+attenuation = 1e-05
+parameters/looping = true
+
+[node name="MusicUnder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2yyqe")
+autoplay = true
+max_distance = 1.65276e+06
+attenuation = 1e-05
+parameters/looping = true
+
+[node name="MusicFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m2i46")
+}
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ir7hs")
+volume_db = -4.0
+autoplay = true
+max_distance = 3.27384e+15
+attenuation = 1e-05
+
+[node name="Underwater" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4dtak")
+volume_db = -80.0
+max_distance = 3.45654e+12
+attenuation = 1e-05
+
+[node name="WAVECrash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fgv8e")
+volume_db = 4.0
+max_distance = 3.45679e+18
+attenuation = 1e-05
+
+[node name="Alarm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_m2i46")
+volume_db = -8.0
+max_distance = 3.24456e+18
+attenuation = 1e-05
 
 [connection signal="timeout" from="Wave_Frequency" to="." method="_on_wave_frequency_timeout"]
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]

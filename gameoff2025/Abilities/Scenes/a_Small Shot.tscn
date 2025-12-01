@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjofoqlswslyh"]
+[gd_scene load_steps=3 format=3 uid="uid://bjofoqlswslyh"]
 
 [ext_resource type="Script" uid="uid://ckeele4xns51k" path="res://Abilities/Scenes/a_weapon.gd" id="1_4rx26"]
+[ext_resource type="AudioStream" uid="uid://dkgtifsqbsdy2" path="res://Abilities/Scenes/Alberto Sueri - 8 Bit Fun - Laser Shot Short Synth Stutter.wav" id="2_5vvxa"]
 
 [node name="AWeapon" type="Node2D"]
 script = ExtResource("1_4rx26")
@@ -8,5 +9,9 @@ AbilityType = 1
 metadata/_custom_type_script = "uid://c75dqpmnb0qwj"
 
 [node name="RandDelay" type="Timer" parent="."]
+
+[node name="Fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5vvxa")
+volume_db = -10.0
 
 [connection signal="timeout" from="RandDelay" to="." method="_on_rand_delay_timeout"]

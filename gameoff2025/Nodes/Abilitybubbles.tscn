@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://jwcr4f8p5ger"]
+[gd_scene load_steps=19 format=3 uid="uid://jwcr4f8p5ger"]
 
 [ext_resource type="Script" uid="uid://d2ppn6fnm58kp" path="res://Nodes/abilitybubbles.gd" id="1_enshr"]
 [ext_resource type="Texture2D" uid="uid://luhd42rrfbea" path="res://Assets/Assets2.3.png" id="2_ji0y8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ymal1kdf2rs0" path="res://Assets/Assets24.3.png" id="9_g5y38"]
 [ext_resource type="AudioStream" uid="uid://cyyqhdluw5is0" path="res://Assets/Sprites/SoundsCrate-Stylized_Bubble_Pop_4.mp3" id="9_tuelp"]
 [ext_resource type="Texture2D" uid="uid://bvl1sh0crmk4q" path="res://Assets/Assets24.0.png" id="10_0bj42"]
+[ext_resource type="AudioStream" uid="uid://2ce8kvub5ug2" path="res://Nodes/Epic Stock Media - Vibrant Game - Sci Fi Cannon Blast Modulated.wav" id="13_io12i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g68sb"]
 radius = 217.083
@@ -179,6 +180,10 @@ stream = ExtResource("9_tuelp")
 
 [node name="DeHighlight" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_tuelp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_io12i")
+volume_db = -6.0
 
 [connection signal="mouse_entered" from="BubblesArea" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="BubblesArea" to="." method="_on_area_2d_mouse_exited"]

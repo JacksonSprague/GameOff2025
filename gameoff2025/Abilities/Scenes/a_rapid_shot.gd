@@ -17,7 +17,7 @@ func _activate() -> void:
 		get_tree().current_scene.add_child(projectielref)
 		projectielref.global_position=global_position+(aimdir*10)+Vector2(randf_range(-50,50),randf_range(-100,10))
 		projectielref.dir=aimdir
-
+		$Fire.play()
 func get_nearest_enemy() -> Node:
 	var nearest_enemy = null
 	var nearest_distance = INF

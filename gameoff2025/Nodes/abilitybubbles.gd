@@ -36,6 +36,7 @@ func _on_area_2d_mouse_exited() -> void:
 
 func POP():
 	$POP.play()
+	$AudioStreamPlayer2D.play()
 	get_parent().PlayerRef.ui_ref.get_node("Root/MainDivider/MarginContainer/AbilityDescription").visible=false
 	if get_parent().has_method("AbilitySelected"):
 		get_parent().AbilitySelected(AbilityName)

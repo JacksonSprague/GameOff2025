@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hw55moqqpvtu"
+path="res://.godot/imported/Soundholder - Retro Games - 8 Bit Swing.wav-46e3cff6dfb30c05e03a1081b0a6355f.sample"
+
+[deps]
+
+source_file="res://Soundholder - Retro Games - 8 Bit Swing.wav"
+dest_files=["res://.godot/imported/Soundholder - Retro Games - 8 Bit Swing.wav-46e3cff6dfb30c05e03a1081b0a6355f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

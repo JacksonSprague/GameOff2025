@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdsdml6yn7kcw"]
+[gd_scene load_steps=5 format=3 uid="uid://cdsdml6yn7kcw"]
+
+[ext_resource type="AudioStream" uid="uid://tiw5japxkgca" path="res://Abilities/Scenes/Alberto Sueri - 8 Bit Fun - Photon Explosion Grainy Delayed.wav" id="1_it3ii"]
+[ext_resource type="Script" uid="uid://c300efof6ty3c" path="res://cpu_particles_2d.gd" id="1_uhmfb"]
 
 [sub_resource type="Curve" id="Curve_cea3l"]
 _data = [Vector2(0, 0.487532), 0.0, 0.0, 0, 0, Vector2(0.690476, 0.992849), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -11,6 +14,7 @@ colors = PackedColorArray(1, 0.484, 0.14, 1, 0, 0, 0, 1)
 [node name="CPUParticles2D" type="CPUParticles2D"]
 emitting = false
 amount = 40
+lifetime = 3.0
 one_shot = true
 speed_scale = 2.0
 explosiveness = 0.8
@@ -29,3 +33,11 @@ scale_amount_curve = SubResource("Curve_cea3l")
 color_ramp = SubResource("Gradient_x0nff")
 hue_variation_min = -0.3
 hue_variation_max = 0.5
+script = ExtResource("1_uhmfb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_it3ii")
+volume_db = -13.0
+autoplay = true
+
+[connection signal="finished" from="." to="." method="_on_finished"]

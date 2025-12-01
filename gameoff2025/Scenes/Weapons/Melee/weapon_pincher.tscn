@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://2nwwklpsnrw"]
+[gd_scene load_steps=7 format=3 uid="uid://2nwwklpsnrw"]
 
 [ext_resource type="PackedScene" uid="uid://b52lluf1418x" path="res://Scenes/Weapons/weapon_base.tscn" id="1_7cto1"]
 [ext_resource type="Texture2D" uid="uid://cxs8f5bjvnhf3" path="res://Assets/Sprites/Weapons/Pincher/Pincher.png" id="2_bmgjm"]
 [ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="3_blnc0"]
 [ext_resource type="Script" uid="uid://ctlgwn1l3jyjf" path="res://Scenes/Weapons/Melee/melee_behavior.gd" id="4_5g4de"]
+[ext_resource type="AudioStream" uid="uid://ckv13njnwt8ue" path="res://Resources/Items/Weapons/Melee/Pincher/Alberto Sueri - 8 Bit Fun - Quick Whoosh Gritty .wav" id="5_wpufh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g4de"]
 size = Vector2(64, 32)
@@ -34,5 +35,8 @@ debug_color = Color(0.932223, 0.176746, 0.48425, 0.42)
 script = ExtResource("4_5g4de")
 hitbox = NodePath("../Sprite2D/HitboxComponent")
 weapon = NodePath("..")
+
+[node name="Swing" type="AudioStreamPlayer2D" parent="." index="4"]
+stream = ExtResource("5_wpufh")
 
 [connection signal="area_entered" from="Sprite2D/HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

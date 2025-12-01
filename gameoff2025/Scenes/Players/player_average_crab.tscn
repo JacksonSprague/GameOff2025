@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cpsaytykrou1f"]
+[gd_scene load_steps=37 format=3 uid="uid://cpsaytykrou1f"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_btait"]
 [ext_resource type="Texture2D" uid="uid://dqvs8dgxrng83" path="res://Assets/Sprites/Players/Average Crab/Average_Crab-Idle-Sheet.png" id="2_jbwao"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://br0vcspvmdqem" path="res://Assets/Sprites/Players/Average Crab/Average Crab Burrow-Sheet.png" id="4_puodp"]
 [ext_resource type="Script" uid="uid://cg8urws23jqvb" path="res://Scenes/Players/weapon_container.gd" id="7_l6xtf"]
 [ext_resource type="Script" uid="uid://cm25h6e2ubl71" path="res://Scenes/Players/camera_2d.gd" id="9_k81a1"]
+[ext_resource type="AudioStream" uid="uid://cg63mrx81l6mc" path="res://Abilities/Scenes/soundscrate-videogamebundle-kick.mp3" id="10_eib8b"]
+[ext_resource type="AudioStream" uid="uid://brclyn4xkmc48" path="res://Nodes/soundscrate-videogamebundle-blip.mp3" id="11_3x2el"]
+[ext_resource type="AudioStream" uid="uid://dodw5uheuh8cj" path="res://Scenes/Ni Sound - Interfacing - Game Over Pitching Down.wav" id="12_xxayl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6xtf"]
 radius = 255.031
@@ -459,7 +462,28 @@ libraries = {
 &"": SubResource("AnimationLibrary_3x2el")
 }
 
+[node name="HIT" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("10_eib8b")
+volume_db = -6.0
+
+[node name="Blip" type="AudioStreamPlayer2D" parent="." index="10"]
+stream = ExtResource("11_3x2el")
+volume_db = -8.0
+pitch_scale = 1.5
+
+[node name="Ready" type="AudioStreamPlayer2D" parent="." index="11"]
+stream = ExtResource("11_3x2el")
+volume_db = -8.0
+pitch_scale = 3.0
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="." index="12"]
+stream = ExtResource("12_xxayl")
+volume_db = 5.0
+max_distance = 2.34568e+17
+attenuation = 1e-05
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_entered" from="MagArea" to="." method="_on_mag_area_area_entered"]
 [connection signal="animation_finished" from="Visuals/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="GameOver" to="." method="_on_game_over_finished"]

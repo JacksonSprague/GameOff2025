@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5lrt7g2ujkbe"
+path="res://.godot/imported/Federico Soler - Alarm - emergency warning .wav-aa1a0458c249078f823f0fa702b3d95d.sample"
+
+[deps]
+
+source_file="res://Scenes/Federico Soler - Alarm - emergency warning .wav"
+dest_files=["res://.godot/imported/Federico Soler - Alarm - emergency warning .wav-aa1a0458c249078f823f0fa702b3d95d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

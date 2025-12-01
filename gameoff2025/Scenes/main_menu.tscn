@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://5xunvss8080v"]
+[gd_scene load_steps=27 format=3 uid="uid://5xunvss8080v"]
 
 [ext_resource type="Script" uid="uid://w15qqyyxbmby" path="res://main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://clqdgda1avuj0" path="res://Scenes/UI/MainMenu/Buttons/StartButton.png" id="2_48xlc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c5s2oh1snjell" path="res://Assets/Sprites/Tilemap/Beach_Corner_Outlet_Anim-export.png" id="14_ehtkc"]
 [ext_resource type="Texture2D" uid="uid://cja1jtgxh5hgo" path="res://Assets/Sprites/Tilemap/Beach Sand.png" id="15_6dk6o"]
 [ext_resource type="Texture2D" uid="uid://cjinpckdymmom" path="res://Assets/Sprites/Tilemap/Beach_Horizontal_Anim-Fixed.png" id="16_jr6u5"]
+[ext_resource type="AudioStream" uid="uid://y7e3evoa460g" path="res://Artlist Productions - Urban Egypt Vol 1 - Alexandria Beach Mediterranean Sea Fisherman.wav" id="17_wyh8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m47u"]
 texture = ExtResource("9_m3bi6")
@@ -281,6 +282,13 @@ scale = Vector2(18.155, 18.155)
 tile_set = SubResource("TileSet_jw7lb")
 format = 2
 layer_0/tile_data = PackedInt32Array(2, 65542, 0, 3, 6, 0, 0, 65542, 0, 1, 6, 0, 131071, 6, 0, 65536, 65542, 0, 65537, 6, 0, 65538, 65542, 0, 65539, 6, 0, 65540, 65542, 0, 65541, 6, 0, 65542, 65542, 0, 5, 6, 0, 6, 65542, 0, 4, 131078, 5, 65535, 6, 0, 7, 6, 0, 8, 65542, 0, 65543, 6, 0, 65544, 65542, 0, 131075, 65542, 2, 131076, 6, 2, 131073, 6, 2, 131074, 6, 2, 196607, 6, 2, 131072, 65542, 2, 131077, 6, 2, 131078, 65542, 2, 131079, 6, 2, 131080, 65542, 2, 131081, 6, 2, 131082, 65542, 2, 65545, 6, 0, 65546, 65542, 0, 9, 6, 0, 10, 65542, 0, 131083, 6, 2, 131084, 65542, 2, 11, 6, 0, 65547, 6, 1, 12, 65542, 0, 65548, 131078, 5, 327681, 7, 0, 327687, 7, 0)
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_wyh8j")
+volume_db = 10.0
+autoplay = true
+max_distance = 3.27384e+15
+attenuation = 1e-05
 
 [connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Options" to="." method="_on_options_pressed"]

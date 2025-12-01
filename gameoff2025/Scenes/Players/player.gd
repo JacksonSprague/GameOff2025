@@ -112,10 +112,17 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name=="WaveCore" and Burrowing==false:
 		canmove=false
 		$AnimationPlayer.play("Wave")
+		diestuff()
 	if area.name=="Projectile1" or area.name=="HitboxComponent":
 		pass
-		
 
+func diestuff():
+	for Weapon in current_weapons:
+		if not Weapon:
+			continue
+		if Weapon:
+			Weapon.queue_free()
+	$GameOver.play()
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
@@ -128,5 +135,11 @@ func _on_mag_area_area_entered(area: Area2D) -> void:
 func add_burrow_charge():
 	if BurrowCharge<BurrowChargeNeeded:
 		BurrowCharge+=10*BurrowChargeMultiplier
+		$Blip.play()
 	else:
+		$Ready.play()
 		$HealthComponent.heal(0.5)
+
+
+func _on_game_over_finished() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

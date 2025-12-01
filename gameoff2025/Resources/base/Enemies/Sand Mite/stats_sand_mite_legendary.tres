@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://7y7lny8fb1nh"]
+
+[ext_resource type="Texture2D" uid="uid://dgeb26lltawet" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Icon.png" id="1_cg0l0"]
+[ext_resource type="Script" uid="uid://m8amwx0tddi6" path="res://Resources/base/base_stats.gd" id="2_7kh22"]
+
+[resource]
+script = ExtResource("2_7kh22")
+name = "Sand Mite"
+type = 1
+icon = ExtResource("1_cg0l0")
+health = 11.0
+max_health = 100.0
+health_increased_per_wave = 4.0
+damage = 6.0
+damage_increased_per_wave = 1.3
+speed = 300
+luck = 0.0
+block_chance = 5.0
+shell_drop = 1.0
+metadata/_custom_type_script = "uid://m8amwx0tddi6"

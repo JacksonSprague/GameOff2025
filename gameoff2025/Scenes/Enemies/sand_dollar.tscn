@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cttngim2bp78k"]
 
 [ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/sand_mite.tscn" id="1_qx0d3"]
-[ext_resource type="Resource" uid="uid://f0m21e4ux6rq" path="res://Resources/base/Enemies/stats_sand_dollar.tres" id="2_fh1m1"]
+[ext_resource type="Resource" uid="uid://f0m21e4ux6rq" path="res://Resources/base/Enemies/Sand Dollar/stats_sand_dollar.tres" id="2_fh1m1"]
 [ext_resource type="Texture2D" uid="uid://b6rdl7cv18gm1" path="res://Assets/Sprites/Enemies/Sand Dollar/Sand Dollar.png" id="2_pn3d4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fh1m1"]
@@ -110,6 +110,7 @@ _data = {
 stats = ExtResource("2_fh1m1")
 
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
+scale = Vector2(13.0257, 12.56)
 sprite_frames = SubResource("SpriteFrames_gwc3t")
 frame_progress = 0.0
 
@@ -119,19 +120,7 @@ libraries = {
 }
 autoplay = "Walk"
 
-[node name="CollisionShape2D" parent="." index="1"]
-visible = false
-
 [node name="VisionArea" parent="." index="2"]
-visible = false
-
-[node name="CollisionShape2D" parent="VisionArea" index="0"]
-visible = false
-
-[node name="HurtboxComponent" parent="." index="3"]
-visible = false
-
-[node name="HitboxComponent" parent="." index="4"]
 visible = false
 
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]

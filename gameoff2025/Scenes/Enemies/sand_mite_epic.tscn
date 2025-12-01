@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://774tahb7ako1"]
+
+[ext_resource type="PackedScene" uid="uid://b7rfp31d60i48" path="res://Scenes/Enemies/sand_mite.tscn" id="1_m1vwo"]
+[ext_resource type="Resource" uid="uid://bradi14j33fnd" path="res://Resources/base/Enemies/Sand Mite/stats_sand_mite_epic.tres" id="2_o0vgg"]
+
+[node name="SandMiteEpic" instance=ExtResource("1_m1vwo")]
+stats = ExtResource("2_o0vgg")
+
+[node name="AnimatedSprite2D" parent="Visuals" index="1"]
+position = Vector2(-8.57143, -61.4286)
+scale = Vector2(20.471, 19.739)
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
+scale = Vector2(-1.25, inf_neg)
+
+[node name="CollisionShape2D" parent="VisionArea" index="0"]
+visible = true
+scale = Vector2(-1.25, 1.13116)
+
+[node name="HurtboxComponent" parent="." index="3"]
+visible = true
+
+[node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
+scale = Vector2(-1.25, 1.13116)
+
+[node name="HitboxComponent" parent="." index="4"]
+visible = true
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(1, -60.12)
+scale = Vector2(-1.25, 1.13116)

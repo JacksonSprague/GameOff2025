@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://drf4qr7yscu6m"]
+
+[ext_resource type="PackedScene" uid="uid://cttngim2bp78k" path="res://Scenes/Enemies/sand_dollar.tscn" id="1_wmao1"]
+[ext_resource type="Resource" uid="uid://d0smdwx7pt02n" path="res://Resources/base/Enemies/Sand Dollar/stats_sand_dollar_epic.tres" id="2_txkja"]
+
+[node name="SandDollarEpic" instance=ExtResource("1_wmao1")]
+stats = ExtResource("2_txkja")
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
+position = Vector2(1, -51.12)
+scale = Vector2(0.957227, 0.851063)
+
+[node name="VisionArea" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" parent="VisionArea" index="0"]
+visible = true
+position = Vector2(1, -94.12)
+scale = Vector2(1.47723, 1.33507)
+
+[node name="HurtboxComponent" parent="." index="3"]
+visible = true
+
+[node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
+position = Vector2(1, -98.12)
+scale = Vector2(1.47723, 1.33507)
+
+[node name="HitboxComponent" parent="." index="4"]
+visible = true
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+visible = true
+position = Vector2(1, -82.24)
+scale = Vector2(1.47723, 1.33507)

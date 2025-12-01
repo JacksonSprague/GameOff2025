@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://d0smdwx7pt02n"]
+
+[ext_resource type="Texture2D" uid="uid://b6rdl7cv18gm1" path="res://Assets/Sprites/Enemies/Sand Dollar/Sand Dollar.png" id="1_tidwv"]
+[ext_resource type="Script" uid="uid://m8amwx0tddi6" path="res://Resources/base/base_stats.gd" id="2_tf01k"]
+
+[resource]
+script = ExtResource("2_tf01k")
+name = "Sand Dollar"
+type = 1
+icon = ExtResource("1_tidwv")
+health = 1.0
+max_health = 1.0
+health_increased_per_wave = 0.0
+damage = 6.0
+damage_increased_per_wave = 2.0
+speed = 1000
+luck = 0.0
+block_chance = 5.0
+shell_drop = 4.0
+metadata/_custom_type_script = "uid://m8amwx0tddi6"

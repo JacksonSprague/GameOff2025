@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
 [ext_resource type="Script" uid="uid://dflb8or6uvwrv" path="res://Scenes/Enemies/enemy.gd" id="2_gnx0v"]
-[ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/stats_sand_mite.tres" id="3_gnx0v"]
+[ext_resource type="Resource" uid="uid://bkdywrxx7gqxl" path="res://Resources/base/Enemies/Sand Mite/stats_sand_mite.tres" id="3_gnx0v"]
 [ext_resource type="Texture2D" uid="uid://dthveehaqylpg" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Sheet.png" id="4_hlgua"]
 [ext_resource type="Shader" uid="uid://df7sdg3agk3i2" path="res://flash.shader.gdshader" id="4_x0nff"]
 [ext_resource type="PackedScene" uid="uid://baxagywh1rba1" path="res://Scenes/Components/hitbox_component.tscn" id="5_7sxqv"]
@@ -201,7 +201,7 @@ scale = Vector2(1.34286, 1.11428)
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
 material = SubResource("ShaderMaterial_w4h48")
 position = Vector2(-8.57143, -80)
-scale = Vector2(13.0257, 12.56)
+scale = Vector2(13.626, 13.139)
 sprite_frames = SubResource("SpriteFrames_wvedb")
 autoplay = "default"
 frame_progress = 0.726748
@@ -212,6 +212,7 @@ position = Vector2(0, -63)
 texture = ExtResource("2_4yaod")
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_7sxqv")
 debug_color = Color(0.985329, 0, 0.334846, 0.42)
@@ -222,10 +223,12 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" index="0"]
+visible = false
 position = Vector2(0, -58)
 shape = SubResource("CircleShape2D_gnx0v")
 
 [node name="HurtboxComponent" parent="." index="3"]
+visible = false
 position = Vector2(0, 38.12)
 collision_layer = 8
 collision_mask = 16
@@ -237,6 +240,7 @@ shape = SubResource("CircleShape2D_o2ldw")
 debug_color = Color(1, 0.487198, 0.64356, 0.42)
 
 [node name="HitboxComponent" parent="." index="4" instance=ExtResource("5_7sxqv")]
+visible = false
 position = Vector2(0, 38.12)
 collision_layer = 4
 collision_mask = 32

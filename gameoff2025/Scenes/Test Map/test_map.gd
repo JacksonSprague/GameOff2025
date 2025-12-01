@@ -10,8 +10,8 @@ class_name Test_Map
 
 func _ready() -> void:
 	Global.player = player
-	Global.on_create_block_text.connect(_on_create_block_text)
-	Global.on_create_damage_text.connect(_on_create_damage_text)
+	#Global.on_create_block_text.connect(_on_create_block_text)
+	#Global.on_create_damage_text.connect(_on_create_damage_text)
 
 
 func create_floating_text(base: Node2D) -> FloatingText:

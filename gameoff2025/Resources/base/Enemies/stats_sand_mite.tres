@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_hv0l7")
-name = "Enemy Slow"
+name = "Sand Mite"
 type = 1
 icon = ExtResource("1_onogp")
 health = 6.0

@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 	position += get_move_direction() * stats.speed * delta
 	update_rotation()
 
-
 func get_move_direction() -> Vector2:
 	if not is_instance_valid(Global.player):
 		return Vector2.ZERO

@@ -115,4 +115,4 @@ func _on_hitbox_component_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("Enemy"):
 		var health_ref = area.get_parent().get_node("HealthComponent")
 		if health_ref:
-			health_ref.take_damage(4*get_parent().damagemultiplier)
+			health_ref.take_damage(5.9*get_parent().damagemultiplier)

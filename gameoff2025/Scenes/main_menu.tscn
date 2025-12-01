@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://clqdgda1avuj0" path="res://Scenes/UI/MainMenu/Buttons/StartButton.png" id="2_48xlc"]
 [ext_resource type="Texture2D" uid="uid://ddcq55ikte5gu" path="res://Scenes/UI/MainMenu/Buttons/StartButton_Hovered.png" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bwwac4tdaa4t4" path="res://Scenes/UI/MainMenu/Buttons/OptionsButton.png" id="4_cp0ys"]
-[ext_resource type="Texture2D" uid="uid://cs4vakgnnwfuq" path="res://Scenes/UI/MainMenu/Buttons/OptionsButton_hovered.png" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://bwn3g0to12mrh" path="res://Scenes/UI/MainMenu/Buttons/QuitButton.png" id="6_trj04"]
 [ext_resource type="Texture2D" uid="uid://d252h85efpf1e" path="res://Scenes/UI/MainMenu/Buttons/QuitButton_Hovered.png" id="7_16hvj"]
+[ext_resource type="Texture2D" uid="uid://c3ah544ter55r" path="res://Assets/Sprites/Lock.png" id="8_wyh8j"]
 [ext_resource type="Texture2D" uid="uid://b1jls5px6hoe8" path="res://Scenes/UI/MainMenu/Buttons/ShorboundTitle.png" id="8_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://c3bwfdjifx8pq" path="res://Assets/Sprites/Tilemap/Beach_Horizontal_Anim-export.png" id="9_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://bi1pwovlo8a3d" path="res://Assets/Sprites/Tilemap/Beach_Horizonta_UpsideDownl_Anim-export-export.png" id="10_wyh8j"]
@@ -249,9 +249,9 @@ offset_right = -273.0
 offset_bottom = 118.0
 scale = Vector2(16.421, 17.9349)
 texture_normal = ExtResource("4_cp0ys")
-texture_hover = ExtResource("5_yhxw7")
 
 [node name="Quit" type="TextureButton" parent="Button_Manager"]
+z_index = -1
 layout_mode = 0
 offset_left = -242.0
 offset_top = 372.0
@@ -260,6 +260,12 @@ offset_bottom = 385.0
 scale = Vector2(16.3797, 17.7603)
 texture_normal = ExtResource("6_trj04")
 texture_hover = ExtResource("7_16hvj")
+
+[node name="Lock" type="Sprite2D" parent="Button_Manager"]
+position = Vector2(364, 180)
+rotation = -0.410751
+scale = Vector2(13.4231, 12)
+texture = ExtResource("8_wyh8j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

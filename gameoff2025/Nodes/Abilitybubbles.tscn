@@ -22,12 +22,12 @@ region = Rect2(0, 0, 70, 70)
 atlas = ExtResource("3_enshr")
 region = Rect2(0, 0, 70, 70)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljp86"]
-atlas = ExtResource("2_imdfa")
-region = Rect2(0, 0, 70, 70)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_io12i"]
 atlas = ExtResource("6_ji0y8")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljp86"]
+atlas = ExtResource("2_imdfa")
 region = Rect2(0, 0, 70, 70)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6242v"]
@@ -38,6 +38,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"a_Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ji0y8")
+}],
+"loop": true,
+"name": &"a_Big Shot",
 "speed": 5.0
 }, {
 "frames": [{
@@ -58,10 +66,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_ji0y8")
+}],
+"loop": true,
+"name": &"a_Rapid Shot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_ji0y8")
 }],
 "loop": true,
-"name": &"a_ShellStrength",
+"name": &"a_Shell Strength",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io12i")
+}],
+"loop": true,
+"name": &"a_Small Shot",
 "speed": 5.0
 }, {
 "frames": [{
@@ -70,14 +94,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"a_Speed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_io12i")
-}],
-"loop": true,
-"name": &"a_Weapon",
 "speed": 5.0
 }]
 
@@ -160,7 +176,7 @@ texture = ExtResource("2_ji0y8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BubblesArea"]
 scale = Vector2(5.78125, 5.78125)
 sprite_frames = SubResource("SpriteFrames_6242v")
-animation = &"a_Weapon"
+animation = &"a_Rapid Shot"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

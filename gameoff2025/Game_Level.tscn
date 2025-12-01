@@ -406,8 +406,8 @@ scale = Vector2(639.504, 81.9609)
 texture = SubResource("GradientTexture2D_yhq3t")
 
 [node name="Region4" type="Sprite2D" parent="."]
-position = Vector2(152936, -163.75)
-scale = Vector2(639.504, 81.9609)
+position = Vector2(170753, -163.75)
+scale = Vector2(1196.3, 81.9609)
 texture = SubResource("GradientTexture2D_xodq7")
 
 [node name="TileMap" type="TileMap" parent="."]

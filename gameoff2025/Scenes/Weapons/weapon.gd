@@ -75,7 +75,6 @@ func get_rotation_to_target() -> float:
 	
 	var rot := global_position.direction_to(closest_target.global_position).angle()
 	return rot
-
 func get_idle_rotation() -> float:
 	if Global.player.is_facing_right():
 		return 0

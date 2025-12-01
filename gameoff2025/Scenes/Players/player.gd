@@ -140,7 +140,7 @@ func add_burrow_charge():
 		$Blip.play()
 	else:
 		$Ready.play()
-		$HealthComponent.heal(0.5)
+		$HealthComponent.heal(0.8)
 
 
 func _on_game_over_finished() -> void:

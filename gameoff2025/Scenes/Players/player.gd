@@ -80,10 +80,22 @@ func Burrow():
 	BurrowCharge=0
 	animated_sprite_2d.play("burrow")
 	Burrowing=true
+	for Weapon in current_weapons:
+		if not Weapon:
+			continue
+		if Weapon:
+			Weapon.visible=false
+		
 	
 func UnBurrow():
 	BurrowCharge=0
 	animated_sprite_2d.play("unburrow")
+	$Visuals/WeaponContainer.visible=true
+	for Weapon in current_weapons:
+		if not Weapon:
+			continue
+		if Weapon:
+			Weapon.visible=true
 
 func is_facing_right() -> bool:
 	return visuals.scale.x == -0.5

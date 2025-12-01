@@ -6,7 +6,7 @@ const ShardRef = preload("res://Nodes/BurrowShard.tscn")
 
 @onready var vision_area: Area2D = $VisionArea
 
-@onready var mat = $Visuals/AnimatedSprite2D.material.duplicate()
+@onready var mat :Material= $Visuals/AnimatedSprite2D.material.duplicate()
 
 
 var flash_time :=0.1
@@ -51,12 +51,13 @@ func update_rotation() -> void:
 
 func can_move_towards_player() -> bool:
 	return is_instance_valid(Global.player) and\
-	global_position.distance_to(Global.player.global_position) > 60  
+	global_position.distance_to(Global.player.global_position) > 60
 
 func start_flash():
-	mat.set("shader_param/flash_strength", 1.0)
+	mat.set_shader_parameter("flash_strength", 1.0)
 	await get_tree().create_timer(flash_time).timeout
-	mat.set("shader_param/flash_strength", 0.0)
+	mat.set_shader_parameter("flash_strength", 0.0)
+
 
 func _on_area_entered(area: Area2D) -> void:
 	ProjectileHit(area)

@@ -85,8 +85,12 @@ func ProjectileHit(area: Area2D):
 	if area.name=="WaveCore":
 		if $AnimationPlayer.has_animation("Wave"):
 			$AnimationPlayer.play("Wave")
-		var hurtbox = $HurtboxComponent
-		var hitbox = $HitboxComponent
+		var hurtbox
+		var hitbox
+		if $HurtboxComponent:
+			hurtbox = $HurtboxComponent
+		if $HitboxComponent:
+			hitbox = $HitboxComponent
 		if hurtbox:
 			hurtbox.queue_free()
 		if hitbox:

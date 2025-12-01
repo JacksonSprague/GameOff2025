@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvd4v004o0fqa"]
 
 [ext_resource type="Script" uid="uid://dooymxp65l8hi" path="res://Nodes/burrow_shard.gd" id="1_3uy3c"]
-[ext_resource type="Texture2D" uid="uid://dgy2no5ijok7" path="res://Assets/Assets333.png" id="2_bjd7j"]
+[ext_resource type="Texture2D" uid="uid://bbmdwtf1ap06b" path="res://Assets/Assets24.7.png" id="2_bjd7j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnohf"]
 radius = 50.6701

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://btv0jhrbhwvnt"]
+[gd_scene load_steps=7 format=3 uid="uid://cb2hsqtc48k5n"]
 
-[ext_resource type="Script" uid="uid://dw2pd5rjmuwqj" path="res://Abilities/Scenes/Subweapons/projectile_1.gd" id="1_2j3t4"]
-[ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="2_2j3t4"]
+[ext_resource type="Script" uid="uid://d1vy8r1dkpj7" path="res://Abilities/Scenes/Subweapons/projectile_2.gd" id="1_w3blb"]
+[ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="2_p6dba"]
 
 [sub_resource type="Gradient" id="Gradient_2lhvc"]
 offsets = PackedFloat32Array(0.257212, 0.350962, 0.456731, 0.509615, 0.581731, 0.711538)
@@ -14,19 +14,19 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2j3t4"]
-radius = 5.09902
+radius = 87.0517
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2lhvc"]
-radius = 42.0119
+radius = 140.289
 
 [node name="Projectile1" type="Area2D"]
-modulate = Color(0.990406, 0.516697, 0.72664, 1)
+modulate = Color(0.5148, 0.99, 0.80784, 1)
 collision_layer = 16416
 collision_mask = 16392
-script = ExtResource("1_2j3t4")
+script = ExtResource("1_w3blb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(4.53125, 4.53125)
 texture = SubResource("GradientTexture2D_uv3ym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -35,7 +35,7 @@ shape = SubResource("CircleShape2D_2j3t4")
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 16416
 collision_mask = 16392
-script = ExtResource("2_2j3t4")
+script = ExtResource("2_p6dba")
 metadata/_custom_type_script = "uid://hgkqvocq4aam"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
@@ -50,13 +50,15 @@ explosiveness = 1.0
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 300.0
-initial_velocity_max = 600.0
-scale_amount_min = 10.0
-scale_amount_max = 20.0
+initial_velocity_min = 500.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 0.6
+angular_velocity_max = 14.1
+scale_amount_min = 30.0
+scale_amount_max = 50.0
 
 [node name="Destroy" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 2.0
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjofoqlswslyh"]
+[gd_scene load_steps=2 format=3 uid="uid://dqf8rlkn14w8k"]
 
-[ext_resource type="Script" uid="uid://ckeele4xns51k" path="res://Abilities/Scenes/a_weapon.gd" id="1_fdrnd"]
+[ext_resource type="Script" uid="uid://cyp1jpom8hs7l" path="res://Abilities/Scenes/a_rapid_shot.gd" id="1_2j5f5"]
 
 [node name="AWeapon" type="Node2D"]
-script = ExtResource("1_fdrnd")
+script = ExtResource("1_2j5f5")
 AbilityType = 1
+Cooldown = 0.3
 metadata/_custom_type_script = "uid://c75dqpmnb0qwj"
 
 [node name="RandDelay" type="Timer" parent="."]

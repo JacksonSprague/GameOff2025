@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://btv0jhrbhwvnt"]
+[gd_scene load_steps=7 format=3 uid="uid://bwombv0mvi2n0"]
 
-[ext_resource type="Script" uid="uid://dw2pd5rjmuwqj" path="res://Abilities/Scenes/Subweapons/projectile_1.gd" id="1_2j3t4"]
-[ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="2_2j3t4"]
+[ext_resource type="Script" uid="uid://cbuwpkoijl5l2" path="res://Abilities/Scenes/Subweapons/projectile_3.gd" id="1_ce6i7"]
+[ext_resource type="Script" uid="uid://hgkqvocq4aam" path="res://Scenes/Components/hitbox_component.gd" id="2_lgrk1"]
 
 [sub_resource type="Gradient" id="Gradient_2lhvc"]
-offsets = PackedFloat32Array(0.257212, 0.350962, 0.456731, 0.509615, 0.581731, 0.711538)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.257212, 0.52, 0.711538)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_uv3ym"]
 gradient = SubResource("Gradient_2lhvc")
@@ -17,16 +17,16 @@ fill_to = Vector2(1, 1)
 radius = 5.09902
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2lhvc"]
-radius = 42.0119
+radius = 27.0185
 
 [node name="Projectile1" type="Area2D"]
-modulate = Color(0.990406, 0.516697, 0.72664, 1)
+modulate = Color(0, 0.0494997, 0.99, 1)
 collision_layer = 16416
 collision_mask = 16392
-script = ExtResource("1_2j3t4")
+script = ExtResource("1_ce6i7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.9375, 0.9375)
 texture = SubResource("GradientTexture2D_uv3ym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -35,7 +35,7 @@ shape = SubResource("CircleShape2D_2j3t4")
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 16416
 collision_mask = 16392
-script = ExtResource("2_2j3t4")
+script = ExtResource("2_lgrk1")
 metadata/_custom_type_script = "uid://hgkqvocq4aam"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
@@ -56,7 +56,7 @@ scale_amount_min = 10.0
 scale_amount_max = 20.0
 
 [node name="Destroy" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.4
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

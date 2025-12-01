@@ -64,10 +64,14 @@ func _on_area_entered(area: Area2D) -> void:
 
 func ProjectileHit(area: Area2D):
 	if area.name=="WaveCore":
+		var hurtbox
+		var hitbox
 		if $AnimationPlayer.has_animation("Wave"):
 			$AnimationPlayer.play("Wave")
-		var hurtbox = $HurtboxComponent
-		var hitbox = $HitboxComponent
+		if $HurtboxComponent:
+			hurtbox = $HurtboxComponent
+		if $HitboxComponent:
+			hitbox = $HitboxComponent
 		if hurtbox:
 			hurtbox.queue_free()
 		if hitbox:

@@ -307,6 +307,7 @@ wait_time = 27.0
 one_shot = true
 
 [node name="Spawn_Timer" type="Timer" parent="."]
+wait_time = 1.8
 autostart = true
 
 [node name="Countdown_timer" type="Timer" parent="."]

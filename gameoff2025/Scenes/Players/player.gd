@@ -80,6 +80,7 @@ func Burrow():
 	BurrowCharge=0
 	animated_sprite_2d.play("burrow")
 	Burrowing=true
+	$Burrow.play()
 	for Weapon in current_weapons:
 		if not Weapon:
 			continue
@@ -91,6 +92,7 @@ func UnBurrow():
 	BurrowCharge=0
 	animated_sprite_2d.play("unburrow")
 	$Visuals/WeaponContainer.visible=true
+	$Burrow2.play()
 	for Weapon in current_weapons:
 		if not Weapon:
 			continue

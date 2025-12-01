@@ -27,12 +27,12 @@ var enemy_dictionary = {
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node
 ## it goes "name": then the weight (how common it is), then reference the node itself. Higher numbers are more common, lower are more rare.
 var ability_dictionary = {
-	"a_Attack": {"weight" : 1.5, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn"), "desc" : "Increase attack power by 10%"},
-	"a_Health": {"weight" : 1.5, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Increase maximum health by 30%"},
-	"a_Speed": {"weight" : 2.0, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "Roam the beach 10% faster"},
-	"a_Shell Strength": {"weight" : 1.5, "scene" : preload("res://Abilities/Scenes/a_Shell Strength.tscn"), "desc" : "Reduce shell strength needed to burrow by 10%"},
+	"a_Attack": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Attack.tscn"), "desc" : "Increase attack power by 10%"},
+	"a_Health": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Health.tscn"), "desc" : "Increase defense by 30%"},
+	"a_Speed": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Speed.tscn"), "desc" : "Roam the beach 10% faster"},
+	"a_Shell Strength": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Shell Strength.tscn"), "desc" : "Reduce shell strength needed to burrow by 10%"},
 	"a_Small Shot": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Small Shot.tscn"), "desc" : "Gain or enhance the SMALL SHOT weapon which fires small but deadly projectiles"},
-	"a_Magnet": {"weight" : 2, "scene" : preload("res://Abilities/Scenes/a_Magnet.tscn"), "desc" : "Increase the distance from which you can grab shell shards by 30%"},
+	"a_Magnet": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Magnet.tscn"), "desc" : "Increase the distance from which you can grab shell shards by 30%"},
 	"a_Big Shot": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Big Shot.tscn"), "desc" : "Gain or enhance the BIG SHOT, a slow but powerful projectile that pierces through enemies"},
 	"a_Rapid Shot": {"weight" : 1, "scene" : preload("res://Abilities/Scenes/a_Rapid Shot.tscn"), "desc" : "Gain or enhance the RAPID SHOT, an attack that peppers your enemies with rapid damage"}
 }
@@ -90,6 +90,7 @@ func AbilitySelected(AbilityName :String):
 	Bubble2Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
 	Bubble3Ref.get_node("BubblesArea/CollisionShape2D").disabled=true
 	BigWaveRef.Receed()
+	$WAVECrash.play()
 	if ability_dictionary.has(AbilityName):
 		var abilitydata = ability_dictionary[AbilityName]
 		NewAbilityNode = abilitydata["scene"].instantiate()

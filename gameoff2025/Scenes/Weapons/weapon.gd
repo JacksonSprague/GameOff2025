@@ -104,7 +104,8 @@ func _on_range_area_area_entered(area: Area2D) -> void:
 
 
 func _on_range_area_area_exited(area: Area2D) -> void:
-	targets.erase(area)
+	if area.is_in_group("Enemy"):
+		targets.erase(area)
 	if targets.size() == 0:
 		closest_target = null
 

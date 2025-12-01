@@ -7,7 +7,7 @@ const ShardRef = preload("res://Nodes/BurrowShard.tscn")
 
 @onready var vision_area: Area2D = $VisionArea
 
-@onready var mat = $Visuals/AnimatedSprite2D.material.duplicate()
+@onready var mat :Material= $Visuals/AnimatedSprite2D.material.duplicate()
 @onready var knockback_timer: Timer = $KnockbackTimer
 
 
@@ -73,9 +73,9 @@ func reset_knockback() -> void:
 	knockback_power = 0.0
 
 func start_flash():
-	mat.set("shader_param/flash_strength", 1.0)
+	mat.set_shader_parameter("flash_strength",1.0)
 	await get_tree().create_timer(flash_time).timeout
-	mat.set("shader_param/flash_strength", 0.0)
+	mat.set_shader_parameter("flash_strength",0.0)
 
 func _on_area_entered(area: Area2D) -> void:
 	ProjectileHit(area)

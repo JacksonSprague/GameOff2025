@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://4wo4f3whj4ww"]
+[gd_scene load_steps=47 format=3 uid="uid://4wo4f3whj4ww"]
 
 [ext_resource type="Script" uid="uid://nge8oayxixrp" path="res://game_level.gd" id="1_6mbg6"]
 [ext_resource type="PackedScene" uid="uid://cpsaytykrou1f" path="res://Scenes/Players/player_average_crab.tscn" id="2_acser"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://86gwgd30n1gr" path="res://Assets/Sprites/Tilemap/Beach_Corner_Outleta_Anim-export.png" id="15_xodq7"]
 [ext_resource type="Texture2D" uid="uid://c5s2oh1snjell" path="res://Assets/Sprites/Tilemap/Beach_Corner_Outlet_Anim-export.png" id="16_qdf25"]
 [ext_resource type="Texture2D" uid="uid://cja1jtgxh5hgo" path="res://Assets/Sprites/Tilemap/Beach Sand.png" id="17_yvigd"]
+[ext_resource type="Texture2D" uid="uid://dernl6m0evs76" path="res://Assets/Sprites/Enviorment/Tree/palme-animation1.png" id="18_yhq3t"]
 
 [sub_resource type="Gradient" id="Gradient_6mbg6"]
 offsets = PackedFloat32Array(0.387019, 0.978365)
@@ -235,6 +236,119 @@ sources/7 = SubResource("TileSetAtlasSource_yvigd")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmwlx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3076"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(0, 0, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnvbr"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(210, 0, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xodq7"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(420, 0, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdf25"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(630, 0, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvigd"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(0, 150, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xg4c"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(210, 150, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvfu7"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(420, 150, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20vrn"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(630, 150, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmpso"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(0, 300, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in1jv"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(210, 300, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qc41"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(420, 300, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjlog"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(630, 300, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhv8m"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(0, 450, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw1v2"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(210, 450, 210, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuxsb"]
+atlas = ExtResource("18_yhq3t")
+region = Rect2(420, 450, 210, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcghv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3076")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnvbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xodq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdf25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvigd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xg4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvfu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20vrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmpso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in1jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qc41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjlog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhv8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw1v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuxsb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="GameLevel" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_6mbg6")
 player = NodePath("PlayerAverageCrab")
@@ -350,3 +464,1193 @@ shape = SubResource("WorldBoundaryShape2D_mmwlx")
 [node name="GameManager" parent="." node_paths=PackedStringArray("PlayerRef") instance=ExtResource("5_ov375")]
 PlayerRef = NodePath("../PlayerAverageCrab")
 enemy_ref1 = ExtResource("7_vfafu")
+
+[node name="Enviorment" type="Node2D" parent="."]
+
+[node name="Trees" type="Node2D" parent="Enviorment"]
+
+[node name="Palm Tree" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(3023, -996)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree2" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(3781, 521)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree3" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(4382, -2404)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree4" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(6884, -1527)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree5" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(8155, 344)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree6" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(9337, -2158)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree7" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(11181, -976.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree8" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(11939, 540.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree9" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(12540, -2384.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree10" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(15042, -1507.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree11" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(16313, 363.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree12" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(17495, -2138.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree13" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(18536, -799.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree14" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(19294, 717.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree15" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(19895, -2207.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree16" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(22397, -1330.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree17" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(23668, 540.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree18" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(24850, -1961.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree19" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(26694, -780)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree20" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(27452, 737)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree21" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(28053, -2188)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree22" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(30555, -1311)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree23" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(31826, 560)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree24" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(33008, -1942)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree25" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(34189, -883.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree26" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(34947, 633.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree27" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(35548, -2291.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree28" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(38050, -1414.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree29" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(39321, 456.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree30" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(40503, -2045.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree31" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(42347, -864)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree32" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(43105, 653)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree33" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(43706, -2272)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree34" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(46208, -1395)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree35" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(47479, 476)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree36" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(48661, -2026)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree37" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(50320, -827.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree38" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(51078, 689.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree39" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(51679, -2235.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree40" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(54181, -1358.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree41" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(55452, 512.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree42" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(56634, -1989.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree43" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(58478, -808)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree44" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(59236, 709)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree45" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(59837, -2216)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree46" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(62339, -1339)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree47" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(63610, 532)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree48" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(64792, -1970)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree49" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(66142, -827.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree50" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(66900, 689.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree51" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(67501, -2235.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree52" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(70003, -1358.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree53" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(71274, 512.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree54" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(72456, -1989.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree55" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(74300, -808)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree56" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(75058, 709)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree57" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(75659, -2216)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree58" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(78161, -1339)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree59" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(79432, 532)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree60" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(80614, -1970)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree61" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(83268, -1175.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree62" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(84026, 341.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree63" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(84627, -2583.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree64" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(87129, -1706.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree65" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(88400, 164.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree66" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(89582, -2337.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree67" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(91426, -1156)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree68" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(92184, 361)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree69" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(92785, -2564)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree70" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(95287, -1687)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree71" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(96558, 184)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree72" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(97740, -2318)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree73" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(100195, -528.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree74" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(100953, 988.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree75" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(101554, -1936.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree76" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(104056, -1059.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree77" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(105327, 811.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree78" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(106509, -1690.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree79" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(108353, -509)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree80" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(109111, 1008)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree81" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(109712, -1917)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree82" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(112214, -1040)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree83" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(113485, 831)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree84" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(114667, -1671)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree85" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(116724, -428.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree86" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(117482, 1088.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree87" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(118083, -1836.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree88" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(120585, -959.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree89" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(121856, 911.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree90" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(123038, -1590.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree91" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(124882, -409)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree92" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(125640, 1108)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree93" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(126241, -1817)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree94" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(128743, -940)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree95" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(130014, 931)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree96" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(131196, -1571)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree97" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(134099, -677.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree98" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(134857, 839.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree99" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(135458, -2085.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree100" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(137960, -1208.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree101" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(139231, 662.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree102" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(140413, -1839.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree103" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(142257, -658)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree104" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(143015, 859)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree105" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(143616, -2066)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree106" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(146118, -1189)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree107" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(147389, 682)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree108" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(148571, -1820)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree109" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(151574, -777.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree110" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(152332, 739.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree111" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(152933, -2185.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree112" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(155435, -1308.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree113" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(156706, 562.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree114" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(157888, -1939.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree115" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(159732, -758)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree116" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(160490, 759)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree117" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(161091, -2166)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree118" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(163593, -1289)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree119" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(164864, 582)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree120" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(166046, -1920)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree121" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(167198, -608.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree122" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(167956, 908.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree123" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(168557, -2016.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree124" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(171059, -1139.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree125" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(172330, 731.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree126" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(173512, -1770.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree127" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(175356, -589)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree128" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(176114, 928)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree129" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(176715, -1997)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree130" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(179217, -1120)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree131" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(180488, 751)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree132" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(181670, -1751)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree133" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(183646, -1073.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree134" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(184404, 443.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree135" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(185005, -2481.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree136" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(187507, -1604.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree137" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(188778, 266.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree138" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(189960, -2235.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree139" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(191804, -1054)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree140" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(192562, 463)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree141" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(193163, -2462)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree142" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(195665, -1585)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree143" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(196936, 286)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree144" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(198118, -2216)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree145" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(200459, 357.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree146" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(203562, -1690.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree147" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(204833, 180.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Palm Tree148" type="AnimatedSprite2D" parent="Enviorment/Trees"]
+position = Vector2(206015, -2321.5)
+scale = Vector2(13.0095, 14.6333)
+sprite_frames = SubResource("SpriteFrames_tcghv")
+autoplay = "default"
+frame = 14
+frame_progress = 0.930409
+
+[node name="Rocks" type="Node2D" parent="Enviorment"]

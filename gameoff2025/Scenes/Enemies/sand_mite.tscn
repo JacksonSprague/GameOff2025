@@ -278,7 +278,12 @@ hue_variation_max = 0.5
 [node name="VisualsDisappear" type="Timer" parent="." index="8"]
 wait_time = 0.1
 
+[node name="KnockbackTimer" type="Timer" parent="." index="9"]
+wait_time = 0.4
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
 [connection signal="timeout" from="VisualsDisappear" to="." method="_on_visuals_disappear_timeout"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]

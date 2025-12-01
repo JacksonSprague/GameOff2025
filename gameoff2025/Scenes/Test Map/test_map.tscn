@@ -40,3 +40,4 @@ position = Vector2(-10, 858)
 
 [node name="SandDollar" parent="." instance=ExtResource("6_aygn4")]
 position = Vector2(-1168, 333)
+rotation = 0.000120609

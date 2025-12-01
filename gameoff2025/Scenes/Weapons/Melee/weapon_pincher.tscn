@@ -11,6 +11,7 @@ size = Vector2(64, 32)
 [node name="WeaponPincher" instance=ExtResource("1_7cto1")]
 
 [node name="Sprite2D" parent="." index="0"]
+z_index = 0
 position = Vector2(25, -3)
 scale = Vector2(4, 4)
 texture = ExtResource("2_bmgjm")

@@ -2,16 +2,22 @@ extends CharacterBase
 class_name Enemy
 
 const ShardRef = preload("res://Nodes/BurrowShard.tscn")
+
 @export var flock_push := 20.0
 
 @onready var vision_area: Area2D = $VisionArea
 
 @onready var mat = $Visuals/AnimatedSprite2D.material.duplicate()
+@onready var knockback_timer: Timer = $KnockbackTimer
 
 
 var flash_time :=0.1
 
 var can_move := true
+
+var knockback_dir: Vector2
+var knockback_power: float
+
 var move_dir: Vector2
 
 func _ready():
@@ -26,7 +32,7 @@ func _process(delta: float) -> void:
 	if not can_move_towards_player():
 		return
 	
-	position += get_move_direction() * stats.speed * delta
+	position += (get_move_direction() + knockback_dir * knockback_power) * stats.speed * delta
 	update_rotation()
 
 func get_move_direction() -> Vector2:
@@ -52,6 +58,19 @@ func update_rotation() -> void:
 func can_move_towards_player() -> bool:
 	return is_instance_valid(Global.player) and\
 	global_position.distance_to(Global.player.global_position) > 60  
+
+func apply_knockback(knock_dir: Vector2, knock_power: float) -> void:
+	knockback_dir = knock_dir
+	knockback_power = knock_power
+	if knockback_timer.time_left > 0:
+		knockback_timer.stop()
+		reset_knockback()
+	
+	knockback_timer.start()
+
+func reset_knockback() -> void:
+	knockback_dir = Vector2.ZERO
+	knockback_power = 0.0
 
 func start_flash():
 	mat.set("shader_param/flash_strength", 1.0)
@@ -86,3 +105,15 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 func _on_visuals_disappear_timeout() -> void:
 	if %Visuals:
 		%Visuals.visible=false
+
+
+func _on_knockback_timer_timeout() -> void:
+	reset_knockback()
+
+
+func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
+	super._on_hurtbox_component_on_damaged(hitbox)
+	
+	if hitbox.knockback_power > 0:
+		var dir := hitbox.source.global_position.direction_to(global_position)
+		apply_knockback(dir, hitbox.knockback_power)

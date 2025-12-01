@@ -18,15 +18,31 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not is_attacking:
-		if targets.size() > 0:
-			update_closest_target()
-		else:
-			closest_target = null
+		closest_target=get_nearest_enemy()
+		#if targets.size() > 0:
+			#update_closest_target()
+		#else:
+			#closest_target = null
 	
 	rotate_to_target()
 	
 	if can_use_weapon():
 		use_weapon()
+
+func get_nearest_enemy() -> Node:
+	var nearest_enemy = null
+	var nearest_distance = INF
+	
+	for Enemy in get_tree().get_nodes_in_group("Enemy"):
+		if not is_instance_valid(Enemy):
+			continue
+		var dist = global_position.distance_to(Enemy.global_position)
+		if dist < nearest_distance:
+			nearest_distance=dist
+			nearest_enemy=Enemy
+	return nearest_enemy
+
+
 
 func setup_weapon(data: ItemWeapon) -> void:
 	self.data = data
@@ -93,7 +109,7 @@ func get_closest_target() -> Node2D:
 	return closest_enemy
 
 func can_use_weapon() -> bool:
-	return cooldown_timer.is_stopped() and closest_target
+	return cooldown_timer.is_stopped() and closest_target and closest_target.global_position.distance_to(get_parent().global_position)<400
 
 
 func _on_range_area_area_entered(area: Area2D) -> void:

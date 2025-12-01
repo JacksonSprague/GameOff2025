@@ -2,7 +2,7 @@ extends CharacterBase
 class_name Enemy
 
 const ShardRef = preload("res://Nodes/BurrowShard.tscn")
-
+const P_ref = preload("res://cpu_particles_2d.tscn")
 @export var flock_push := 20.0
 
 @onready var vision_area: Area2D = $VisionArea
@@ -98,9 +98,6 @@ func ProjectileHit(area: Area2D):
 
 
 
-func _on_cpu_particles_2d_finished() -> void:
-	queue_free()
-
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	queue_free()
@@ -109,6 +106,7 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 func _on_visuals_disappear_timeout() -> void:
 	if %Visuals:
 		%Visuals.visible=false
+		queue_free()
 
 
 func _on_knockback_timer_timeout() -> void:
@@ -121,3 +119,11 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 	if hitbox.knockback_power > 0:
 		var dir := hitbox.source.global_position.direction_to(global_position)
 		apply_knockback(dir, hitbox.knockback_power)
+
+func spawn_death_particles():
+
+	var p = P_ref.instantiate()
+	
+	get_tree().current_scene.add_child(p)
+	p.global_position= global_position
+	p.emitting=true

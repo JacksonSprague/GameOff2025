@@ -6,30 +6,23 @@
 [node name="SandDollarEpic" instance=ExtResource("1_wmao1")]
 stats = ExtResource("2_txkja")
 
+[node name="AnimatedSprite2D" parent="Visuals" index="1"]
+modulate = Color(1, 0.39, 0.39, 1)
+
 [node name="CollisionShape2D" parent="." index="1"]
 visible = true
 position = Vector2(1, -51.12)
 scale = Vector2(0.957227, 0.851063)
-
-[node name="VisionArea" parent="." index="2"]
-visible = true
 
 [node name="CollisionShape2D" parent="VisionArea" index="0"]
 visible = true
 position = Vector2(1, -94.12)
 scale = Vector2(1.47723, 1.33507)
 
-[node name="HurtboxComponent" parent="." index="3"]
-visible = true
-
 [node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(1, -98.12)
 scale = Vector2(1.47723, 1.33507)
 
-[node name="HitboxComponent" parent="." index="4"]
-visible = true
-
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
-visible = true
 position = Vector2(1, -82.24)
 scale = Vector2(1.47723, 1.33507)

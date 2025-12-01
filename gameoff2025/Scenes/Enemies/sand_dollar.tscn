@@ -122,6 +122,3 @@ autoplay = "Walk"
 
 [node name="VisionArea" parent="." index="2"]
 visible = false
-
-[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
-visible = false

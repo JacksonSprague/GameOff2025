@@ -39,3 +39,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		pass
 	if anim_name=="Receed":
 		OwnerRef.AwaitNextWave()
+
+
+func _on_wave_core_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		if area.has_method("ProjectileHit"):
+			area.ProjectileHit($WaveCore)
+	

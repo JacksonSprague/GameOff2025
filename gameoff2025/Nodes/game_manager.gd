@@ -3,7 +3,7 @@ class_name GameManager
 
 @export var PlayerRef :Player
 @export var enemy_ref1 :PackedScene
-
+var Wavecount=0
 var Difficulty = 1
 const WaveScene = preload("res://Nodes/BIG_wave.tscn")
 const BubbleScene = preload("res://Nodes/Abilitybubbles.tscn")
@@ -14,6 +14,14 @@ var Bubble2Ref :AbilityBubble
 var Bubble3Ref :AbilityBubble
 
 var isWave =false 
+
+var enemy_dictionary = {
+	"SandMite1": {"weight" : 1.5, "scene" : preload("res://Scenes/Enemies/sand_mite.tscn")},
+	"SandMite2": {"weight" : 0, "scene" : preload("res://Scenes/Enemies/sand_mite_epic.tscn")},
+	"SandMite3": {"weight" : 0, "scene" : preload("res://Scenes/Enemies/sand_mite_legendary.tscn")},
+	"SandDollar1": {"weight" : 0, "scene" : preload("res://Scenes/Enemies/sand_dollar.tscn")},
+	"SandDollar2": {"weight" : 0, "scene" : preload("res://Scenes/Enemies/sand_dollar_epic.tscn")},
+}
 
 
 ##Abilities must be added here for them to appear. And ability name MUST match the name of the node
@@ -90,10 +98,20 @@ func AbilitySelected(AbilityName :String):
 
 func AwaitNextWave():
 	BigWaveRef.queue_free()
-	$Spawn_Timer.wait_time=$Spawn_Timer.wait_time/1.2
+	$Spawn_Timer.wait_time=$Spawn_Timer.wait_time/1.1
 	$Spawn_Timer.start()
 	$Wave_Frequency.wait_time=clamp($Wave_Frequency.wait_time/1.05,6,100)
 	$Wave_Frequency.start()
+	Wavecount+=1
+	
+	if Wavecount>2:
+		enemy_dictionary["SandDollar1"]["weight"]=2
+	if Wavecount>4:
+		enemy_dictionary["SandMite2"]["weight"]=2
+	if Wavecount>6:
+		enemy_dictionary["SandDollar2"]["weight"]=3
+	if Wavecount>8:
+		enemy_dictionary["SandMite3"]["weight"]=3
 
 func _on_wave_frequency_timeout() -> void:
 	$Warning.visible=true
@@ -151,7 +169,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
-	var enemy = enemy_ref1.instantiate()
+	var enemy = enemy_dictionary[weighted_dictionary_pick(enemy_dictionary)]["scene"].instantiate()
 	add_child(enemy)
 	var radius = 2000
 	enemy.position = point_on_oval(PlayerRef.global_position,radius*1.2,radius,randf_range(0,360))
@@ -161,6 +179,31 @@ func point_on_oval(center: Vector2, radius_x: float, radius_y: float, angle: flo
 	var y = center.y + radius_y * sin(angle)
 	return Vector2(x, y)
 	
+func enemy_weighted_dictionary_pick(dict : Dictionary) -> String:
+	var total_weight :float=0.0
+	for key in dict.keys():
+		var w = dict[key]
+		if typeof(w) == TYPE_DICTIONARY and w.has("weight"):
+			total_weight+=float(w["weight"])
+		else:
+			total_weight+=float(w)
+	if total_weight <= 0:
+		return "Nothing to Pick"
+	
+	var r = randf()*total_weight
+	
+	var acc = 0.0
+	for key in dict.keys():
+		var w = dict[key]
+		if typeof(w) == TYPE_DICTIONARY and w.has("weight"):
+			acc += float(w["weight"])
+		else:
+			acc += float(w)
+			
+		if r <= acc:
+			return key
+	
+	return dict.keys()[-1]
 	
 	
 	

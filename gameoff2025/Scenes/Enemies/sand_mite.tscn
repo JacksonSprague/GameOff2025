@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7rfp31d60i48"]
+[gd_scene load_steps=23 format=3 uid="uid://b7rfp31d60i48"]
 
 [ext_resource type="PackedScene" uid="uid://dl2q5epsndpea" path="res://Scenes/base.tscn" id="1_ynjhl"]
 [ext_resource type="Texture2D" uid="uid://ph85d7ek3qvj" path="res://icon.svg" id="2_4yaod"]
@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dthveehaqylpg" path="res://Assets/Sprites/Enemies/Sand Mite/Sand Mite-Sheet.png" id="4_hlgua"]
 [ext_resource type="Shader" uid="uid://df7sdg3agk3i2" path="res://flash.shader.gdshader" id="4_x0nff"]
 [ext_resource type="PackedScene" uid="uid://baxagywh1rba1" path="res://Scenes/Components/hitbox_component.tscn" id="5_7sxqv"]
+[ext_resource type="PackedScene" uid="uid://cdsdml6yn7kcw" path="res://cpu_particles_2d.tscn" id="8_w4h48"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w4h48"]
 shader = ExtResource("4_x0nff")
 shader_parameter/flash_strength = 0.0
+shader_parameter/brightness_boost = 0.08
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2ldw"]
 atlas = ExtResource("4_hlgua")
@@ -59,13 +61,13 @@ animations = [{
 radius = 80.0001
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnx0v"]
-radius = 250.0
+radius = 280.014
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2ldw"]
-radius = 94.0053
+radius = 106.006
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlgua"]
-radius = 76.0066
+radius = 68.8
 
 [sub_resource type="Animation" id="Animation_o2ldw"]
 length = 0.001
@@ -176,14 +178,6 @@ _data = {
 &"Wave": SubResource("Animation_hlgua")
 }
 
-[sub_resource type="Curve" id="Curve_cea3l"]
-_data = [Vector2(0, 0.487532), 0.0, 0.0, 0, 0, Vector2(0.690476, 0.992849), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_x0nff"]
-offsets = PackedFloat32Array(0, 0.875)
-colors = PackedColorArray(1, 0.484, 0.14, 1, 0, 0, 0, 1)
-
 [node name="SandMite" groups=["Enemy"] instance=ExtResource("1_ynjhl")]
 collision_layer = 2
 collision_mask = 16385
@@ -256,28 +250,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_cewjn")
 }
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="7"]
+[node name="CPUParticles2D" parent="." index="7" instance=ExtResource("8_w4h48")]
 position = Vector2(0, 0.119999)
-emitting = false
-amount = 40
-one_shot = true
-speed_scale = 2.0
-explosiveness = 0.8
-direction = Vector2(0, 0)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 200.0
-initial_velocity_max = 300.0
-tangential_accel_min = 318.3
-tangential_accel_max = 318.3
-angle_min = -171.4
-angle_max = 165.7
-scale_amount_min = 10.0
-scale_amount_max = 40.0
-scale_amount_curve = SubResource("Curve_cea3l")
-color_ramp = SubResource("Gradient_x0nff")
-hue_variation_min = -0.3
-hue_variation_max = 0.5
 
 [node name="VisualsDisappear" type="Timer" parent="." index="8"]
 wait_time = 0.1
@@ -288,6 +262,5 @@ one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
 [connection signal="timeout" from="VisualsDisappear" to="." method="_on_visuals_disappear_timeout"]
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]

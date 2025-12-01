@@ -6,28 +6,29 @@
 [node name="SandMiteLegendary" instance=ExtResource("1_a4wi4")]
 stats = ExtResource("2_1o358")
 
+[node name="Shadow" parent="Visuals" index="0"]
+position = Vector2(0, 61.999)
+scale = Vector2(2.353, 1.644)
+
 [node name="AnimatedSprite2D" parent="Visuals" index="1"]
+modulate = Color(0, 1, 0.383333, 1)
 scale = Vector2(24.306, 23.437)
 
 [node name="CollisionShape2D" parent="." index="1"]
-visible = true
 position = Vector2(0, -28.12)
 scale = Vector2(1.6644, 1.24505)
+
+[node name="VisionArea" parent="." index="2"]
+visible = false
 
 [node name="CollisionShape2D" parent="VisionArea" index="0"]
 visible = true
 position = Vector2(0, -71.12)
 scale = Vector2(1.6644, 1.3721)
 
-[node name="HurtboxComponent" parent="." index="3"]
-visible = true
-
 [node name="CollisionShape2D" parent="HurtboxComponent" index="0"]
 position = Vector2(0, -75.12)
 scale = Vector2(1.6644, 1.3721)
-
-[node name="HitboxComponent" parent="." index="4"]
-visible = true
 
 [node name="CollisionShape2D" parent="HitboxComponent" index="0"]
 position = Vector2(-1, -65.12)

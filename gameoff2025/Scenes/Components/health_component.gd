@@ -13,6 +13,8 @@ func setup(stats: BaseStats) -> void:
 	current_health = stats.health
 	on_health_changed.emit(current_health, max_health)
 
+
+
 func take_damage(value: float) -> void:
 	#print("damaged "+name+" of:"+get_parent().name+" for: ")
 	if current_health <= 0:
@@ -57,11 +59,12 @@ func die() -> void:
 			hurtbox.queue_free()
 		if hitbox:
 			hitbox.queue_free()
+		get_parent().spawn_death_particles()
 		$"../VisualsDisappear".start()
-		if $"../CPUParticles2D":
-			$"../CPUParticles2D".emitting=true
 		var spawned = $"..".ShardRef.instantiate()
 		get_tree().current_scene.add_child(spawned)
 	
 		spawned.global_position=$"..".global_position
+	
+
 	

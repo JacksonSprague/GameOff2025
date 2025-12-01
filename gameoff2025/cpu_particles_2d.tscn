@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdsdml6yn7kcw"]
+
+[sub_resource type="Curve" id="Curve_cea3l"]
+_data = [Vector2(0, 0.487532), 0.0, 0.0, 0, 0, Vector2(0.690476, 0.992849), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_x0nff"]
+offsets = PackedFloat32Array(0, 0.875)
+colors = PackedColorArray(1, 0.484, 0.14, 1, 0, 0, 0, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+amount = 40
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.8
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+tangential_accel_min = 318.3
+tangential_accel_max = 318.3
+angle_min = -171.4
+angle_max = 165.7
+scale_amount_min = 10.0
+scale_amount_max = 40.0
+scale_amount_curve = SubResource("Curve_cea3l")
+color_ramp = SubResource("Gradient_x0nff")
+hue_variation_min = -0.3
+hue_variation_max = 0.5

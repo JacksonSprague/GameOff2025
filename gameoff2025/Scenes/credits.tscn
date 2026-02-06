@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgw4wbrkdw4m"]
+
+[ext_resource type="VideoStream" uid="uid://dcx8jlsuosdtx" path="res://ShoreBound-Credits.ogv" id="1_r18jl"]
+[ext_resource type="Script" uid="uid://dk7bv2km20c04" path="res://Scenes/Credits.gd" id="2_gryuy"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+texture_filter = 1
+offset_left = -3.0
+offset_top = 4.0
+offset_right = 2877.0
+offset_bottom = 1624.0
+stream = ExtResource("1_r18jl")
+autoplay = true
+loop = true
+script = ExtResource("2_gryuy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1441, 808)
+zoom = Vector2(1.03, 1.03)
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]
